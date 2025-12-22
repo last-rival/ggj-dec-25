@@ -11,5 +11,15 @@ config_version=5
 [application]
 
 config/name="GodotGameJamDecember2025"
+run/main_scene="uid://joqju5gkcy0j"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/clyde/plugin.cfg")
