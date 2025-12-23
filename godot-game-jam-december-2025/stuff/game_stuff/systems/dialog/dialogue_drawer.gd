@@ -12,7 +12,7 @@ const DialogueEndScene = preload("res://stuff/game_stuff/systems/dialog/end_butt
 
 var passive_check_handler = preload("res://stuff/game_stuff/checks/passive_checks_handler.gd").new()
 var active_check_handler = preload("res://stuff/game_stuff/checks/active_checks_handler.gd").new()
-var game_data = preload("res://stuff/game_stuff/data/game_data.gd").new()
+
 
 
 @onready var _dialogue_entries_container: Control = $PanelContainer/ScrollContainer/inner_container/dialogue_entries
@@ -58,16 +58,16 @@ func start(dialogue_name: String) -> void:
 		if variable_name == "active_check_result":
 			return active_check_handler.last_check_result.has_succeeded
 
-		return game_data.get_variable(variable_name)
+		return GameData.get_variable(variable_name)
 	)
 
 	_dialogue.on_external_variable_update(func(variable_name: String, value):
-		game_data.set_variable(variable_name, value)
+		GameData.set_variable(variable_name, value)
 	)
 
 	_dialogue.event_triggered.connect(_on_event_triggered)
 	
-	var dialogue_data = game_data.get_dialogue_data(dialogue_name)
+	var dialogue_data = GameData.get_dialogue_data(dialogue_name)
 	if dialogue_data:
 		_dialogue.load_data(dialogue_data)
 
@@ -140,7 +140,7 @@ func _handle_end() -> void:
 	# execute it, it remembers variations, options visited, and internal variables.
 	# Keep in mind that in this example the data is only kept in memory, so it's
 	# persisted between dialogue runs, but not when closing the game.
-	game_data.store_dialogue_data(_current_dialogue_name, _dialogue.get_data())
+	GameData.store_dialogue_data(_current_dialogue_name, _dialogue.get_data())
 
 
 

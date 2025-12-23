@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://stuff/game_stuff/inventory/inventory_item.gd" id="1_item"]
+
+[resource]
+script = ExtResource("1_item")
+placeholder_color = Color(0.2, 0.2, 0.6, 1)
+name = "Prudence Dossier 3"
+description = "Detailed file 3 on Prudence."
+use_condition_variable = "prudence_dossier3_available"
+use_condition_expected_value = true
+on_use_set_variable = "prudence_dossier3_used"
+on_use_set_value = true
+on_use_dialogue = ""

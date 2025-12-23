@@ -7,6 +7,26 @@ var is_dialogue_running: bool = false
 
 func _ready() -> void:
 	_dialogue_drawer.hide()
+	
+
+	# Add clue items to inventory
+	# 1. Original 5
+	var cup = load("res://stuff/game_stuff/inventory/clues/cup.tres")
+	var dossiers = load("res://stuff/game_stuff/inventory/clues/dossiers.tres")
+	var chits = load("res://stuff/game_stuff/inventory/clues/chits.tres")
+	var photo = load("res://stuff/game_stuff/inventory/clues/photo.tres")
+	var flower = load("res://stuff/game_stuff/inventory/clues/flower.tres")
+	
+	GameData.add_item(cup)
+	GameData.add_item(dossiers)
+	GameData.add_item(chits)
+	GameData.add_item(photo)
+	GameData.add_item(flower)
+
+
+
+
+
 
 
 func _input(event: InputEvent) -> void:

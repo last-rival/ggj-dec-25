@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://stuff/game_stuff/inventory/inventory_item.gd" id="1_item"]
+
+[resource]
+script = ExtResource("1_item")
+placeholder_color = Color(0.6, 0.4, 0.8, 1)
+name = "Briar Chit 2"
+description = "A fragmented note about Briar."
+use_condition_variable = "briar_chit2_available"
+use_condition_expected_value = true
+on_use_set_variable = "briar_chit2_used"
+on_use_set_value = true
+on_use_dialogue = ""
