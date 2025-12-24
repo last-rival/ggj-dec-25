@@ -8,6 +8,8 @@ extends Node
 signal inventory_updated
 signal collection_updated
 signal inventory_visibility_changed(visible: bool)
+signal energy_updated(new_amount: int)
+signal energy_debug_visibility_changed(visible: bool)
 
 var _persistence = {
 	"dialogues": {},
@@ -21,6 +23,8 @@ var collected_items_cache: Array[InventoryItem] = []
 var discovered_items: Array[InventoryItem] = []
 
 var is_expanded_inventory_open: bool = false
+const MAX_ENERGY = 5
+var current_energy: int = 5
 
 func _ready():
 	# --- Default UNLOCKED Items ---
@@ -30,6 +34,11 @@ func _ready():
 	
 	# Default Inventory Button Visibility
 	set_variable("inventory_button_visible", true)
+	
+	# Default Energy
+	set_variable("energy", 5)
+	set_variable("exhausted", false)
+	set_variable("energy_debug_visible", false)
 	
 	# --- Default LOCKED Items (Hidden) ---
 	# Key items
@@ -67,6 +76,10 @@ func set_variable(var_name: String, value) -> void:
 	# Check for Inventory Button Visibility
 	if var_name == "inventory_button_visible":
 		inventory_visibility_changed.emit(value)
+
+	# Check for Energy Debug Visibility
+	if var_name == "energy_debug_visible":
+		energy_debug_visibility_changed.emit(value)
 
 func _process_discovery(var_name: String):
 	# Find which item matches this variable
@@ -152,5 +165,32 @@ func has_item(item_name: String) -> bool:
 
 func get_inventory() -> Array:
 	return _persistence.inventory
+
+func modify_energy(amount: int) -> void:
+	current_energy = clamp(current_energy + amount, 0, MAX_ENERGY)
+	
+	# Sync to global variables for dialogue system
+	set_variable("energy", current_energy)
+	
+	# Check exhaustion
+	if current_energy == 0:
+		set_variable("exhausted", true)
+		print("Player is exhausted!")
+	else:
+		set_variable("exhausted", false)
+
+	energy_updated.emit(current_energy)
+
+func set_energy(amount: int) -> void:
+	current_energy = clamp(amount, 0, MAX_ENERGY)
+	
+	set_variable("energy", current_energy)
+	
+	if current_energy == 0:
+		set_variable("exhausted", true)
+	else:
+		set_variable("exhausted", false)
+		
+	energy_updated.emit(current_energy)
 
 

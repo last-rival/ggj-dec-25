@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://energy_ui_scene"]
+
+[ext_resource type="Script" path="res://stuff/game_stuff/energy/energy_ui.gd" id="1_script"]
+
+[node name="EnergyUI" type="VBoxContainer"]
+offset_right = 240.0
+offset_bottom = 20.0
+theme_override_constants/separation = 10
+script = ExtResource("1_script")
+
+[node name="Indicators" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Energy1" type="ColorRect" parent="Indicators"]
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+
+[node name="Energy2" type="ColorRect" parent="Indicators"]
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+
+[node name="Energy3" type="ColorRect" parent="Indicators"]
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+
+[node name="Energy4" type="ColorRect" parent="Indicators"]
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+
+[node name="Energy5" type="ColorRect" parent="Indicators"]
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+
+[node name="DebugButtons" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ReduceButton" type="Button" parent="DebugButtons"]
+layout_mode = 2
+text = " - Energy"
+
+[node name="ResetExhaustButton" type="Button" parent="DebugButtons"]
+layout_mode = 2
+text = "Reset Exh."
+
+[node name="DebugInfo" type="Label" parent="."]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "E: 5 | Exh: false"

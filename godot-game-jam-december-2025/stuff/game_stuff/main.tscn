@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" path="res://stuff/game_stuff/inventory/ui/expanded_inventory_ui.tscn" id="5_expanded"]
 [ext_resource type="PackedScene" uid="uid://qtxb7q4nkvo5" path="res://stuff/game_stuff/checks/active_check_animation.tscn" id="3_h2yge"]
 [ext_resource type="Script" path="res://stuff/game_stuff/inventory/inventory_variables_master_sheet.gd" id="6_debug_inv"]
+[ext_resource type="Script" path="res://stuff/game_stuff/energy/energy_variable_master_sheet.gd" id="7_debug_energy"]
+[ext_resource type="PackedScene" path="res://stuff/game_stuff/energy/energy_ui.tscn" id="7_energy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2yge"]
 albedo_color = Color(0.145098, 0.133333, 0.121569, 1)
@@ -23,6 +25,9 @@ script = ExtResource("1_0xm2m")
 
 [node name="DebugInventory" type="Node" parent="."]
 script = ExtResource("6_debug_inv")
+
+[node name="DebugEnergy" type="Node" parent="."]
+script = ExtResource("7_debug_energy")
 
 [node name="scene" type="Node3D" parent="."]
 
@@ -114,6 +119,17 @@ theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
+
+
+	[node name="EnergyUI" parent="HUD" instance=ExtResource("7_energy")]
+	anchors_preset = 5
+	anchor_left = 0.5
+	anchor_right = 0.5
+	offset_left = -120.0
+	offset_top = 20.0
+	offset_right = 120.0
+	offset_bottom = 40.0
+	grow_horizontal = 2
 
 [node name="InventoryUI" parent="HUD" instance=ExtResource("4_inventory")]
 

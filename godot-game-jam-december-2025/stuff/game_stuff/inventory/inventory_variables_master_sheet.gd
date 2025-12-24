@@ -106,3 +106,5 @@ func _ready():
 	GameData.set_variable("briar_chit1_used", false)
 	GameData.set_variable("briar_chit2_used", false)
 	GameData.set_variable("briar_chit3_used", false)
+
+
