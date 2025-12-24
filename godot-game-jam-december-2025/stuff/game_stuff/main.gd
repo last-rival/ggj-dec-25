@@ -41,6 +41,13 @@ func _ready() -> void:
 	
 	# Connect Inventory Button
 	$HUD/InventoryButton.pressed.connect(func(): $HUD/ExpandedInventoryUI.toggle())
+	
+	# Handle visibility
+	GameData.inventory_visibility_changed.connect(func(v): $HUD/InventoryButton.visible = v)
+	# Set initial state (default true if not set)
+	var is_inv_visible = GameData.get_variable("inventory_button_visible")
+	if is_inv_visible == null: is_inv_visible = true
+	$HUD/InventoryButton.visible = is_inv_visible
 
 
 
