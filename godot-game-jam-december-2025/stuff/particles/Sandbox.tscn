@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxhut6dd83ij4"]
+
+[ext_resource type="Texture2D" uid="uid://bvaxtgmd06u0i" path="res://stuff/particles/el_sample_trim.png" id="1_i5ggk"]
+[ext_resource type="Texture2D" uid="uid://j3ooxua5vgey" path="res://stuff/particles/line.png" id="2_iwt84"]
+[ext_resource type="Material" uid="uid://3fh3nfb57fd6" path="res://stuff/particles/SusRing.tres" id="3_dcjas"]
+[ext_resource type="Texture2D" uid="uid://1cmd26ewtavt" path="res://stuff/particles/shock.png" id="4_iwt84"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ElSampleTrim" type="Sprite2D" parent="."]
+position = Vector2(955.00006, 775.99994)
+scale = Vector2(0.73083776, 0.7308377)
+texture = ExtResource("1_i5ggk")
+
+[node name="Mask" type="Polygon2D" parent="."]
+clip_children = 1
+polygon = PackedVector2Array(901, 664, 454, 809, 437, 379, 639, 159, 989, 92, 1482, 214, 1498, 584, 1407, 808, 1032, 646)
+uv = PackedVector2Array(901, 664, 419, 838, 313, 366, 548, 97, 1026, 53, 1554, 167, 1620, 730, 1407, 808, 1032, 646)
+
+[node name="Sus" type="GPUParticles2D" parent="Mask"]
+visible = false
+position = Vector2(962, 601)
+scale = Vector2(0.89, 0.89)
+emitting = false
+amount = 30
+texture = ExtResource("2_iwt84")
+lifetime = 0.7
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 24
+trail_lifetime = 2.2399999999999998
+process_material = ExtResource("3_dcjas")
+
+[node name="Sus2" type="GPUParticles2D" parent="Mask"]
+position = Vector2(962, 601)
+scale = Vector2(0.89, 0.89)
+emitting = false
+amount = 10
+texture = ExtResource("4_iwt84")
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 24
+trail_lifetime = 2.2399999999999998
+process_material = ExtResource("3_dcjas")

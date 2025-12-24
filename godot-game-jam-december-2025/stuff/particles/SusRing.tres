@@ -1,0 +1,29 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=3 format=3 uid="uid://3fh3nfb57fd6"]
+
+[sub_resource type="Curve" id="Curve_tjqs3"]
+_data = [Vector2(0.22648081, 0.98142856), 0.0, -2.4429166, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_yjyn3"]
+curve = SubResource("Curve_tjqs3")
+
+[resource]
+lifetime_randomness = 0.6
+particle_flag_align_y = true
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 315.0
+emission_ring_inner_radius = 350.0
+emission_ring_cone_angle = 90.0
+angle_min = 1.0728835e-05
+angle_max = 1.0728835e-05
+direction = Vector3(-1, -1, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = 42.769997
+radial_accel_max = 42.769997
+scale_min = 0.79999995
+scale_max = 1.5
+alpha_curve = SubResource("CurveTexture_yjyn3")
