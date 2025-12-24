@@ -4,7 +4,7 @@
 _data = [Vector2(0.22648081, 0.98142856), 0.0, -2.4429166, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_yjyn3"]
+[sub_resource type="CurveTexture" id="CurveTexture_82yxe"]
 curve = SubResource("Curve_tjqs3")
 
 [resource]
@@ -26,4 +26,4 @@ radial_accel_min = 42.769997
 radial_accel_max = 42.769997
 scale_min = 0.79999995
 scale_max = 1.5
-alpha_curve = SubResource("CurveTexture_yjyn3")
+alpha_curve = SubResource("CurveTexture_82yxe")

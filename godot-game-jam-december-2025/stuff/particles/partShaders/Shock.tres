@@ -1,0 +1,59 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://dlg54fpeirhh0"]
+
+[ext_resource type="Shader" uid="uid://codn6i2v6h2gt" path="res://stuff/particles/partShaders/RingParticleShader.gdshader" id="1_gct2o"]
+
+[sub_resource type="Curve" id="Curve_fmk43"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.6655519, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_m7c0x"]
+curve = SubResource("Curve_fmk43")
+
+[resource]
+shader = ExtResource("1_gct2o")
+shader_parameter/direction = Vector3(-1, -1, 0)
+shader_parameter/spread = 180.0
+shader_parameter/flatness = 0.0
+shader_parameter/inherit_emitter_velocity_ratio = 0.0
+shader_parameter/initial_linear_velocity_min = 0.0
+shader_parameter/initial_linear_velocity_max = 0.0
+shader_parameter/directional_velocity_min = 1.0
+shader_parameter/directional_velocity_max = 1.0
+shader_parameter/angular_velocity_min = 0.0
+shader_parameter/angular_velocity_max = 0.0
+shader_parameter/orbit_velocity_min = 0.0
+shader_parameter/orbit_velocity_max = 0.0
+shader_parameter/radial_velocity_min = 0.0
+shader_parameter/radial_velocity_max = 0.0
+shader_parameter/linear_accel_min = 0.0
+shader_parameter/linear_accel_max = 0.0
+shader_parameter/radial_accel_min = 42.769997
+shader_parameter/radial_accel_max = 42.769997
+shader_parameter/tangent_accel_min = 0.0
+shader_parameter/tangent_accel_max = 0.0
+shader_parameter/damping_min = 0.0
+shader_parameter/damping_max = 0.0
+shader_parameter/initial_angle_min = 1.0728835e-05
+shader_parameter/initial_angle_max = 1.0728835e-05
+shader_parameter/scale_min = 0.79999995
+shader_parameter/scale_max = 1.5
+shader_parameter/hue_variation_min = 0.0
+shader_parameter/hue_variation_max = 0.0
+shader_parameter/anim_speed_min = 0.0
+shader_parameter/anim_speed_max = 0.0
+shader_parameter/anim_offset_min = 0.0
+shader_parameter/anim_offset_max = 0.0
+shader_parameter/lifetime_randomness = 0.6
+shader_parameter/emission_shape_offset = Vector3(0, 0, 0)
+shader_parameter/emission_shape_scale = Vector3(1, 1, 1)
+shader_parameter/velocity_pivot = Vector3(0, 0, 0)
+shader_parameter/emission_ring_axis = Vector3(0, 0, 1)
+shader_parameter/emission_ring_height = 1.0
+shader_parameter/emission_ring_radius = 315.0
+shader_parameter/emission_ring_inner_radius = 350.0
+shader_parameter/emission_ring_cone_angle = 90.0
+shader_parameter/color_value = Color(1, 1, 1, 1)
+shader_parameter/gravity = Vector3(0, -1e-06, 0)
+shader_parameter/alpha_curve = SubResource("CurveTexture_m7c0x")
+shader_parameter/cone_mask_direction = Vector3(1, 0, 0)
+shader_parameter/cone_mask_angle = 130.0

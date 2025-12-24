@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1cmd26ewtavt"
-path="res://.godot/imported/shock.png-fbe01522d46e6b3f44479c506917ccb9.ctex"
+uid="uid://j3ooxua5vgey"
+path="res://.godot/imported/line.png-c11c1ef9d6458de8cb0216be123038f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://stuff/particles/shock.png"
-dest_files=["res://.godot/imported/shock.png-fbe01522d46e6b3f44479c506917ccb9.ctex"]
+source_file="res://stuff/particles/art/line.png"
+dest_files=["res://.godot/imported/line.png-c11c1ef9d6458de8cb0216be123038f5.ctex"]
 
 [params]
 
