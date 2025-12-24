@@ -10,18 +10,37 @@ func _ready() -> void:
 	
 
 	# Add clue items to inventory
-	# 1. Original 5
-	var cup = load("res://stuff/game_stuff/inventory/clues/cup.tres")
-	var dossiers = load("res://stuff/game_stuff/inventory/clues/dossiers.tres")
-	var chits = load("res://stuff/game_stuff/inventory/clues/chits.tres")
+	# Load specific character clues
+	# Load specific character clues
+	
+	# 1. Chits (3 per character, except Priest)
+	var chit_chars = ["eleanor", "rachel", "prudence", "briar"]
+	for char_name in chit_chars:
+		for i in range(1, 4):
+			var path = "res://stuff/game_stuff/inventory/clues/characters/%s/chit_%d.tres" % [char_name, i]
+			if ResourceLoader.exists(path):
+				var item = load(path)
+				if item: GameData.add_item(item)
+
+	# 2. Dossiers (1 per character, including Priest)
+	var dossier_chars = ["eleanor", "rachel", "prudence", "briar", "priest"]
+	for char_name in dossier_chars:
+		var path = "res://stuff/game_stuff/inventory/clues/characters/%s/dossier_1.tres" % [char_name]
+		if ResourceLoader.exists(path):
+			var item = load(path)
+			if item: GameData.add_item(item)
+
+	# Load Key Items
 	var photo = load("res://stuff/game_stuff/inventory/clues/photo.tres")
+	var cup = load("res://stuff/game_stuff/inventory/clues/cup.tres")
 	var flower = load("res://stuff/game_stuff/inventory/clues/flower.tres")
 	
-	GameData.add_item(cup)
-	GameData.add_item(dossiers)
-	GameData.add_item(chits)
-	GameData.add_item(photo)
-	GameData.add_item(flower)
+	if photo: GameData.add_item(photo)
+	if cup: GameData.add_item(cup)
+	if flower: GameData.add_item(flower)
+	
+	# Connect Inventory Button
+	$HUD/InventoryButton.pressed.connect(func(): $HUD/ExpandedInventoryUI.toggle())
 
 
 

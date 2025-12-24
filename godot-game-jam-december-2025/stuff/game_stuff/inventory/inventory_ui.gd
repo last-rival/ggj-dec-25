@@ -25,6 +25,10 @@ func update_ui():
 				slot.clear()
 
 func _on_slot_clicked(item: InventoryItem):
+	if GameData.is_expanded_inventory_open:
+		GameData.remove_item_from_active(item)
+		return
+
 	if current_popup:
 		current_popup.queue_free()
 		

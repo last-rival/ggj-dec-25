@@ -9,8 +9,10 @@ signal close_requested
 @onready var placeholder_container = $MarginContainer/VBoxContainer/InventoryContainer
 
 @onready var use_button = $MarginContainer/VBoxContainer/UseButton
+@onready var carry_button = $MarginContainer/VBoxContainer/CarryButton
 
 var current_item: InventoryItem
+var allow_use: bool = true
 
 func setup(item: InventoryItem):
 	current_item = item
@@ -45,7 +47,21 @@ func update_info():
 		if val != current_item.use_condition_expected_value:
 			can_use = false
 	
-	use_button.visible = can_use
+	if allow_use:
+		use_button.visible = true
+		use_button.disabled = not can_use
+		carry_button.visible = false
+	else:
+		use_button.visible = false
+		carry_button.visible = true
+		
+		# Optional: disable carry if already equipped?
+		if GameData.has_item_equipped(current_item.name):
+			carry_button.disabled = true
+			carry_button.text = "CARRIED"
+		else:
+			carry_button.disabled = false
+			carry_button.text = "CARRY"
 
 func _on_use_button_pressed():
 	if current_item:
@@ -53,7 +69,17 @@ func _on_use_button_pressed():
 		if current_item.on_use_set_variable != "":
 			GameData.set_variable(current_item.on_use_set_variable, current_item.on_use_set_value)
 		
+		# Remove from active inventory after use
+		GameData.remove_item_from_active(current_item)
+		
 		close_requested.emit()
+
+func _on_carry_button_pressed():
+	if current_item:
+		var success = GameData.equip_item(current_item)
+		if success:
+			close_requested.emit()
+
 
 func _on_close_button_pressed():
 	close_requested.emit()

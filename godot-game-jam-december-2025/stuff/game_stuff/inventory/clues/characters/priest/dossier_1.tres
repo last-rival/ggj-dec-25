@@ -4,11 +4,11 @@
 
 [resource]
 script = ExtResource("1_item")
-placeholder_color = Color(0.4, 0.2, 0.6, 1)
-name = "Briar Dossier 2"
-description = "Detailed file 2 on Briar."
-use_condition_variable = "briar_dossier2_available"
+name = "Priest Dossier 1"
+description = "A dossier about the Priest."
+placeholder_color = Color(0.9, 0.9, 0.9, 1)
+use_condition_variable = "priest_dossier_1_available"
 use_condition_expected_value = true
-on_use_set_variable = "briar_dossier2_used"
+on_use_set_variable = "priest_dossier_1_used"
 on_use_set_value = true
 on_use_dialogue = ""

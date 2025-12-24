@@ -23,6 +23,10 @@ func set_item(new_item: InventoryItem):
 		icon_rect.visible = true
 		placeholder_poly.visible = false
 	
+	if has_node("NameLabel"):
+		$NameLabel.text = item.name
+		$NameLabel.visible = true
+	
 	disabled = false
 
 func clear():
@@ -30,7 +34,16 @@ func clear():
 	icon_rect.texture = null
 	icon_rect.visible = false
 	placeholder_poly.visible = false
+	if has_node("NameLabel"):
+		$NameLabel.visible = false
 	disabled = true
+
+func set_used_state(is_used: bool):
+	disabled = is_used
+	if is_used:
+		modulate = Color(0.5, 0.5, 0.5, 1)
+	else:
+		modulate = Color(1, 1, 1, 1)
 
 func _on_pressed():
 	if item:

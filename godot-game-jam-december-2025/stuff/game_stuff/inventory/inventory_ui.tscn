@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://njfpmdjc3qex"]
 
-[ext_resource type="Script" path="res://stuff/game_stuff/inventory/inventory_ui.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://du78rnc6egy4f" path="res://stuff/game_stuff/inventory/inventory_ui.gd" id="1_script"]
 [ext_resource type="PackedScene" path="res://stuff/game_stuff/inventory/inventory_slot.tscn" id="2_slot"]
 
 [node name="InventoryUI" type="Control"]
@@ -20,8 +20,8 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -440.0
-offset_top = -100.0
+offset_left = -600.0
+offset_top = -130.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/margin_right = 20
@@ -29,7 +29,7 @@ theme_override_constants/margin_bottom = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 20
 
 [node name="InventorySlot1" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_slot")]
 layout_mode = 2
