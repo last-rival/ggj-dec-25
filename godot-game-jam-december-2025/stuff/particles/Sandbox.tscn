@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxhut6dd83ij4"]
+[gd_scene load_steps=10 format=3 uid="uid://cxhut6dd83ij4"]
 
 [ext_resource type="Texture2D" uid="uid://bvaxtgmd06u0i" path="res://stuff/particles/art/el_sample_trim.png" id="1_i5ggk"]
 [ext_resource type="Texture2D" uid="uid://j3ooxua5vgey" path="res://stuff/particles/art/line.png" id="2_iwt84"]
@@ -6,10 +6,12 @@
 [ext_resource type="Material" uid="uid://3fh3nfb57fd6" path="res://stuff/particles/SusRing.tres" id="3_dcjas"]
 [ext_resource type="Texture2D" uid="uid://cllhbn4cshbgo" path="res://stuff/particles/art/shocksspritesheet.png" id="4_dcjas"]
 [ext_resource type="Material" uid="uid://dlg54fpeirhh0" path="res://stuff/particles/partShaders/Shock.tres" id="5_vv2ie"]
+[ext_resource type="Texture2D" uid="uid://bgkcou8k1twm3" path="res://stuff/particles/art/tiredspritesheetdark.png" id="7_73ccx"]
+[ext_resource type="Material" uid="uid://cq3qdu7cvi7ss" path="res://stuff/particles/TiredBox.tres" id="8_7magt"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7pstm"]
 particles_animation = true
-particles_anim_h_frames = 6
+particles_anim_h_frames = 4
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
@@ -63,3 +65,14 @@ randomness = 0.55
 fixed_fps = 24
 trail_lifetime = 2.24
 process_material = ExtResource("3_dcjas")
+
+[node name="Tired" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.827451)
+material = SubResource("CanvasItemMaterial_7pstm")
+position = Vector2(959, 479)
+emitting = false
+amount = 2
+texture = ExtResource("7_73ccx")
+lifetime = 4.0
+speed_scale = 0.6
+process_material = ExtResource("8_7magt")
