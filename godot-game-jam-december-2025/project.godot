@@ -25,3 +25,7 @@ window/stretch/aspect="expand"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/clyde/plugin.cfg")
+
+[autoload]
+
+GameData="*res://stuff/game_stuff/data/game_data.gd"

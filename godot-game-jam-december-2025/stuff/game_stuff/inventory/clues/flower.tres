@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://stuff/game_stuff/inventory/inventory_item.gd" id="1_item"]
+
+[resource]
+script = ExtResource("1_item")
+placeholder_color = Color(0.5, 0, 0.5, 1)
+name = "Strange Flower"
+description = "A unique flower found near the incident."
+use_condition_variable = "flower_available"
+use_condition_expected_value = true
+on_use_set_variable = "flower_used"
+on_use_set_value = true
+on_use_dialogue = ""

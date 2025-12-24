@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://stuff/game_stuff/inventory/inventory_slot.gd" id="1_slot"]
+
+[node name="InventorySlot" type="Button"]
+custom_minimum_size = Vector2(100, 100)
+script = ExtResource("1_slot")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="InventoryContainer" type="Control" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="MarginContainer/InventoryContainer"]
+polygon = PackedVector2Array(0, 0, 90, 0, 90, 90, 0, 90)
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+autowrap_mode = 2
+text = "Item"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
