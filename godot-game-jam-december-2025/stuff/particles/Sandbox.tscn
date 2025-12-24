@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxhut6dd83ij4"]
+[gd_scene load_steps=7 format=3 uid="uid://cxhut6dd83ij4"]
 
 [ext_resource type="Texture2D" uid="uid://bvaxtgmd06u0i" path="res://stuff/particles/art/el_sample_trim.png" id="1_i5ggk"]
 [ext_resource type="Texture2D" uid="uid://j3ooxua5vgey" path="res://stuff/particles/art/line.png" id="2_iwt84"]
 [ext_resource type="Material" uid="uid://dp2snw445xjln" path="res://stuff/particles/partShaders/Sus.tres" id="3_7pstm"]
-[ext_resource type="Texture2D" uid="uid://1cmd26ewtavt" path="res://stuff/particles/art/shock.png" id="4_iwt84"]
+[ext_resource type="Texture2D" uid="uid://cllhbn4cshbgo" path="res://stuff/particles/art/shocksspritesheet.png" id="4_dcjas"]
 [ext_resource type="Material" uid="uid://dlg54fpeirhh0" path="res://stuff/particles/partShaders/Shock.tres" id="5_vv2ie"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7pstm"]
+particles_animation = true
+particles_anim_h_frames = 6
+particles_anim_v_frames = 1
+particles_anim_loop = false
 
 [node name="Node2D" type="Node2D"]
 
@@ -28,14 +34,15 @@ trail_lifetime = 2.24
 process_material = ExtResource("3_7pstm")
 
 [node name="Shock" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_7pstm")
 position = Vector2(962, 601)
 rotation = 1.5707964
 scale = Vector2(0.89, 0.89)
 emitting = false
-amount = 6
-texture = ExtResource("4_iwt84")
-one_shot = true
+amount = 4
+texture = ExtResource("4_dcjas")
 explosiveness = 1.0
+randomness = 0.55
 fixed_fps = 24
 trail_lifetime = 2.24
 process_material = ExtResource("5_vv2ie")
