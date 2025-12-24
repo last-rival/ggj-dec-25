@@ -7,6 +7,7 @@ extends Node
 
 signal inventory_updated
 signal collection_updated
+signal inventory_visibility_changed(visible: bool)
 
 var _persistence = {
 	"dialogues": {},
@@ -27,10 +28,13 @@ func _ready():
 	set_variable("found_poisoned_cup", true)
 	set_variable("found_priest_dossier_1", true)
 	
+	# Default Inventory Button Visibility
+	set_variable("inventory_button_visible", true)
+	
 	# --- Default LOCKED Items (Hidden) ---
 	# Key items
 	set_variable("found_strange_flower", false)
-	
+
 	# Character Clues
 	var chars = ["eleanor", "rachel", "prudence", "briar"]
 	
@@ -59,6 +63,10 @@ func set_variable(var_name: String, value) -> void:
 	# Check for Item Discovery
 	if var_name.begins_with("found_") and value == true:
 		_process_discovery(var_name)
+	
+	# Check for Inventory Button Visibility
+	if var_name == "inventory_button_visible":
+		inventory_visibility_changed.emit(value)
 
 func _process_discovery(var_name: String):
 	# Find which item matches this variable

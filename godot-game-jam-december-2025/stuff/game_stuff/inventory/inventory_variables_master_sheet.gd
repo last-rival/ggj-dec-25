@@ -12,6 +12,9 @@ func _ready():
 	GameData.set_variable("found_body_photo", true)
 	GameData.set_variable("found_poisoned_cup", true)
 	GameData.set_variable("found_priest_dossier_1", true)
+	
+	# Visibility Control
+	GameData.set_variable("inventory_button_visible", true)
 
 	# ==========================================
 	# LOCKED ITEMS (Set to true to unlock)
