@@ -11,9 +11,11 @@ extends Node3D
 
 var is_dialogue_running: bool = false
 
+
 func _ready() -> void:
 	_dialogue_drawer.hide()
-	
+	_dialogue_drawer.connect("break_room",on_break_room_trigger)
+	_dialogue_drawer.connect("energy_used", on_energy_use_trigger)
 
 	# Add clue items to inventory
 	# Load specific character clues
@@ -67,10 +69,12 @@ func load_innterogation_room() -> void:
 	break_room.hide();
 	change_active_character()
 
+
 func load_break_room() -> void:
 	break_room.show();
 	innterogation_room.hide();
 	hud.hide();
+
 
 func _input(event: InputEvent) -> void:
 	if not is_dialogue_running:
@@ -111,10 +115,9 @@ func _on_active_dialogue_pressed() -> void:
 func _on_variables_dialogue_button_pressed() -> void:
 	_start_dialogue("variables")
 
+
 func _on_game_demo_pressed() -> void:
 	_start_dialogue("game_demo")
-	_dialogue_drawer.connect("break_room",on_break_room_trigger)
-	_dialogue_drawer.connect("energy_used", on_energy_use_trigger)
 
 func _start_dialogue(dialogue: String) -> void:
 	_dialogue_list.hide()
@@ -137,12 +140,14 @@ func _on_dialogue_drawer_active_check_ended() -> void:
 func _on_restart_scene_button_pressed() -> void:
 	get_tree().reload_current_scene()
 
+
 func _on_exit_break_room_pressed() -> void:
 	load_innterogation_room()
 
+
 func change_active_character() -> void:
 	var intro_completed = GameData.get_variable("intro_completed");
-	var intro_value=false;
+	var intro_value = false;
 
 	if intro_completed != null:
 		intro_value=intro_completed as bool
@@ -151,6 +156,7 @@ func change_active_character() -> void:
 		return
 
 	_character.shuffle_active_character();
+
 
 func on_energy_use_trigger(amount:int) -> void:
 	GameData.modify_energy(-amount)
