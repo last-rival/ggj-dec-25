@@ -160,3 +160,9 @@ func change_active_character() -> void:
 
 func on_energy_use_trigger(amount:int) -> void:
 	GameData.modify_energy(-amount)
+
+# TODO : Updated the game to load different conversation files based on the active character.
+# The way this will work is you carry on a conversation, the character runs of energy and then you enter break room
+# Next character loads in looks at the interal and external variables and picks up from the required place.
+# This that are difficult to do are -> Jumping from one place section of the script to another section via code.
+# Should be possible need to check the documentation

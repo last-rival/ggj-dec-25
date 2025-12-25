@@ -18,7 +18,7 @@ Energy System Demo
 	Can we get over with this quickly.
 	{set prudence_intro=true}
 	<-
-+ {@energy<=1}Chell
++ {@energy==1}Chell
 	{trigger energy_used(1)}
 	Chell:
 	Let's go play when this is done.
