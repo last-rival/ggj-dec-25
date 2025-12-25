@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="GodotGameJamDecember2025"
-run/main_scene="uid://joqju5gkcy0j"
+run/main_scene="res://addons/maaacks_menus_template/examples/scenes/opening/opening.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameData="*res://stuff/game_stuff/data/game_data.gd"
+AppConfig="*res://addons/maaacks_menus_template/base/nodes/autoloads/app_config/app_config.tscn"
+SceneLoader="*res://addons/maaacks_menus_template/base/nodes/autoloads/scene_loader/scene_loader.tscn"
+ProjectMusicController="*res://addons/maaacks_menus_template/base/nodes/autoloads/music_controller/project_music_controller.tscn"
+ProjectUISoundController="*res://addons/maaacks_menus_template/base/nodes/autoloads/ui_sound_controller/project_ui_sound_controller.tscn"
 
 [display]
 
@@ -28,7 +32,11 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/clyde/plugin.cfg")
+enabled=PackedStringArray("res://addons/clyde/plugin.cfg", "res://addons/maaacks_menus_template/plugin.cfg")
+
+[gui]
+
+theme/custom="res://addons/maaacks_menus_template/examples/resources/themes/gravity.tres"
 
 [input_devices]
 
@@ -36,3 +44,13 @@ pointing/android/enable_long_press_as_right_click=true
 pointing/android/enable_pan_and_scale_gestures=true
 pointing/android/disable_scroll_deadzone=true
 pointing/emulate_touch_from_mouse=true
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://addons/maaacks_menus_template/base/translations/menus_translations.en.translation", "res://addons/maaacks_menus_template/base/translations/menus_translations.fr.translation")
+
+[maaacks_menus_template]
+
+disable_install_audio_busses=true
+disable_update_check=false
+disable_install_wizard=true

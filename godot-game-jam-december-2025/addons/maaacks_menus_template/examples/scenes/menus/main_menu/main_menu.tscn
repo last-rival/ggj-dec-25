@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://byvydukidk6i2"]
+
+[ext_resource type="PackedScene" uid="uid://c6k5nnpbypshi" path="res://addons/maaacks_menus_template/base/nodes/menus/main_menu/main_menu.tscn" id="1_pss7b"]
+[ext_resource type="Script" uid="uid://bdet8115mn02d" path="res://addons/maaacks_menus_template/examples/scenes/menus/main_menu/main_menu.gd" id="2_lk0wa"]
+[ext_resource type="PackedScene" uid="uid://dum2pujhh1w4g" path="res://addons/maaacks_menus_template/examples/scenes/windows/main_menu_options_window.tscn" id="3_cfr4i"]
+[ext_resource type="PackedScene" uid="uid://c5pfkjxskjc60" path="res://addons/maaacks_menus_template/examples/scenes/windows/main_menu_credits_window.tscn" id="4_qhsni"]
+
+[node name="MainMenu" instance=ExtResource("1_pss7b")]
+offset_left = 559.0
+offset_top = 259.0
+offset_right = -559.0
+offset_bottom = -259.0
+script = ExtResource("2_lk0wa")
+game_scene_path = "uid://joqju5gkcy0j"
+options_packed_scene = ExtResource("3_cfr4i")
+credits_packed_scene = ExtResource("4_qhsni")
+
+[node name="TitleLabel" parent="MenuContainer/TitleMargin/TitleContainer" index="0"]
+text = "GodotGameJamDecember2025"
+
+[node name="MenuButtonsBoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer" index="0"]
+offset_left = -152.0
+offset_top = -179.0
+offset_right = 152.0
+offset_bottom = 179.0
+
+[node name="NewGameButton" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="0"]
+size_flags_vertical = 3
+
+[node name="OptionsButton" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="1"]
+size_flags_vertical = 3
+
+[node name="CreditsButton" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="2"]
+size_flags_vertical = 3
+
+[node name="ExitButton" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="3"]
+size_flags_vertical = 3
