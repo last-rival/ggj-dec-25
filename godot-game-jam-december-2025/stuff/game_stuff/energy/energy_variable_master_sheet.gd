@@ -6,18 +6,18 @@ func _ready():
 	# ==========================================
 	GameData.set_variable("energy", 5) # Set to 0 to test exhaustion
 
-    # ==========================================
-    # REDUCE ENERGY FUNCTION:
-    #GameData.modify_energy(-1)
-    # ==========================================
+	# ==========================================
+	# REDUCE ENERGY FUNCTION:
+	#GameData.modify_energy(-1)
+	# ==========================================
 
-    # ==========================================
-    # RESET ENERGY FUNCTION:
-    #GameData.set_energy(GameData.MAX_ENERGY)
-    # ==========================================
+	# ==========================================
+	# RESET ENERGY FUNCTION:
+	#GameData.set_energy(GameData.MAX_ENERGY)
+	# ==========================================
 
-    # ==========================================
-    # DEFAULT EXHAUSTION
+	# ==========================================
+	# DEFAULT EXHAUSTION
 	GameData.set_variable("exhausted", false)
 	
 	# ==========================================

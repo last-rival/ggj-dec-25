@@ -5,6 +5,7 @@ signal dialogue_ended
 signal active_check_started
 signal active_check_ended
 signal break_room
+signal energy_used
 
 const SPEAKER_RESOURCES_FOLDER: String = "res://stuff/game_stuff/speakers/"
 
@@ -62,10 +63,12 @@ func start(dialogue_name: String) -> void:
 		if variable_name == "active_check_result":
 			return active_check_handler.last_check_result.has_succeeded
 
+		print("Fetching Global Variable " + variable_name)
 		return GameData.get_variable(variable_name)
 	)
 
 	_dialogue.on_external_variable_update(func(variable_name: String, value):
+		print("Updating Global Variable " + variable_name)
 		GameData.set_variable(variable_name, value)
 	)
 
@@ -266,11 +269,15 @@ func _clear_entries() -> void:
 
 func _on_event_triggered(event_name: String, params: Array) -> void:
 	print("Trigger Event => "+event_name);
+
 	if event_name == "active_check":
 		_handle_active_check(params[0], params[1])
 	
 	if event_name == "break_room":
 		break_room.emit();
+	
+	if event_name == "energy_used":
+		energy_used.emit();
 
 
 func _handle_active_check(skill, level) -> void:

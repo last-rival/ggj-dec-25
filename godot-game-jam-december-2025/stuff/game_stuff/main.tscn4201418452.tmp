@@ -39,6 +39,7 @@ characters = {
 "prudence": NodePath("prudence"),
 "rachel": NodePath("rachel")
 }
+default_character = null
 
 [node name="HUD" type="CanvasLayer" parent="."]
 

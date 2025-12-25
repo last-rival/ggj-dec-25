@@ -1,5 +1,14 @@
 extends Node
 
+# Constans for the game
+const BRIAR_KEY = "brair"
+const CHELL_KEY = "chell"
+const ELEANOR_KEY = "eleanor"
+const PRUDENCE_KEY = "prudence"
+const RACHEL_KEY = "rahcel"
+const CHARACTER_SHUFFLE_CHANCE_ON_ENERGY_LEFT : int = 50;
+const ALL_CHARACTERS : Array[String] = [BRIAR_KEY, CHELL_KEY, ELEANOR_KEY, PRUDENCE_KEY, RACHEL_KEY]
+
 # This script represents your game data. This abstracts your data layer.
 # Your game will likely be more complex than that, including file storage and load.
 # To keep things simple, this example only persist the data in memory.
@@ -25,6 +34,8 @@ var discovered_items: Array[InventoryItem] = []
 var is_expanded_inventory_open: bool = false
 const MAX_ENERGY = 5
 var current_energy: int = 5
+
+var active_character:String="elanor";
 
 func _ready():
 	# --- Default UNLOCKED Items ---
@@ -58,11 +69,6 @@ func _ready():
 			set_variable(c_var, false)
 
 func get_variable(var_name: String):
-	# this is an example of a dynamic value which is not part of the game persistence
-	# this is abstracted from the dialogue system
-	if var_name == "hour_of_day":
-		return Time.get_time_dict_from_system().hour
-
 	return _persistence.global_variables.get(var_name)
 
 

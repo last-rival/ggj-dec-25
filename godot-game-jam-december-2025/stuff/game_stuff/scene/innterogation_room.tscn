@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dc3q0aepimx7t"]
 
 [ext_resource type="Texture2D" uid="uid://c5get84wxejji" path="res://stuff/raw_imports/Interogation_room_1.png" id="1_lgdkx"]
-[ext_resource type="Texture2D" uid="uid://cpktvc2i4k0s1" path="res://stuff/game_stuff/speakers/portraits/elanor_1.png" id="2_7auk8"]
+[ext_resource type="PackedScene" uid="uid://vv5g6l2jpeiu" path="res://stuff/game_stuff/scene/character.tscn" id="2_7auk8"]
 
 [node name="innterogation_room" type="Node2D"]
 
@@ -17,18 +17,48 @@ texture = ExtResource("1_lgdkx")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="character" type="TextureRect" parent="innterogation_room/bg"]
+[node name="character" parent="innterogation_room/bg" node_paths=PackedStringArray("characters") instance=ExtResource("2_7auk8")]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.52400005
-anchor_top = 0.77400005
-anchor_right = 0.52400005
-anchor_bottom = 0.77400005
-offset_left = -256.08008
-offset_top = -511.92004
-offset_right = 255.91992
-offset_bottom = 0.079956055
-pivot_offset = Vector2(239, 671)
-texture = ExtResource("2_7auk8")
-expand_mode = 1
-stretch_mode = 5
+anchor_left = 0.5156667
+anchor_top = 0.49922225
+anchor_right = 0.5156667
+anchor_bottom = 0.49922225
+offset_left = -350.08008
+offset_top = -366.16003
+offset_right = 350.91992
+offset_bottom = 366.83997
+characters = {
+"brair": NodePath("brair"),
+"chell": NodePath("chell"),
+"eleanor": NodePath("eleanor"),
+"prudence": NodePath("prudence"),
+"rachel": NodePath("rachel")
+}
+metadata/_edit_use_anchors_ = true
+
+[node name="brair" parent="innterogation_room/bg/character" index="0"]
+visible = false
+offset_top = 22.0
+offset_bottom = 22.0
+
+[node name="chell" parent="innterogation_room/bg/character" index="1"]
+offset_top = 35.0
+offset_bottom = 35.0
+
+[node name="eleanor" parent="innterogation_room/bg/character" index="2"]
+visible = true
+offset_top = 48.0
+offset_bottom = 48.0
+
+[node name="prudence" parent="innterogation_room/bg/character" index="3"]
+offset_left = 1.0
+offset_top = 48.0
+offset_right = 1.0
+offset_bottom = 48.0
+
+[node name="rachel" parent="innterogation_room/bg/character" index="4"]
+offset_top = -9.0
+offset_bottom = -9.0
+
+[editable path="innterogation_room/bg/character"]
