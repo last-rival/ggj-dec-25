@@ -152,5 +152,5 @@ func change_active_character() -> void:
 
 	_character.shuffle_active_character();
 
-func on_energy_use_trigger() -> void:
-	GameData.modify_energy(-1)
+func on_energy_use_trigger(amount:int) -> void:
+	GameData.modify_energy(-amount)

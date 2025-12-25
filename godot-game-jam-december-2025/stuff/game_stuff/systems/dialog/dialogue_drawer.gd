@@ -5,7 +5,7 @@ signal dialogue_ended
 signal active_check_started
 signal active_check_ended
 signal break_room
-signal energy_used
+signal energy_used(amount:int)
 
 const SPEAKER_RESOURCES_FOLDER: String = "res://stuff/game_stuff/speakers/"
 
@@ -277,7 +277,11 @@ func _on_event_triggered(event_name: String, params: Array) -> void:
 		break_room.emit();
 	
 	if event_name == "energy_used":
-		energy_used.emit();
+		var amount = params[0];
+		if amount == null:
+			energy_used.emit(0)
+		else:
+			energy_used.emit(amount);
 
 
 func _handle_active_check(skill, level) -> void:

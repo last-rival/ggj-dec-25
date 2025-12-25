@@ -1,43 +1,41 @@
-Lets test profiles.
+Engery System Demo
 
 +Eleanor
-	{trigger energy_used}
+	{trigger energy_used(3)}
 	Eleanor:
 	Hello Piggy!
 	{set eleanor_intro=true}
 	<-
 
 +Rachel
-	{trigger energy_used}
+	{trigger energy_used(1)}
 	Rachel:
 	This is Rachel, does my protrait look okay?
 	{set rachel_intro=true}
 	<-
 
 +Prudence
-	{trigger energy_used}
+	{trigger energy_used(1)}
 	Prudence:
 	Can we get over with this quickly.
 	{set prudence_intro=true}
 	<-
 
 +Chell
-	{trigger energy_used}
+	{trigger energy_used(1)}
 	Chell:
 	Let's go play when this is done.
 	{set chell_intro=true}
-	{trigger energy_used}
 	<-
 
 +Briar
-	{trigger energy_used}
+	{trigger energy_used(1)}
 	Briar:
 	Hmm... don't really have time for this.
 	{set briar_intro=true}
-	{trigger energy_used}
 	<-
 
-+{briar_intro and eleanor_intro and rachel_intro and chell_intro and prudence_intro or @character_energy == 0}Visit Break Room
++{briar_intro and eleanor_intro and rachel_intro and chell_intro and prudence_intro or @energy <= 0} Visit Break Room
 	{trigger break_room}{set @intro_completed=true}
 	(shuffle cycle
 		- Let's take a break and see what infromation we have. #end
