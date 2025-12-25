@@ -1,27 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://joqju5gkcy0j"]
+[gd_scene load_steps=12 format=3 uid="uid://joqju5gkcy0j"]
 
 [ext_resource type="Script" uid="uid://ct4qw6sp5c36c" path="res://stuff/game_stuff/main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://ltwhxc6oap2c" path="res://stuff/game_stuff/systems/dialog/dialogue_drawer.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" path="res://stuff/game_stuff/inventory/inventory_ui.tscn" id="4_inventory"]
-[ext_resource type="PackedScene" path="res://stuff/game_stuff/inventory/ui/expanded_inventory_ui.tscn" id="5_expanded"]
 [ext_resource type="PackedScene" uid="uid://qtxb7q4nkvo5" path="res://stuff/game_stuff/checks/active_check_animation.tscn" id="3_h2yge"]
-[ext_resource type="Script" path="res://stuff/game_stuff/inventory/inventory_variables_master_sheet.gd" id="6_debug_inv"]
-[ext_resource type="Script" path="res://stuff/game_stuff/energy/energy_variable_master_sheet.gd" id="7_debug_energy"]
+[ext_resource type="PackedScene" uid="uid://ckyk7e3k3nyb6" path="res://stuff/game_stuff/scene/break_room.tscn" id="4_3l2cm"]
+[ext_resource type="PackedScene" uid="uid://njfpmdjc3qex" path="res://stuff/game_stuff/inventory/inventory_ui.tscn" id="4_inventory"]
+[ext_resource type="PackedScene" path="res://stuff/game_stuff/inventory/ui/expanded_inventory_ui.tscn" id="5_expanded"]
+[ext_resource type="Script" uid="uid://cej20bjb2xtc4" path="res://stuff/game_stuff/inventory/inventory_variables_master_sheet.gd" id="6_debug_inv"]
+[ext_resource type="Script" uid="uid://djj8eqayat207" path="res://stuff/game_stuff/energy/energy_variable_master_sheet.gd" id="7_debug_energy"]
 [ext_resource type="PackedScene" path="res://stuff/game_stuff/energy/energy_ui.tscn" id="7_energy"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2yge"]
-albedo_color = Color(0.145098, 0.133333, 0.121569, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_h2yge"]
-material = SubResource("StandardMaterial3D_h2yge")
-size = Vector3(20, 1, 20)
-
+[ext_resource type="PackedScene" uid="uid://dc3q0aepimx7t" path="res://stuff/game_stuff/scene/innterogation_room.tscn" id="9_c0q6h"]
 
 [sub_resource type="Theme" id="Theme_h2yge"]
 default_font_size = 32
 
-[node name="main" type="Node3D"]
+[node name="main" type="Node3D" node_paths=PackedStringArray("break_room", "innterogation_room", "hud")]
 script = ExtResource("1_0xm2m")
+break_room = NodePath("break_room/break_room")
+innterogation_room = NodePath("innterogation_room/innterogation_room")
+hud = NodePath("HUD")
 
 [node name="DebugInventory" type="Node" parent="."]
 script = ExtResource("6_debug_inv")
@@ -29,22 +26,13 @@ script = ExtResource("6_debug_inv")
 [node name="DebugEnergy" type="Node" parent="."]
 script = ExtResource("7_debug_energy")
 
-[node name="scene" type="Node3D" parent="."]
+[node name="break_room" parent="." instance=ExtResource("4_3l2cm")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="scene"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.456362, 0)
-mesh = SubResource("BoxMesh_h2yge")
-
-[node name="Camera3D" type="Camera3D" parent="scene"]
-transform = Transform3D(0.777695, -0.330231, 0.534919, 0, 0.850912, 0.525308, -0.628642, -0.40853, 0.66175, 3.40443, 3.56298, 6.86403)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="scene"]
-transform = Transform3D(0.927184, -0.301712, 0.222035, 0, 0.592716, 0.805411, -0.374607, -0.746764, 0.549557, 7.6615, 8.07943, 9.69723)
+[node name="innterogation_room" parent="." instance=ExtResource("9_c0q6h")]
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="DialogueDrawer" parent="HUD" instance=ExtResource("1_ig7tw")]
-offset_left = -630.0
 
 [node name="DialogueList" type="MarginContainer" parent="HUD"]
 anchors_preset = 9
@@ -92,6 +80,11 @@ layout_mode = 2
 focus_mode = 0
 text = "Variables"
 
+[node name="game_demo" type="Button" parent="HUD/DialogueList/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Game Demo"
+
 [node name="ActiveCheckAnimation" parent="HUD" instance=ExtResource("3_h2yge")]
 visible = false
 anchors_preset = 8
@@ -120,23 +113,27 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
+[node name="restart_scene_button" type="Button" parent="HUD/MarginContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 48
+text = "Restart scene"
 
-	[node name="EnergyUI" parent="HUD" instance=ExtResource("7_energy")]
-	anchors_preset = 5
-	anchor_left = 0.5
-	anchor_right = 0.5
-	offset_left = -120.0
-	offset_top = 20.0
-	offset_right = 120.0
-	offset_bottom = 40.0
-	grow_horizontal = 2
+[node name="EnergyUI" parent="HUD" instance=ExtResource("7_energy")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_top = 20.0
+offset_right = 120.0
+offset_bottom = 40.0
+grow_horizontal = 2
 
 [node name="InventoryUI" parent="HUD" instance=ExtResource("4_inventory")]
 
 [node name="ExpandedInventoryUI" parent="HUD" instance=ExtResource("5_expanded")]
-
 visible = false
-
 
 [node name="InventoryButton" type="Button" parent="HUD"]
 anchors_preset = 1
@@ -149,14 +146,7 @@ offset_bottom = 60.0
 grow_horizontal = 0
 text = "Inventory"
 
-
-[node name="restart_scene_button" type="Button" parent="HUD/MarginContainer"]
-custom_minimum_size = Vector2(400, 0)
-layout_mode = 2
-focus_mode = 0
-theme_override_font_sizes/font_size = 48
-text = "Restart scene"
-
+[connection signal="pressed" from="break_room/break_room/bg/exit_break_room" to="." method="_on_exit_break_room_pressed"]
 [connection signal="active_check_ended" from="HUD/DialogueDrawer" to="." method="_on_dialogue_drawer_active_check_ended"]
 [connection signal="active_check_started" from="HUD/DialogueDrawer" to="." method="_on_dialogue_drawer_active_check_started"]
 [connection signal="dialogue_ended" from="HUD/DialogueDrawer" to="." method="_on_dialogue_drawer_dialogue_ended"]
@@ -165,4 +155,8 @@ text = "Restart scene"
 [connection signal="pressed" from="HUD/DialogueList/VBoxContainer/active_dialogue" to="." method="_on_active_dialogue_pressed"]
 [connection signal="pressed" from="HUD/DialogueList/VBoxContainer/test_dialogue_button" to="." method="_on_test_dialogue_button_pressed"]
 [connection signal="pressed" from="HUD/DialogueList/VBoxContainer/variables_dialogue_button" to="." method="_on_variables_dialogue_button_pressed"]
+[connection signal="pressed" from="HUD/DialogueList/VBoxContainer/game_demo" to="." method="_on_game_demo_pressed"]
 [connection signal="pressed" from="HUD/MarginContainer/restart_scene_button" to="." method="_on_restart_scene_button_pressed"]
+
+[editable path="break_room"]
+[editable path="innterogation_room"]

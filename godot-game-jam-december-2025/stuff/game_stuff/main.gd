@@ -3,6 +3,10 @@ extends Node3D
 @onready var _dialogue_drawer = $HUD/DialogueDrawer
 @onready var _dialogue_list = $HUD/DialogueList
 
+@export var break_room : CanvasLayer;
+@export var innterogation_room : CanvasLayer;
+@export var hud : CanvasLayer;
+
 var is_dialogue_running: bool = false
 
 func _ready() -> void:
@@ -48,12 +52,24 @@ func _ready() -> void:
 	var is_inv_visible = GameData.get_variable("inventory_button_visible")
 	if is_inv_visible == null: is_inv_visible = true
 	$HUD/InventoryButton.visible = is_inv_visible
+	
+	# Start Game
+	load_innterogation_room()
 
 
 
+# Load and unload scene
+func load_innterogation_room() -> void:
+	can_visit_break_room = false;
+	innterogation_room.show();
+	hud.show();
+	break_room.hide();
+	
 
-
-
+func load_break_room() -> void:
+	break_room.show();
+	innterogation_room.hide();
+	hud.hide();
 
 func _input(event: InputEvent) -> void:
 	if not is_dialogue_running:
@@ -71,6 +87,8 @@ func _on_dialogue_drawer_dialogue_ended() -> void:
 	_dialogue_drawer.hide()
 	_dialogue_list.show()
 	is_dialogue_running = false
+	if can_visit_break_room:
+		load_break_room()
 
 
 func _on_test_dialogue_button_pressed() -> void:
@@ -92,6 +110,9 @@ func _on_active_dialogue_pressed() -> void:
 func _on_variables_dialogue_button_pressed() -> void:
 	_start_dialogue("variables")
 
+func _on_game_demo_pressed() -> void:
+	_start_dialogue("game_demo")
+	_dialogue_drawer.connect("break_room",on_break_room_trigger)
 
 func _start_dialogue(dialogue: String) -> void:
 	_dialogue_list.hide()
@@ -99,6 +120,9 @@ func _start_dialogue(dialogue: String) -> void:
 	_dialogue_drawer.start(dialogue)
 	is_dialogue_running = true
 
+var can_visit_break_room:bool=false;
+func on_break_room_trigger() -> void:
+	can_visit_break_room=true;
 
 func _on_dialogue_drawer_active_check_started() -> void:
 	$HUD/ActiveCheckAnimation.show()
@@ -110,3 +134,6 @@ func _on_dialogue_drawer_active_check_ended() -> void:
 
 func _on_restart_scene_button_pressed() -> void:
 	get_tree().reload_current_scene()
+
+func _on_exit_break_room_pressed() -> void:
+	load_innterogation_room()

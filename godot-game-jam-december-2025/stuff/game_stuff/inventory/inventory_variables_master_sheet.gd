@@ -51,7 +51,7 @@ func _ready():
 	# USE AVAILABLE VARIABLES (Controls 'USE' button state)
 	# Set to TRUE to enable the Use button
 	# ==========================================
-    
+	
 	GameData.set_variable("photo_available", false)
 	GameData.set_variable("cup_available", false)
 	GameData.set_variable("flower_available", false)
@@ -106,5 +106,3 @@ func _ready():
 	GameData.set_variable("briar_chit1_used", false)
 	GameData.set_variable("briar_chit2_used", false)
 	GameData.set_variable("briar_chit3_used", false)
-
-

@@ -15,6 +15,10 @@ run/main_scene="uid://joqju5gkcy0j"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameData="*res://stuff/game_stuff/data/game_data.gd"
+
 [display]
 
 window/size/viewport_width=1920
@@ -26,6 +30,9 @@ window/stretch/aspect="expand"
 
 enabled=PackedStringArray("res://addons/clyde/plugin.cfg")
 
-[autoload]
+[input_devices]
 
-GameData="*res://stuff/game_stuff/data/game_data.gd"
+pointing/android/enable_long_press_as_right_click=true
+pointing/android/enable_pan_and_scale_gestures=true
+pointing/android/disable_scroll_deadzone=true
+pointing/emulate_touch_from_mouse=true

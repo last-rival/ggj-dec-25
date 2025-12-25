@@ -1,0 +1,35 @@
+You:
+	Lets test profiles.
++You: Elanor
+	Elanor:
+	Hello Piggy!
+	{set elanor_intro=true}
+	<-
++You: Rachel
+	Rachel:
+	This is Rachel, does my protrait look okay?
+	{set rachel_intro=true}
+	<-
++You: Prudence
+	Prudence:
+	Can we get over with this quickly.
+	{set prudence_intro=true}
+	<-
++You: Chell
+	Chell:
+	Let's go play when this is done.
+	{set chell_intro=true}
+	<-
++You: Briar
+	Briar:
+	Hmm... don't really have time for this.
+	{set briar_intro=true}
+	<-
++{briar_intro and elanor_intro and rachel_intro and chell_intro and prudence_intro} You: Visit Break Room {trigger break_room}
+	(shuffle cycle
+		- Let's take a break and see what infromation we have. #end
+		- I need to re collect. #end
+		- How about we take a break. #end
+		- Don't even think of drinking tea, at least not here. #end
+	)
+	

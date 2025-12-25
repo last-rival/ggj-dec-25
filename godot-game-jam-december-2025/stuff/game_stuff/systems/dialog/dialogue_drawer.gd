@@ -4,8 +4,9 @@ signal dialogue_ended
 
 signal active_check_started
 signal active_check_ended
+signal break_room
 
-const SPEAKER_RESOURCES_FOLDER: String = "res://speakers/"
+const SPEAKER_RESOURCES_FOLDER: String = "res://stuff/game_stuff/speakers/"
 
 const DialogueEntryScene = preload("res://stuff/game_stuff/systems/dialog/dialogue_entry.tscn")
 const DialogueEndScene = preload("res://stuff/game_stuff/systems/dialog/end_button.tscn")
@@ -19,8 +20,11 @@ var active_check_handler = preload("res://stuff/game_stuff/checks/active_checks_
 @onready var _scroll_container: ScrollContainer = $PanelContainer/ScrollContainer
 @onready var _scroll_bar: ScrollBar = _scroll_container.get_v_scroll_bar()
 
-@onready var _speaker_picture_container: PanelContainer = $PortraitContainer/PanelContainer
-@onready var _speaker_picture: TextureRect = $PortraitContainer/PanelContainer/TextureRect
+#@onready var _speaker_picture_container: PanelContainer = $PortraitContainer/PanelContainer
+#@onready var _speaker_picture: TextureRect = $PortraitContainer/PanelContainer/TextureRect
+
+#@export var _speaker_picture_container: TextureRect;
+#@export var _speaker_picture: TextureRect;
 
 @onready var _continue_button: Button = $PanelContainer/ScrollContainer/inner_container/ContinueButton
 
@@ -66,10 +70,11 @@ func start(dialogue_name: String) -> void:
 	)
 
 	_dialogue.event_triggered.connect(_on_event_triggered)
-	
+
 	var dialogue_data = GameData.get_dialogue_data(dialogue_name)
 	if dialogue_data:
 		_dialogue.load_data(dialogue_data)
+		
 
 	next()
 
@@ -166,11 +171,12 @@ func _create_entry(content: Dictionary) -> DialogueEntry:
 	entry.set_content(speaker_resource, "" if content.text == null else content.text, _check_tag)
 	_check_tag = ""
 
-	if speaker_resource.portrait_path != "" and ResourceLoader.exists(speaker_resource.portrait_path):
-		_speaker_picture_container.show()
-		_speaker_picture.texture = load(speaker_resource.portrait_path)
-	else:
-		_speaker_picture_container.hide()
+# Don't need to set speaker
+	#if speaker_resource.portrait_path != "" and ResourceLoader.exists(speaker_resource.portrait_path):
+		#_speaker_picture_container.show()
+		#_speaker_picture.texture = load(speaker_resource.portrait_path)
+	#else:
+		#_speaker_picture_container.hide()
 
 	return entry
 
@@ -259,8 +265,12 @@ func _clear_entries() -> void:
 
 
 func _on_event_triggered(event_name: String, params: Array) -> void:
+	print("Trigger Event => "+event_name);
 	if event_name == "active_check":
 		_handle_active_check(params[0], params[1])
+	
+	if event_name == "break_room":
+		break_room.emit();
 
 
 func _handle_active_check(skill, level) -> void:

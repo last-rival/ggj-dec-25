@@ -192,5 +192,3 @@ func set_energy(amount: int) -> void:
 		set_variable("exhausted", false)
 		
 	energy_updated.emit(current_energy)
-
-
