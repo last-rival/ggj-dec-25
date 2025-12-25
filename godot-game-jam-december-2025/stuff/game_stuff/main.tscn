@@ -43,6 +43,8 @@ characters = {
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="DialogueDrawer" parent="HUD" instance=ExtResource("1_ig7tw")]
+offset_left = -602.0
+offset_right = -1.7700195
 
 [node name="DialogueList" type="MarginContainer" parent="HUD"]
 anchors_preset = 9

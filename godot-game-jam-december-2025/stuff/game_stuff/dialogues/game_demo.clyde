@@ -1,4 +1,4 @@
-Engery System Demo
+Energy System Demo
 
 + {@energy>=3}Eleanor
 	{trigger energy_used(3)}
@@ -18,7 +18,7 @@ Engery System Demo
 	Can we get over with this quickly.
 	{set prudence_intro=true}
 	<-
-+ {@energy>=1}Chell
++ {@energy<=1}Chell
 	{trigger energy_used(1)}
 	Chell:
 	Let's go play when this is done.
@@ -30,7 +30,6 @@ Engery System Demo
 	Hmm... don't really have time for this.
 	{set briar_intro=true}
 	<-
-
 + {briar_intro and eleanor_intro and rachel_intro and chell_intro and prudence_intro or @energy <= 0} Visit Break Room
 	{trigger break_room}{set @intro_completed=true}
 	(shuffle cycle

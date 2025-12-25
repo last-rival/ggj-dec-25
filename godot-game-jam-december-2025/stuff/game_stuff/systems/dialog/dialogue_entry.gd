@@ -76,7 +76,7 @@ func select_option(index: int) -> void:
 
 
 func mark_as_read() -> void:
-	self.modulate.a = 0.4
+	self.modulate.a = 0.8
 	_options_list.hide()
 
 
