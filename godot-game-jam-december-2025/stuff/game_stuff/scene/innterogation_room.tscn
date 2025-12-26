@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dc3q0aepimx7t"]
 
-[ext_resource type="Texture2D" uid="uid://c5get84wxejji" path="res://stuff/raw_imports/Interogation_room_1.png" id="1_lgdkx"]
+[ext_resource type="Texture2D" uid="uid://c5get84wxejji" path="res://stuff/art/rooms/Interogation_room_1.png" id="1_lgdkx"]
 [ext_resource type="PackedScene" uid="uid://vv5g6l2jpeiu" path="res://stuff/game_stuff/scene/character.tscn" id="2_7auk8"]
 
 [node name="innterogation_room" type="Node2D"]

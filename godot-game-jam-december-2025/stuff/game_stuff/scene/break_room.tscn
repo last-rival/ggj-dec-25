@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ckyk7e3k3nyb6"]
 
-[ext_resource type="Texture2D" uid="uid://dvfjla4yb2ovq" path="res://stuff/raw_imports/break_room.png" id="1_3k7g7"]
+[ext_resource type="Texture2D" uid="uid://bd0hwn3h5j2am" path="res://stuff/art/rooms/break_room.png" id="1_3k7g7"]
 
 [node name="break_room" type="Node2D"]
 

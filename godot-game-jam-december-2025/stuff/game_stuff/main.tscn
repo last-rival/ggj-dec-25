@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://joqju5gkcy0j"]
+[gd_scene load_steps=13 format=3 uid="uid://joqju5gkcy0j"]
 
 [ext_resource type="Script" uid="uid://ct4qw6sp5c36c" path="res://stuff/game_stuff/main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://ltwhxc6oap2c" path="res://stuff/game_stuff/systems/dialog/dialogue_drawer.tscn" id="1_ig7tw"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://njfpmdjc3qex" path="res://stuff/game_stuff/inventory/inventory_ui.tscn" id="4_inventory"]
 [ext_resource type="PackedScene" path="res://stuff/game_stuff/inventory/ui/expanded_inventory_ui.tscn" id="5_expanded"]
 [ext_resource type="Script" uid="uid://cej20bjb2xtc4" path="res://stuff/game_stuff/inventory/inventory_variables_master_sheet.gd" id="6_debug_inv"]
+[ext_resource type="Texture2D" uid="uid://d0lc3js7v5jqg" path="res://stuff/raw_imports/ref.png" id="6_tiyvg"]
 [ext_resource type="Script" uid="uid://djj8eqayat207" path="res://stuff/game_stuff/energy/energy_variable_master_sheet.gd" id="7_debug_energy"]
 [ext_resource type="PackedScene" path="res://stuff/game_stuff/energy/energy_ui.tscn" id="7_energy"]
 [ext_resource type="PackedScene" uid="uid://dc3q0aepimx7t" path="res://stuff/game_stuff/scene/innterogation_room.tscn" id="9_c0q6h"]
@@ -43,8 +44,6 @@ characters = {
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="DialogueDrawer" parent="HUD" instance=ExtResource("1_ig7tw")]
-offset_left = -602.0
-offset_right = -1.7700195
 
 [node name="DialogueList" type="MarginContainer" parent="HUD"]
 anchors_preset = 9
@@ -162,6 +161,22 @@ offset_right = -20.0
 offset_bottom = 60.0
 grow_horizontal = 0
 text = "Inventory"
+
+[node name="TextureRect" type="TextureRect" parent="HUD"]
+visible = false
+modulate = Color(1, 1, 1, 0.48235294)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -18.0
+offset_right = 32.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_tiyvg")
+expand_mode = 1
+stretch_mode = 6
 
 [connection signal="pressed" from="break_room/break_room/bg/exit_break_room" to="." method="_on_exit_break_room_pressed"]
 [connection signal="active_check_ended" from="HUD/DialogueDrawer" to="." method="_on_dialogue_drawer_active_check_ended"]

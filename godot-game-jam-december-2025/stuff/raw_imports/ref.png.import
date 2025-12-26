@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvfjla4yb2ovq"
-path="res://.godot/imported/break_room.png-b8d6bda40817ac963f1f633d00e70a94.ctex"
+uid="uid://d0lc3js7v5jqg"
+path="res://.godot/imported/ref.png-cc6f373157b4b839d42b5a19c960155b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://stuff/raw_imports/break_room.png"
-dest_files=["res://.godot/imported/break_room.png-b8d6bda40817ac963f1f633d00e70a94.ctex"]
+source_file="res://stuff/raw_imports/ref.png"
+dest_files=["res://.godot/imported/ref.png-cc6f373157b4b839d42b5a19c960155b.ctex"]
 
 [params]
 
