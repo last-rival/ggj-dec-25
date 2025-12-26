@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://c5bd4yno55slk"]
+
+[ext_resource type="Script" uid="uid://cki74gneqenum" path="res://stuff/game_stuff/systems/character/alter.gd" id="1_1yvdq"]
+[ext_resource type="PackedScene" uid="uid://dat6b3oancqgw" path="res://stuff/game_stuff/alter_scenes/rachel.tscn" id="2_1yvdq"]
+[ext_resource type="PackedScene" uid="uid://lqcn7ptx0hlc" path="res://stuff/game_stuff/alter_scenes/chell.tscn" id="3_le4y5"]
+[ext_resource type="PackedScene" uid="uid://do40wjbxm4arh" path="res://stuff/game_stuff/alter_scenes/prudence.tscn" id="4_0pfeu"]
+[ext_resource type="PackedScene" uid="uid://bdrebvnt8kbig" path="res://stuff/game_stuff/alter_scenes/briar.tscn" id="4_1yvdq"]
+[ext_resource type="PackedScene" uid="uid://e60a3tw3cy1v" path="res://stuff/game_stuff/alter_scenes/eleanor.tscn" id="5_i6xxb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uacqm"]
+
+[node name="Character" type="Panel" node_paths=PackedStringArray("characters")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 540)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_uacqm")
+script = ExtResource("1_1yvdq")
+characters = {
+"brair": NodePath("Briar"),
+"chell": NodePath("Chell"),
+"eleanor": NodePath("Eleanor"),
+"prudence": NodePath("Prudence"),
+"rachel": NodePath("Rachel")
+}
+
+[node name="Rachel" parent="." instance=ExtResource("2_1yvdq")]
+visible = false
+position = Vector2(960, 497)
+
+[node name="Chell" parent="." instance=ExtResource("3_le4y5")]
+visible = false
+position = Vector2(960, 540)
+
+[node name="Briar" parent="." instance=ExtResource("4_1yvdq")]
+position = Vector2(960, 512)
+
+[node name="Prudence" parent="." instance=ExtResource("4_0pfeu")]
+visible = false
+position = Vector2(960, 540)
+
+[node name="Eleanor" parent="." instance=ExtResource("5_i6xxb")]
+position = Vector2(960, 540)
+
+[editable path="Rachel"]
+[editable path="Chell"]
+[editable path="Briar"]
+[editable path="Prudence"]
+[editable path="Eleanor"]

@@ -1,0 +1,82 @@
+[gd_scene load_steps=17 format=3 uid="uid://lqcn7ptx0hlc"]
+
+[ext_resource type="Texture2D" uid="uid://c6tjep6hjrltx" path="res://stuff/art/alters/C_Sprites/happy/for_me_m_open.png" id="1_e5tvi"]
+[ext_resource type="Texture2D" uid="uid://bbqfkg23md1g8" path="res://stuff/art/alters/C_Sprites/happy/for_me_m_close.png" id="2_cdrvh"]
+[ext_resource type="Texture2D" uid="uid://dpjdwk464iw2x" path="res://stuff/art/alters/C_Sprites/happy/e_m_open.png" id="3_uda1p"]
+[ext_resource type="Texture2D" uid="uid://mpkjlrrdoiq0" path="res://stuff/art/alters/C_Sprites/happy/e_close_m_open.png" id="4_ltvih"]
+[ext_resource type="Texture2D" uid="uid://qx45wrf7ayev" path="res://stuff/art/alters/C_Sprites/neutral/e_open_m_close.png" id="5_wn26s"]
+[ext_resource type="Texture2D" uid="uid://cjr3k5q5m7yus" path="res://stuff/art/alters/C_Sprites/neutral/e_m_open.png" id="6_y72pb"]
+[ext_resource type="Texture2D" uid="uid://710niftb85sf" path="res://stuff/art/alters/C_Sprites/neutral/e_close_m_open.png" id="7_uktdo"]
+[ext_resource type="Texture2D" uid="uid://box4ti0dovr37" path="res://stuff/art/alters/C_Sprites/neutral/e_m_close.png" id="8_0bkuv"]
+[ext_resource type="Texture2D" uid="uid://d1bqarx6h3vxy" path="res://stuff/art/alters/C_Sprites/sad/sad_m_close.png" id="9_d5agt"]
+[ext_resource type="Texture2D" uid="uid://dbjam8sydwcf0" path="res://stuff/art/alters/C_Sprites/sad/sad_m_open.png" id="10_3nb8o"]
+[ext_resource type="Texture2D" uid="uid://deq2yfyq8oxb7" path="res://stuff/art/alters/C_Sprites/upset/m_close.png" id="11_54ddd"]
+[ext_resource type="Texture2D" uid="uid://dn7h16f4ntq3c" path="res://stuff/art/alters/C_Sprites/upset/m_open.png" id="12_awaf6"]
+[ext_resource type="Texture2D" uid="uid://c4mel7jx4tikt" path="res://stuff/art/alters/C_Sprites/upset/pout_e_close.png" id="13_qmwdi"]
+[ext_resource type="Texture2D" uid="uid://cln4ouso5y6lg" path="res://stuff/art/alters/C_Sprites/upset/pout_e_open.png" id="14_xbiih"]
+[ext_resource type="Texture2D" uid="uid://org5q6ps0jkk" path="res://stuff/art/alters/C_Sprites/no_energy.png" id="15_o657w"]
+[ext_resource type="Texture2D" uid="uid://bgurjr2itwinq" path="res://stuff/art/alters/C_Sprites/sweat.png" id="16_uk4ov"]
+
+[node name="Chell" type="Node2D"]
+
+[node name="For_Me_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_e5tvi")
+
+[node name="For_Me_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_cdrvh")
+
+[node name="Happy_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_uda1p")
+
+[node name="Happy_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_ltvih")
+
+[node name="Neutral_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("5_wn26s")
+
+[node name="Neutral_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("6_y72pb")
+
+[node name="Neutral_03" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("7_uktdo")
+
+[node name="Neutral_04" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("8_0bkuv")
+
+[node name="Sad_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("9_d5agt")
+
+[node name="Sad_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("10_3nb8o")
+
+[node name="Upset_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("11_54ddd")
+
+[node name="Upset_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("12_awaf6")
+
+[node name="Upset_Pout_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("13_qmwdi")
+
+[node name="Upset_Pout_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("14_xbiih")
+
+[node name="No_Energy" type="Sprite2D" parent="."]
+texture = ExtResource("15_o657w")
+
+[node name="Sweat" type="Sprite2D" parent="."]
+texture = ExtResource("16_uk4ov")

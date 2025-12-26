@@ -1,0 +1,117 @@
+[gd_scene load_steps=24 format=3 uid="uid://e60a3tw3cy1v"]
+
+[ext_resource type="Texture2D" uid="uid://c1o5dku4de20a" path="res://stuff/art/alters/E_Sprites/happy/e_m_open.png" id="1_ek63v"]
+[ext_resource type="Texture2D" uid="uid://cy00jg5jwdjqn" path="res://stuff/art/alters/E_Sprites/happy/e_open_m_close.png" id="2_oraeq"]
+[ext_resource type="Texture2D" uid="uid://o3714112qso5" path="res://stuff/art/alters/E_Sprites/happy/e_ohrly_m_open.png" id="3_xo60n"]
+[ext_resource type="Texture2D" uid="uid://bkanm40q5odjl" path="res://stuff/art/alters/E_Sprites/happy/e_ohrly_m_close.png" id="4_6et6b"]
+[ext_resource type="Texture2D" uid="uid://cj33l2mdp78a5" path="res://stuff/art/alters/E_Sprites/happy/e_worry_m_open.png" id="5_bwsi1"]
+[ext_resource type="Texture2D" uid="uid://cmjeutumbwm03" path="res://stuff/art/alters/E_Sprites/happy/e_relief_m_open.png" id="6_e1dkr"]
+[ext_resource type="Texture2D" uid="uid://cubqtl1scksoq" path="res://stuff/art/alters/E_Sprites/happy/e_relief_m_close.png" id="7_lxuku"]
+[ext_resource type="Texture2D" uid="uid://bb3cwxaqguu4g" path="res://stuff/art/alters/E_Sprites/neutral/thought_e_m_open.png" id="8_fjhgq"]
+[ext_resource type="Texture2D" uid="uid://c20teycci7kif" path="res://stuff/art/alters/E_Sprites/neutral/thought_e_open_m_close.png" id="9_hllib"]
+[ext_resource type="Texture2D" uid="uid://dnradl3qteyw1" path="res://stuff/art/alters/E_Sprites/neutral/e_m_open.png" id="10_6r3yn"]
+[ext_resource type="Texture2D" uid="uid://om38v157jah1" path="res://stuff/art/alters/E_Sprites/neutral/e_open_m_close.png" id="11_5r2uf"]
+[ext_resource type="Texture2D" uid="uid://cflrbsf5vq4g0" path="res://stuff/art/alters/E_Sprites/neutral/e_close_m_open.png" id="12_77qkq"]
+[ext_resource type="Texture2D" uid="uid://cxr2l4am0yku8" path="res://stuff/art/alters/E_Sprites/neutral/e_m_close.png" id="13_fuir1"]
+[ext_resource type="Texture2D" uid="uid://b1s8rwari8t80" path="res://stuff/art/alters/E_Sprites/upset/e_frown_m_grit.png" id="14_qulwe"]
+[ext_resource type="Texture2D" uid="uid://doa5fu60qiy73" path="res://stuff/art/alters/E_Sprites/upset/e_sad_m_grit.png" id="15_fuccn"]
+[ext_resource type="Texture2D" uid="uid://c6tvn0shp4n14" path="res://stuff/art/alters/E_Sprites/upset/e_sad_m_open.png" id="16_smmps"]
+[ext_resource type="Texture2D" uid="uid://bcliato8btip0" path="res://stuff/art/alters/E_Sprites/upset/e_side_m_grit.png" id="17_mstvv"]
+[ext_resource type="Texture2D" uid="uid://do8pe00iwe8ev" path="res://stuff/art/alters/E_Sprites/upset/offended_m_open.png" id="18_3thef"]
+[ext_resource type="Texture2D" uid="uid://bi8lbcx4res2d" path="res://stuff/art/alters/E_Sprites/upset/offended_m_close.png" id="19_76fs2"]
+[ext_resource type="Texture2D" uid="uid://fvlkj1kiebsr" path="res://stuff/art/alters/E_Sprites/whatchu_say_m_close.png" id="20_2nhu3"]
+[ext_resource type="Texture2D" uid="uid://d3fk1gm6gk3ay" path="res://stuff/art/alters/E_Sprites/whatchu_say_m_open.png" id="21_6t85q"]
+[ext_resource type="Texture2D" uid="uid://c772p5vaxy4vg" path="res://stuff/art/alters/E_Sprites/no_energy.png" id="22_o0xap"]
+[ext_resource type="Texture2D" uid="uid://dwc7m76e2uiaw" path="res://stuff/art/alters/E_Sprites/sweat.png" id="23_fkgej"]
+
+[node name="Eleanor" type="Node2D"]
+
+[node name="Happy_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_ek63v")
+
+[node name="Happy_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_oraeq")
+
+[node name="Oreally_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_xo60n")
+
+[node name="Oreally_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_6et6b")
+
+[node name="Relief_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("5_bwsi1")
+
+[node name="Relief_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("6_e1dkr")
+
+[node name="Relief_03" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("7_lxuku")
+
+[node name="Thought_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("8_fjhgq")
+
+[node name="Thought_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("9_hllib")
+
+[node name="Neutral_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("10_6r3yn")
+
+[node name="Neutral_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("11_5r2uf")
+
+[node name="Neutral_03" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("12_77qkq")
+
+[node name="Neutral_04" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("13_fuir1")
+
+[node name="Upset_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("14_qulwe")
+
+[node name="Upset_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("15_fuccn")
+
+[node name="Upset_03" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("16_smmps")
+
+[node name="Upset_04" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("17_mstvv")
+
+[node name="Offended_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("18_3thef")
+
+[node name="Offended_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("19_76fs2")
+
+[node name="Whatchu_Say_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("21_6t85q")
+
+[node name="Whatchu_Say_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("20_2nhu3")
+
+[node name="No_Energy" type="Sprite2D" parent="."]
+texture = ExtResource("22_o0xap")
+
+[node name="Sweat" type="Sprite2D" parent="."]
+texture = ExtResource("23_fkgej")

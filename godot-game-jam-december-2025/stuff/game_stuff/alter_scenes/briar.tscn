@@ -1,0 +1,137 @@
+[gd_scene load_steps=28 format=3 uid="uid://bdrebvnt8kbig"]
+
+[ext_resource type="Texture2D" uid="uid://dwanjan0wbepf" path="res://stuff/art/alters/B_Sprites/for_chell/smile_m_close.png" id="1_8k31g"]
+[ext_resource type="Texture2D" uid="uid://btf5oc5i2mmhw" path="res://stuff/art/alters/B_Sprites/for_chell/smile_m_open.png" id="2_pi4a4"]
+[ext_resource type="Texture2D" uid="uid://cktswogbp66vf" path="res://stuff/art/alters/B_Sprites/for_chell/smile_e_straight_m_close.png" id="3_ph87e"]
+[ext_resource type="Texture2D" uid="uid://cxr4c1gglyyki" path="res://stuff/art/alters/B_Sprites/for_chell/pout_m_open.png" id="4_oymdn"]
+[ext_resource type="Texture2D" uid="uid://ciiftqrr2i56i" path="res://stuff/art/alters/B_Sprites/for_chell/pout_m_close.png" id="5_fcnh1"]
+[ext_resource type="Texture2D" uid="uid://s6hkif1qlbyk" path="res://stuff/art/alters/B_Sprites/neutral/e_m_open.png" id="6_oqfl7"]
+[ext_resource type="Texture2D" uid="uid://b8xdk7m0p5egn" path="res://stuff/art/alters/B_Sprites/neutral/e_open_m_close.png" id="7_hbdc3"]
+[ext_resource type="Texture2D" uid="uid://dkol6aj08q62y" path="res://stuff/art/alters/B_Sprites/neutral/e_close_m_open.png" id="8_i8e4v"]
+[ext_resource type="Texture2D" uid="uid://cyah4nnhxljpp" path="res://stuff/art/alters/B_Sprites/neutral/e_m_close.png" id="9_6kp5q"]
+[ext_resource type="Texture2D" uid="uid://b3lf862m71cmj" path="res://stuff/art/alters/B_Sprites/shock/disblief.png" id="10_ii5h7"]
+[ext_resource type="Texture2D" uid="uid://bl67sa1dgcqui" path="res://stuff/art/alters/B_Sprites/shock/disblief_talk.png" id="11_f8tkh"]
+[ext_resource type="Texture2D" uid="uid://kl7u7upe6vx4" path="res://stuff/art/alters/B_Sprites/shock/backstab_m_grit.png" id="12_ftwmm"]
+[ext_resource type="Texture2D" uid="uid://i8pic6ec2k1u" path="res://stuff/art/alters/B_Sprites/shock/backstab_m_open.png" id="13_o4x5s"]
+[ext_resource type="Texture2D" uid="uid://cjj6hohqfhowb" path="res://stuff/art/alters/B_Sprites/toy/hah_e_open.png" id="14_5r5on"]
+[ext_resource type="Texture2D" uid="uid://cnjwkytjcsny7" path="res://stuff/art/alters/B_Sprites/toy/hah_e_close.png" id="15_y3svl"]
+[ext_resource type="Texture2D" uid="uid://co6r14fwf53ub" path="res://stuff/art/alters/B_Sprites/toy/hah_e_open_side.png" id="16_w5sg0"]
+[ext_resource type="Texture2D" uid="uid://ctt8ynd8yewjp" path="res://stuff/art/alters/B_Sprites/toy/hah_m_close.png" id="17_y2oso"]
+[ext_resource type="Texture2D" uid="uid://s6ofxvrtmxgc" path="res://stuff/art/alters/B_Sprites/upset/e_open_m_grit.png" id="18_4nsuj"]
+[ext_resource type="Texture2D" uid="uid://sbbhtoml286u" path="res://stuff/art/alters/B_Sprites/upset/e_close_m_grit.png" id="19_si1ke"]
+[ext_resource type="Texture2D" uid="uid://bhv2fuwuw0fbh" path="res://stuff/art/alters/B_Sprites/upset/e_open_m_smirk.png" id="20_s5syx"]
+[ext_resource type="Texture2D" uid="uid://6sfaeax1qm5q" path="res://stuff/art/alters/B_Sprites/for_chell/pause_e_close.png" id="21_ytcqv"]
+[ext_resource type="Texture2D" uid="uid://d0tijew5tbgjm" path="res://stuff/art/alters/B_Sprites/upset/e_m_open.png" id="22_jbpd8"]
+[ext_resource type="Texture2D" uid="uid://b8au58fejaefi" path="res://stuff/art/alters/B_Sprites/upset/insulted_e_open_m_close.png" id="23_qj7bt"]
+[ext_resource type="Texture2D" uid="uid://b07p8tqadvq04" path="res://stuff/art/alters/B_Sprites/upset/all_i_could_do.png" id="24_mpoe6"]
+[ext_resource type="Texture2D" uid="uid://ctx6dsnmujfxx" path="res://stuff/art/alters/B_Sprites/sus_m_close.png" id="25_qkd25"]
+[ext_resource type="Texture2D" uid="uid://c21tjf2pdijm5" path="res://stuff/art/alters/B_Sprites/no_energy.png" id="26_rkky1"]
+[ext_resource type="Texture2D" uid="uid://blpxjodyrumfr" path="res://stuff/art/alters/B_Sprites/sweat.png" id="27_tm6tl"]
+
+[node name="Briar" type="Node2D"]
+
+[node name="Smile_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_8k31g")
+
+[node name="Smile_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_pi4a4")
+
+[node name="Smile_03" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_ph87e")
+
+[node name="Pout_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_oymdn")
+
+[node name="Pout_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("5_fcnh1")
+
+[node name="Neutral_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("6_oqfl7")
+
+[node name="Neutral_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("7_hbdc3")
+
+[node name="Neutral_03" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("8_i8e4v")
+
+[node name="Neutral_04" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("9_6kp5q")
+
+[node name="Disbelief_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("10_ii5h7")
+
+[node name="Disbelief_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("11_f8tkh")
+
+[node name="Backstab_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("12_ftwmm")
+
+[node name="Backstab_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("13_o4x5s")
+
+[node name="Hah_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("14_5r5on")
+
+[node name="Hah_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("15_y3svl")
+
+[node name="Hah_03" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("16_w5sg0")
+
+[node name="Hah_04" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("17_y2oso")
+
+[node name="Upset_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("18_4nsuj")
+
+[node name="Upset_02" type="Sprite2D" parent="."]
+texture = ExtResource("19_si1ke")
+
+[node name="Upset_03" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("20_s5syx")
+
+[node name="Pause" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("21_ytcqv")
+
+[node name="Offended_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("22_jbpd8")
+
+[node name="Offended_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("23_qj7bt")
+
+[node name="All_Could_Do" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("24_mpoe6")
+
+[node name="Sus_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("25_qkd25")
+
+[node name="No_Energy" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("26_rkky1")
+
+[node name="Sweat" type="Sprite2D" parent="."]
+texture = ExtResource("27_tm6tl")
