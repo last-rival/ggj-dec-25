@@ -2,7 +2,7 @@ extends MarginContainer
 
 signal dialogue_ended
 
-signal active_check_started
+signal active_check_start_conversation_withed
 signal active_check_ended
 signal break_room
 signal energy_used(amount:int)
@@ -44,18 +44,53 @@ var _last_entry: DialogueEntry
 
 var _check_tag: String = ""
 
+var _briar_dialogue : ClydeDialogue
+var _chell_dialogue : ClydeDialogue
+var _eleanor_dialogue : ClydeDialogue
+var _prudence_dialogue : ClydeDialogue
+var _rachel_dialogue : ClydeDialogue
 
 func _ready() -> void:
 	_scroll_bar.changed.connect(_on_scroll_bar_changed)
 
+	_briar_dialogue = ClydeDialogue.new()
+	_chell_dialogue = ClydeDialogue.new()
+	_eleanor_dialogue = ClydeDialogue.new()
+	_prudence_dialogue = ClydeDialogue.new()
+	_rachel_dialogue = ClydeDialogue.new()
+	
+	_briar_dialogue.load_dialogue("briar")
+	_chell_dialogue.load_dialogue("chell")
+	_eleanor_dialogue.load_dialogue("eleanor")
+	_prudence_dialogue.load_dialogue("prudence")
+	_rachel_dialogue.load_dialogue("rachel")
+	
+	init_dialogue(_briar_dialogue)
+	init_dialogue(_chell_dialogue)
+	init_dialogue(_eleanor_dialogue)
+	init_dialogue(_prudence_dialogue)
+	init_dialogue(_rachel_dialogue)
 
-func start(dialogue_name: String) -> void:
-	_reset_state()
-	_current_dialogue_name = dialogue_name
-	_dialogue = ClydeDialogue.new()
-	_dialogue.load_dialogue(dialogue_name)
+func start_conversation() -> void:
+	var active_character = GameData.active_character;
+	match active_character:
+		GameData.BRIAR_KEY:
+			start_conversation_with(active_character,_briar_dialogue)
+		GameData.CHELL_KEY:
+			start_conversation_with(active_character,_chell_dialogue)
+		GameData.ELEANOR_KEY:
+			start_conversation_with(active_character,_eleanor_dialogue)
+		GameData.PRUDENCE_KEY:
+			start_conversation_with(active_character,_prudence_dialogue)
+		GameData.RACHEL_KEY:
+			start_conversation_with(active_character,_rachel_dialogue)
+		_:
+			start_conversation_with(GameData.ELEANOR_KEY,_eleanor_dialogue)
 
-	_dialogue.on_external_variable_fetch(func(variable_name: String):
+	return
+
+func init_dialogue(dialogue : ClydeDialogue) -> void:
+	dialogue.on_external_variable_fetch(func(variable_name: String):
 		if variable_name.begins_with("passive_check"):
 			var check_result: CheckResult = passive_check_handler.handle_passive_check(variable_name)
 			_check_tag = check_result.get_display_string()
@@ -68,20 +103,26 @@ func start(dialogue_name: String) -> void:
 		return GameData.get_variable(variable_name)
 	)
 
-	_dialogue.on_external_variable_update(func(variable_name: String, value):
-		print("Updating Global Variable " + variable_name)
+	dialogue.on_external_variable_update(func(variable_name: String, value):
+		print("Setting Global Variable " + variable_name)
 		GameData.set_variable(variable_name, value)
 	)
 
-	_dialogue.event_triggered.connect(_on_event_triggered)
+	dialogue.event_triggered.connect(_on_event_triggered)
 
+	return;
+
+
+func start_conversation_with(dialogue_name: String, dialogue : ClydeDialogue) -> void:
+	_reset_state()
+	_dialogue = dialogue;
+	_current_dialogue_name = dialogue_name
 	var dialogue_data = GameData.get_dialogue_data(dialogue_name)
 	if dialogue_data:
 		_dialogue.load_data(dialogue_data)
 		
 
 	next()
-
 
 func _reset_state() -> void:
 	_has_ended = false
@@ -116,7 +157,7 @@ func next() -> void:
 
 
 func _handle_line(content: Dictionary) -> void:
-	if content.tags.has("active-check-start"):
+	if content.tags.has("active-check-start_conversation_with"):
 		_set_as_waiting_for_active_check()
 		return
 	
@@ -228,8 +269,9 @@ func _get_speaker_resource(speaker_name) -> Speaker:
 	else:
 		speaker.speaker_name = speaker_name
 
-	if speaker_name == _last_speaker:
-		speaker.speaker_name = "<same>"
+	# Don't need this, we want the speaker names to be expicilty shown
+	#if speaker_name == _last_speaker:
+		#speaker.speaker_name = "<same>"
 
 	_last_speaker = speaker_name
 
@@ -265,7 +307,8 @@ func _mark_last_entry_as_read() -> void:
 
 func _clear_entries() -> void:
 	for c in _dialogue_entries_container.get_children():
-		c.queue_free()
+		if c is Button:
+			c.queue_free()
 
 
 func _on_event_triggered(event_name: String, params: Array) -> void:
@@ -290,7 +333,7 @@ func _on_event_triggered(event_name: String, params: Array) -> void:
 
 func _handle_active_check(skill, level) -> void:
 	_set_as_waiting_for_active_check()
-	active_check_started.emit()
+	active_check_start_conversation_withed.emit()
 	active_check_handler.process_active_check(skill, level)
 	await get_tree().create_timer(2.0).timeout
 	active_check_ended.emit()

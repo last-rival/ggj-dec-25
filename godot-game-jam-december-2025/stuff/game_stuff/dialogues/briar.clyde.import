@@ -1,0 +1,14 @@
+[remap]
+
+importer="clyde.dialogue"
+type="ClydeDialogueFile"
+uid="uid://dpo6kg5tl2uo4"
+path="res://.godot/imported/briar.clyde-864e66824df8a1d9a0d2e2a24550bb44.res"
+
+[deps]
+
+source_file="res://stuff/game_stuff/dialogues/briar.clyde"
+dest_files=["res://.godot/imported/briar.clyde-864e66824df8a1d9a0d2e2a24550bb44.res"]
+
+[params]
+

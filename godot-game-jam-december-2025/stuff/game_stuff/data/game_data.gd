@@ -1,11 +1,11 @@
 extends Node
 
 # Constans for the game
-const BRIAR_KEY = "brair"
+const BRIAR_KEY = "briar"
 const CHELL_KEY = "chell"
 const ELEANOR_KEY = "eleanor"
 const PRUDENCE_KEY = "prudence"
-const RACHEL_KEY = "rahcel"
+const RACHEL_KEY = "rachel"
 const CHARACTER_SHUFFLE_CHANCE_ON_ENERGY_LEFT : int = 50;
 const ALL_CHARACTERS : Array[String] = [BRIAR_KEY, CHELL_KEY, ELEANOR_KEY, PRUDENCE_KEY, RACHEL_KEY]
 

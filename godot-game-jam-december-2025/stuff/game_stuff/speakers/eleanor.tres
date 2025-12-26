@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_q38bc")
-speaker_name = "Elanor"
+speaker_name = "Eleanor"
 speaker_color = Color(0.8619677, 0.38162273, 1, 1)
 portrait_path = "uid://cpktvc2i4k0s1"
 metadata/_custom_type_script = "uid://booxiry4lf2es"

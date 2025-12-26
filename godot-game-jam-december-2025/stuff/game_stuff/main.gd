@@ -1,7 +1,6 @@
 extends Node3D
 
 @onready var _dialogue_drawer = $HUD/DialogueDrawer
-@onready var _dialogue_list = $HUD/DialogueList
 @onready var _character = $innterogation_room/innterogation_room/bg/character
 
 @export var break_room : CanvasLayer;
@@ -91,39 +90,17 @@ func _input(event: InputEvent) -> void:
 
 func _on_dialogue_drawer_dialogue_ended() -> void:
 	_dialogue_drawer.hide()
-	_dialogue_list.show()
 	is_dialogue_running = false
 	if can_visit_break_room:
 		load_break_room()
 
 
-func _on_test_dialogue_button_pressed() -> void:
-	_start_dialogue("test")
-
-
-func _on_intro_dialogue_pressed() -> void:
-	_start_dialogue("intro")
-
-
-func _on_passive_dialogue_pressed() -> void:
-	_start_dialogue("passive")
-
-
-func _on_active_dialogue_pressed() -> void:
-	_start_dialogue("active")
-
-
-func _on_variables_dialogue_button_pressed() -> void:
-	_start_dialogue("variables")
-
-
 func _on_game_demo_pressed() -> void:
-	_start_dialogue("game_demo")
+	_start_dialogue()
 
-func _start_dialogue(dialogue: String) -> void:
-	_dialogue_list.hide()
+func _start_dialogue() -> void:
 	_dialogue_drawer.show()
-	_dialogue_drawer.start(dialogue)
+	_dialogue_drawer.start_conversation()
 	is_dialogue_running = true
 
 var can_visit_break_room:bool=false;

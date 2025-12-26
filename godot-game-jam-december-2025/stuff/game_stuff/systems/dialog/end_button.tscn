@@ -19,5 +19,5 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ol573")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jg3fx")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jg3fx")
 theme_override_styles/focus = SubResource("StyleBoxFlat_jg3fx")
-text = "END"
+text = "Break Room"
 alignment = 0

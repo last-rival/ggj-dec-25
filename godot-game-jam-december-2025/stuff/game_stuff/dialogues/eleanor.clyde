@@ -1,0 +1,84 @@
+\[i]The interrogation room smelled of room freshener working hard to mask the underlying stench of mold which was not overpowering yet persistently lingered beneath the lavender scent.[/i]
+She’s already seated when I walked in.
+Her hands were folded in her lap, her posture was straight but not rigid. There is a dignity about her. The kind that came from bearing responsibility for too long. Her eyes carried grief, still mourning the loss. Yet beneath all this there is a resolve that said that she is ready to give her all to this interview. 
+Whether that confidence will make this interview easier or far more complicated is something only time will tell.
+I take the chair across from her, set the recorder on the desk and press the button.
+A soft click breaks the silence.
+
++ Who are you?
+	You:For the record, can you please introduce yourself?
+	She inclined her head slightly, her voice held gentleness which seemed to bury a melancholy.
+	Eleanor:My name is Eleanor, I am the Abbess of the city church.
+	So she was the leader of the Nuns or nun in this church’s case
+	{set @eleanor_name = true}
+	{set @chit_eleanor_abbess = true}
+	<-
+
++ {@eleanor_name} Where were you at the time of murder?
+	Eleanor:I was performing my 3 PM Mercy prayers, I found the head priest lying outside on the lawn when I returned from my prayers. He appeared… passed out.
+	She paused, then lowered her gaze.
+	Eleanor: May God rest his soul
+	{set eleanor_q3 = true}
+	{set @chit_eleanor_prayer = true}
+	The prayer wasn’t performative, it was honest and that somehow made the scent of mold far more prominent. 
+	<-
+
++ {eleanor_q3} Just for the record, were you the first person who discovered the body?
+	I expected a clean answer.
+	These are procedural questions. To ease somebody into interrogation. There is no reason for the composure to crack here.
+	But it does.
+	Eleanor:Y-Yes
+	The words catch on the way out.
+	There was a hesitation. As if she is testing the answer even as she says it. There was an uncertainty in her tone, the kind that comes from omission.
+	Debug: Setting Dossair active to test Question 4 {set dos_priest=true}
+	<-
+
++ {dos_priest} Were there more people in church apart from the head priest and you, Eleanor?
+	It’s a small church perched on top of a hilltop too far from casual foot traffic.
+	According to records only two people resided there, the head priest and Elanor.
+	Anybody visiting around the time of death would have come to attend the Mercy Prayer, but the initial investigation confirmed proof of no other presence. And the head priest did not have any prior appointments.
+	Which raises a different possibility. Perhaps she was expecting more people.
+	There was a pause
+	Her eyes flickered downward, then to the side. Panic bloomed beneath the calm she has been wearing so carefully.
+	Eleanor : N-no, there was nobody apart from us
+	The words came out quickly. Hoping that they might be convincing.
+	They were far from it.
+	She was lying
+	{set eleanor_q5 = true}
+	<-
+
++ {eleanor_q5} Ask if she is hiding something
+	+ You: What are you hiding Elanor?
+		Eleanor: No-thing
+
+	Her eyes widened. She avoided looking at me, gaze drifting just past my shoulder. A textbook tell of somebody when they are lying.
+	A bit more pressure.
+
+	+ You: What are you hiding Elanor?
+		Eleanor: No-thing
+
+	Her breathing quickened, panic leaked through her composure. She is spiraling down.
+	Once more just a little more.
+
+	+ You: What are you hiding Elanor?
+		Eleanor: I am not hiding anything!
+	
+	Her words rushed out, tumbling over each other. Her hands came up to hide her face as she leaned more into the table, to completely get me out of her sight, as if this might shield her from the question itself. To shield herself from me.
+
+	+ You: What are you hiding Elanor?
+	Her shoulders sagged, exhaustion finally taking hold. When she looks up again, her eyes are glassy tears pooled at the edge, threatening to fall.
+	Debug: Setting break count to 1 for unlocking Q6. {set @break_count = 1}
+	{trigger break_room}It was time for a break.#end
+	<-
+
++ {@break_count >= 1} {@chit_eleanor_abbess} Who is responsible for the kitchen?
+	The question that mattered the most.
+	Poison wasn’t administered in the dark, but rather it was served in a cup for the victim to savor quite literally. Anyone who has access to the kitchen automatically qualifies as a suspect.
+	Eleanor exhaled slowly, carrying all the weariness and exhaustion that she had accumulated over the last round of interrogation.
+	Whatever time Prudence provided her, it has been enough… it seems to have been enough for Eleanor to regain her footing.
+	Though the caution has not completely vanished, but the color seems to have returned to her face with a touch of resignation. 
+	If I had asked this earlier, she might have deflected.
+	Now\–
+	Eleanor:
+		Briar, she takes care of kitchen and garden{trigger set_switch(1,0,1,1,0)}{set @chit_brair_garden}
+	<-

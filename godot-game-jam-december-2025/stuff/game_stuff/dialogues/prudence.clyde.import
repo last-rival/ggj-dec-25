@@ -1,0 +1,14 @@
+[remap]
+
+importer="clyde.dialogue"
+type="ClydeDialogueFile"
+uid="uid://b8hrneittuwa1"
+path="res://.godot/imported/prudence.clyde-ae4b77617e710fde0ed53acc71cfdba7.res"
+
+[deps]
+
+source_file="res://stuff/game_stuff/dialogues/prudence.clyde"
+dest_files=["res://.godot/imported/prudence.clyde-ae4b77617e710fde0ed53acc71cfdba7.res"]
+
+[params]
+

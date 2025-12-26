@@ -29,18 +29,13 @@ offset_top = -366.16003
 offset_right = 350.91992
 offset_bottom = 366.83997
 characters = {
-"brair": NodePath("brair"),
+"briar": NodePath("briar"),
 "chell": NodePath("chell"),
 "eleanor": NodePath("eleanor"),
 "prudence": NodePath("prudence"),
 "rachel": NodePath("rachel")
 }
 metadata/_edit_use_anchors_ = true
-
-[node name="brair" parent="innterogation_room/bg/character" index="0"]
-visible = false
-offset_top = 22.0
-offset_bottom = 22.0
 
 [node name="chell" parent="innterogation_room/bg/character" index="1"]
 offset_top = 35.0

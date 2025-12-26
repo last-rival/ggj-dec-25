@@ -28,14 +28,14 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_uacqm")
 script = ExtResource("1_uacqm")
 characters = {
-"brair": NodePath("brair"),
+"briar": NodePath("briar"),
 "chell": NodePath("chell"),
 "eleanor": NodePath("eleanor"),
 "prudence": NodePath("prudence"),
 "rachel": NodePath("rachel")
 }
 
-[node name="brair" type="MarginContainer" parent="."]
+[node name="briar" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,19 +43,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="base" type="TextureRect" parent="brair"]
+[node name="base" type="TextureRect" parent="briar"]
 layout_mode = 2
 texture = ExtResource("1_ntauq")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="eyes" type="TextureRect" parent="brair"]
+[node name="eyes" type="TextureRect" parent="briar"]
 layout_mode = 2
 texture = ExtResource("2_uacqm")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="mouth" type="TextureRect" parent="brair"]
+[node name="mouth" type="TextureRect" parent="briar"]
 layout_mode = 2
 texture = ExtResource("3_brd4k")
 expand_mode = 1

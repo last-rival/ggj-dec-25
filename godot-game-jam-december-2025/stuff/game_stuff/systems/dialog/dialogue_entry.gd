@@ -16,9 +16,10 @@ func set_content(speaker: Speaker, text: String, passive_check: String = "") -> 
 		_text.text = text
 		return
 
-	if speaker.speaker_name == "<same>":
-		_text.text = "[indent]%s" % text
-		return
+	# Don't need this, we want the speaker names to be expicilty shown
+	#if speaker.speaker_name == "<same>":
+		#_text.text = "[indent]%s" % text
+		#return
 
 	var speaker_name = speaker.get_speaker_name().to_upper()
 

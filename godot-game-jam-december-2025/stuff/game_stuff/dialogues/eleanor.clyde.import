@@ -1,0 +1,14 @@
+[remap]
+
+importer="clyde.dialogue"
+type="ClydeDialogueFile"
+uid="uid://lm4m2e4du8nv"
+path="res://.godot/imported/eleanor.clyde-d02fc4af1e64247399e8e7de16153f3d.res"
+
+[deps]
+
+source_file="res://stuff/game_stuff/dialogues/eleanor.clyde"
+dest_files=["res://.godot/imported/eleanor.clyde-d02fc4af1e64247399e8e7de16153f3d.res"]
+
+[params]
+
