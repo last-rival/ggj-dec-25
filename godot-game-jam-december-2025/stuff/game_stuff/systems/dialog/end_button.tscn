@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcxwy1w1a010q"]
+[gd_scene load_steps=4 format=3 uid="uid://bcxwy1w1a010q"]
+
+[ext_resource type="FontFile" uid="uid://05aog0qyx7lq" path="res://UI/Nunito-VariableFont_wght.ttf" id="1_ouw4e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ol573"]
 content_margin_left = 10.0
@@ -15,6 +17,7 @@ custom_minimum_size = Vector2(0, 60)
 offset_right = 54.0
 offset_bottom = 40.0
 focus_mode = 0
+theme_override_fonts/font = ExtResource("1_ouw4e")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ol573")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jg3fx")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jg3fx")

@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvxg13t7gs81"]
+[gd_scene load_steps=4 format=3 uid="uid://dvxg13t7gs81"]
 
 [ext_resource type="Script" uid="uid://bo5grpld3q3mv" path="res://stuff/game_stuff/systems/dialog/dialogue_entry.gd" id="1_pt7a4"]
+[ext_resource type="FontFile" uid="uid://05aog0qyx7lq" path="res://UI/Nunito-VariableFont_wght.ttf" id="2_pfrwx"]
+[ext_resource type="FontFile" uid="uid://bs5er5vopmn1f" path="res://UI/Nunito-Italic-VariableFont_wght.ttf" id="3_eo0xa"]
 
 [node name="DialogueEntry" type="MarginContainer"]
 custom_minimum_size = Vector2(200, 0)
@@ -13,6 +15,11 @@ theme_override_constants/separation = 10
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_pfrwx")
+theme_override_fonts/bold_font = ExtResource("2_pfrwx")
+theme_override_fonts/bold_italics_font = ExtResource("3_eo0xa")
+theme_override_fonts/italics_font = ExtResource("3_eo0xa")
+theme_override_fonts/mono_font = ExtResource("2_pfrwx")
 bbcode_enabled = true
 text = "SPEAKER - Dialogue line"
 fit_content = true

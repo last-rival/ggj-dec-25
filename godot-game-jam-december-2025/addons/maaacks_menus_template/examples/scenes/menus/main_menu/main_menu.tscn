@@ -16,7 +16,10 @@ options_packed_scene = ExtResource("3_cfr4i")
 credits_packed_scene = ExtResource("4_qhsni")
 
 [node name="TitleLabel" parent="MenuContainer/TitleMargin/TitleContainer" index="0"]
-text = "GodotGameJamDecember2025"
+text = "Alter Girl"
+
+[node name="SubTitleLabel" parent="MenuContainer/SubTitleMargin/SubTitleContainer" index="0"]
+text = "A Visual Novel Investigation"
 
 [node name="MenuButtonsBoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer" index="0"]
 offset_left = -152.0
@@ -35,3 +38,6 @@ size_flags_vertical = 3
 
 [node name="ExitButton" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="3"]
 size_flags_vertical = 3
+
+[node name="VersionMargin" parent="." index="4"]
+visible = false

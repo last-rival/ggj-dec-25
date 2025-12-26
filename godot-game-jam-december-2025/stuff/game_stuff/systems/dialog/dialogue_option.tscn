@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpiyt3yp8e3x7"]
+[gd_scene load_steps=5 format=3 uid="uid://bpiyt3yp8e3x7"]
 
 [ext_resource type="Script" uid="uid://c20cjf80lxjcu" path="res://stuff/game_stuff/systems/dialog/dialogue_option.gd" id="1_pkjeq"]
+[ext_resource type="FontFile" uid="uid://05aog0qyx7lq" path="res://UI/Nunito-VariableFont_wght.ttf" id="2_ujy1j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pkjeq"]
 resource_local_to_scene = true
@@ -35,6 +36,7 @@ focus_mode = 0
 theme_override_colors/font_color = Color(0.760784, 0.317647, 0.168627, 1)
 theme_override_colors/font_pressed_color = Color(0.694121, 0.694121, 0.694121, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_ujy1j")
 theme_override_styles/normal = SubResource("StyleBoxFlat_pt7a4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pt7a4")
 theme_override_styles/hover = SubResource("StyleBoxFlat_pt7a4")
