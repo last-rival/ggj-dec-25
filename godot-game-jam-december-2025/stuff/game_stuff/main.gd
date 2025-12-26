@@ -16,6 +16,7 @@ func _ready() -> void:
 	_dialogue_drawer.hide()
 	_dialogue_drawer.connect("break_room",on_break_room_trigger)
 	_dialogue_drawer.connect("energy_used", on_energy_use_trigger)
+	_dialogue_drawer.connect("set_switch", on_set_switch_trigger)
 
 	# Add clue items to inventory
 	# Load specific character clues
@@ -160,6 +161,20 @@ func change_active_character() -> void:
 
 func on_energy_use_trigger(amount:int) -> void:
 	GameData.modify_energy(-amount)
+
+func on_set_switch_trigger(chances:Array) -> void:
+	if chances == null || chances.size() != 5 :
+		print("Switch chance parameters are empty or less than 5");
+		return
+
+	GameData.character_switch_chances[GameData.BRIAR_KEY] = int(chances[0]);
+	GameData.character_switch_chances[GameData.CHELL_KEY] = int(chances[1]);
+	GameData.character_switch_chances[GameData.ELEANOR_KEY] = int(chances[2]);
+	GameData.character_switch_chances[GameData.PRUDENCE_KEY] = int(chances[3]);
+	GameData.character_switch_chances[GameData.RACHEL_KEY] = int(chances[4]);
+	
+	for key in GameData.character_switch_chances:
+		print("Set Switch Chance for "+str(key)+" = "+str(GameData.character_switch_chances[key]));
 
 # TODO : Updated the game to load different conversation files based on the active character.
 # The way this will work is you carry on a conversation, the character runs of energy and then you enter break room

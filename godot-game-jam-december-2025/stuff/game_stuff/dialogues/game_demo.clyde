@@ -26,7 +26,6 @@ Energy System Demo
 	<-
 + {@energy>=1}Briar
 	{trigger energy_used(1)}
-	{trigger set_switch(20,20,20,20,20)}
 	Briar:
 	Hmm... don't really have time for this.
 	{set briar_intro=true}

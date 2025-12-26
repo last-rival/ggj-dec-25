@@ -9,6 +9,14 @@ const RACHEL_KEY = "rahcel"
 const CHARACTER_SHUFFLE_CHANCE_ON_ENERGY_LEFT : int = 50;
 const ALL_CHARACTERS : Array[String] = [BRIAR_KEY, CHELL_KEY, ELEANOR_KEY, PRUDENCE_KEY, RACHEL_KEY]
 
+var character_switch_chances:Dictionary[String,int]={
+	BRIAR_KEY:1,
+	CHELL_KEY:1,
+	ELEANOR_KEY:1,
+	PRUDENCE_KEY:1,
+	RACHEL_KEY:1
+}
+
 # This script represents your game data. This abstracts your data layer.
 # Your game will likely be more complex than that, including file storage and load.
 # To keep things simple, this example only persist the data in memory.
