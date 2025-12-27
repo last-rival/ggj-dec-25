@@ -9,8 +9,8 @@ class_name AudioManager
 	"bgm_resent" : preload("res://stuff/audio/AlterGirl_Resentful_Loop.wav"),
 	"sfx_eng_drop" : preload("res://stuff/audio/SFX_EnergyEmpty.wav"),
 	"sfx_eng_fill" : preload("res://stuff/audio/SFX_EnergyFill.wav"),
-	"sfx_eng_notif" : preload("res://stuff/audio/SFX_Notification.wav"),
-	"sfx_eng_sus" : preload("res://stuff/audio/SFX_Sus.wav"),
+	"sfx_notif" : preload("res://stuff/audio/SFX_Notification.wav"),
+	"sfx_sus" : preload("res://stuff/audio/SFX_Sus.wav"),
 	"sfx_eng_tired" : preload("res://stuff/audio/SFX_Tired.wav"),
 }
 

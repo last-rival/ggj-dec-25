@@ -241,66 +241,68 @@ position = Vector2(1175.9999, 590)
 rotation = 0.33796293
 texture = ExtResource("3_pjncy")
 
-[node name="decor_red" type="Node2D" parent="bg/items"]
+[node name="poisoned_cup" type="Sprite2D" parent="bg/items"]
+visible = false
+position = Vector2(1430, 837)
+texture = ExtResource("2_n3jja")
 
-[node name="red_line_2" type="Line2D" parent="bg/items/decor_red"]
+[node name="strange_flower" type="Sprite2D" parent="bg/items"]
+visible = false
+position = Vector2(634, 839)
+texture = ExtResource("3_cilnq")
+
+[node name="decor_red" type="Node2D" parent="bg"]
+position = Vector2(-960, -540)
+
+[node name="red_line_2" type="Line2D" parent="bg/decor_red"]
 points = PackedVector2Array(698, 613, 677, 523)
 width = 4.0
 default_color = Color(0.66, 0, 0, 1)
 
-[node name="red_line_6" type="Line2D" parent="bg/items/decor_red"]
+[node name="red_line_6" type="Line2D" parent="bg/decor_red"]
 points = PackedVector2Array(804, 182, 825, 362)
 width = 4.0
 default_color = Color(0.66, 0, 0, 1)
 
-[node name="red_line_5" type="Line2D" parent="bg/items/decor_red"]
+[node name="red_line_5" type="Line2D" parent="bg/decor_red"]
 points = PackedVector2Array(803, 178, 1003, 238, 828, 363, 859, 217)
 width = 4.0
 default_color = Color(0.66, 0, 0, 1)
 
-[node name="red_line_4" type="Line2D" parent="bg/items/decor_red"]
+[node name="red_line_4" type="Line2D" parent="bg/decor_red"]
 points = PackedVector2Array(499, 647, 550, 452, 610, 477)
 width = 4.0
 default_color = Color(0.66, 0, 0, 1)
 
-[node name="red_line_7" type="Line2D" parent="bg/items/decor_red"]
+[node name="red_line_7" type="Line2D" parent="bg/decor_red"]
 points = PackedVector2Array(1078, 517, 1187, 655, 1242, 655)
 width = 4.0
 default_color = Color(0.66, 0, 0, 1)
 
-[node name="red_line_3" type="Line2D" parent="bg/items/decor_red"]
+[node name="red_line_3" type="Line2D" parent="bg/decor_red"]
 points = PackedVector2Array(551, 656, 585, 611)
 width = 4.0
 default_color = Color(0.66, 0, 0, 1)
 
-[node name="red_line_8" type="Line2D" parent="bg/items/decor_red"]
+[node name="red_line_8" type="Line2D" parent="bg/decor_red"]
 points = PackedVector2Array(1175, 512, 1279, 497)
 width = 4.0
 default_color = Color(0.66, 0, 0, 1)
 
-[node name="red_line_9" type="Line2D" parent="bg/items/decor_red"]
+[node name="red_line_9" type="Line2D" parent="bg/decor_red"]
 points = PackedVector2Array(1231, 317, 1260, 201)
 width = 4.0
 default_color = Color(0.66, 0, 0, 1)
 
-[node name="red_line_10" type="Line2D" parent="bg/items/decor_red"]
+[node name="red_line_10" type="Line2D" parent="bg/decor_red"]
 points = PackedVector2Array(1206, 147, 1260, 201)
 width = 4.0
 default_color = Color(0.66, 0, 0, 1)
 
-[node name="red_line_11" type="Line2D" parent="bg/items/decor_red"]
+[node name="red_line_11" type="Line2D" parent="bg/decor_red"]
 points = PackedVector2Array(1399, 214, 1260, 201)
 width = 4.0
 default_color = Color(0.66, 0, 0, 1)
-
-[node name="poisoned_cup" type="Sprite2D" parent="bg"]
-position = Vector2(470, 297)
-texture = ExtResource("2_n3jja")
-
-[node name="strange_flower" type="Sprite2D" parent="bg"]
-visible = false
-position = Vector2(-326, 299)
-texture = ExtResource("3_cilnq")
 
 [node name="break_room" type="CanvasLayer" parent="."]
 
