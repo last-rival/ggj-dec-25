@@ -1,4 +1,100 @@
-Prudence: Hello this is Prudence.
-+ {@intro_completed == true or @energy<=0} She looks exausted, should take a break
-	{trigger break_room} You walk out to the break room#end
+A soft click breaks the silence
+Something changed.
+-> prudence_intro
+
++ {@energy >= 0} Who are you?
+	It is not a question you repeat again, once the premise has been established.
+	But something compelled me, an instinct screaming that the person in front was not the Elanor I was interviewing.
+	You : Eleanor?
+	The name slipped out before I could stop.
+	In response a smirk curled on her lips.
+	Eleanor : Are you all right detective, it seems you are confusing me for someone else?
+	She drew every word, savouring every moment, her eyes tracked my expression feeding on each flicker of confusion, each crack in my composure, she was enjoying this moment. 
+	Then answering the question that I dared not to voice, she leaned back slightly.
+	{set prudence_q2 = true}
+	{trigger energy_used(1)}
+	Prudence : My name is Prudence, it’s a pleasure to meet you detective.
+	I could not see any telltale sign of lying, and yet she was wrong.
 	<-
+
++ {prudence_q2} {@energy >= 0} Where were you at the time of death?
+	There’s a deliberate smile on her face but it never reaches her eyes. It existed out of obligation. As if she’s humoring me rather than engaging.
+	Prudence : Hmmm
+	she drags the sound out, it seems she doesn’t have much appreciation for time.
+	Prudence : I was reviewing the church accounts, making sure we had enough supplies for the month
+	{set @found_prudence_chit1 = true}
+	[i]Note - "Prudence takes care of management"
+	{@eleanor_chit2_available == false} I should present her with the information of what Eleanor said she was doing at the time of the incident.
+	+{@eleanor_chit2_available == true} {@energy >= 0} Reveal what Eleanor was doing at 3PM.
+		Her eyes scanned over the note, and slowly a sigh escaped her lips, a sigh full of disappointment.
+		When she looked up again, there was a sharpness in her gaze as her eyes narrowed upon me. The expression that she held was not of fear or anger, but rather pity.
+		Prudence: And I thought you were smarter, Detective
+		There was a softness to her voice. That made words cut deeper.
+		Prudence: To ask a question so silly
+		She emphasised on the word silly
+		Prudence: That even a toddler could answer
+		She tilted her head as she studied me, she scanned every section of my face until her expressions conveyed that she had already reached a conclusion. And it wasn’t flattering.
+		Prudence:Since you seem to be competing with dolphins when it comes to intelligence…
+		She lets the insult hang, her expressions were of one who was fully convinced that the words that have come out of her mouth were the absolute truth of the world. 
+		Prudence: I will spit it out for you
+		Prudence: We are our own people, Detective,  Elanor does what she does, I do what I do, and others…
+		An intentional pause so that I could absorb the implications of her words.
+		{set prudence_q3 = true}
+		Prudence:They do what they do…
+		<-
+	<-
++ {prudence_q3 == true} {@energy >= 0} Who are the others that you talk about?
+	She wanted me to ask that. Her face is alight with genuine excitement. What does she have in store for me?
+	Prudence: Tut, tut, tut detective
+	Prudence: Wouldn’t that be far too simple?” she says “It would spoil all the fun
+	Prudence: How about we play a game?
+	She asked and yet it was conveyed as if it was a statement.
+	Prudence: You tell me about four of us
+	Prudence: Including me
+	Prudence: And in return, I will tell you something really really nice
+	Her smile widened, victoriously.
+	I already knew I was not getting anything more out of her right now, not without paying the price that she demands. Pressing hard will only amuse her or shut her down entirely. 
+	For now playing along would be wiser.
+	{@eleanor_chit1_available == false} I should present her with the information of what Eleanor does around here.
+	+{@eleanor_chit1_available == true} {@energy >= 0} Reveal what Eleanor does around here.
+		Prudence: And IUgh
+		The moment her eyes fell on it, her expressions shifted into one who had tasted lime.
+		Prudence: Can you imagine” she said rolling her eyes “she gets to be the Abbess?
+		Prudence: When it is me who manages the finances. The rations. The supplies” She gestured dismissively. 
+		Prudence: I am the one keeping this place running”
+		It’s obvious now, she doesn’t think the Elanor deserves the position. 
+		There is an ambition in her eyes. The kind that comes from believing the role was stolen from you. Prudence sees herself as the more capable one, the only right choice. 
+		I doubt that they get along. 
+		Prudence: Frankly
+		she continues, voice edged with disdain.
+		Prudence: All she does is to tell others what to do
+		A scoff.
+		Prudence: That’s it, that’s all she does
+		{set @found_eleanor_chit3 = true}
+		[i]Note - "Eleanor only prays and designates tasks"
+		{set @found_eleanor_dossier_1 = true}
+		[i]Dossier Unlocked "Eleanor" - All information about Eleanor is revealed.
+		<-
+	<-
+
++ {@prudence_chit2_available == true} {@energy >= 0} Why did you source the flower?
+	You : 
+	Body
+	<-
+
++ {@energy <= 0} She looks exausted, maybe we should take a break.
+	{trigger break_room}[i]You pause the recorder walk out to the innterogation room#end
+	<-
+
++ {@break_room_unlocked} {@energy > 0} Lets take and break and asses the information we have gathered.
+	{trigger break_room}[i]You pause the recorder walk out to the innterogation room.#end
+	<-
+
+
+== prudence_intro
+{prudence_drink == false}I noticed it the moment I looked at her again. 
+{prudence_drink == false}The woman across the table no longer feels… warm, the kindness, the grief softened eyes… they were missing. In its place was something colder and sharper.
+{prudence_drink == false}She snatched the water from my hand, and downed it in a single go, not breaking eye contact until the glass was empty.
+{prudence_drink == false}The dynamics between us feels different. Earlier when I felt I was in control, now I was not that sure. 
+{set prudence_drink = true}
+<-

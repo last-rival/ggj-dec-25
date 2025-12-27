@@ -17,6 +17,7 @@ A soft click breaks the silence
 	So she was the leader of the Nuns or nun in this church’s case
 	{set @eleanor_name = true}
 	{set @found_eleanor_chit_1 = true}
+	{set @break_room_unlocked = true}
 	[i]Note - "Eleanor is the Abbess"
 	<-
 
@@ -107,6 +108,9 @@ A soft click breaks the silence
 	[i]Note - "Briar takes care of Kitchen and Garden"
 	<-
 
-+ {@eleanor_chit_1_available or @energy<=0} Lets take and break and asses the information we have gathered.
++ {@energy <= 0}She looks exausted, maybe we should take a break.
+	{trigger break_room}[i]You pause the recorder walk out to the innterogation room#end
+	<-
++ {@break_room_unlocked} {@energy > 0} Lets take and break and asses the information we have gathered.
 	{trigger break_room}[i]You pause the recorder walk out to the innterogation room.#end
 	<-

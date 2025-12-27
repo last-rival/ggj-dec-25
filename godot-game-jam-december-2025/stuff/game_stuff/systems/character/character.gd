@@ -49,6 +49,17 @@ func set_expression(char_id: String, exp_id : String) -> void:
 
 	exp_node.show()
 
+func set_expression_solo(char_id: String, exp_id : String) -> void:
+	var char_node = characters[char_id]
+	if char_node == null:
+		return
+
+	var exp_node = char_node.get_node(exp_id)
+	if exp_node == null:
+		return
+
+	exp_node.show()
+
 
 func shuffle_active_character() -> void:
 	var start_energy = GameData.current_energy

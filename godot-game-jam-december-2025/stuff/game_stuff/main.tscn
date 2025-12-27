@@ -29,6 +29,14 @@ script = ExtResource("7_debug_energy")
 
 [node name="break_room" parent="." instance=ExtResource("4_3l2cm")]
 
+[node name="break_description_panel" parent="break_room/break_room" index="1"]
+offset_left = -508.0
+offset_right = 484.0
+
+[node name="break_description" parent="break_room/break_room/break_description_panel" index="0"]
+theme_override_font_sizes/normal_font_size = 40
+text = "Click on items to carry or remove them for innterogation."
+
 [node name="innterogation_room" parent="." instance=ExtResource("9_c0q6h")]
 
 [node name="BG" parent="innterogation_room" index="0"]

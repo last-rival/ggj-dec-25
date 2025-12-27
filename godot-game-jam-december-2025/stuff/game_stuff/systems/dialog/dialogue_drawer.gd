@@ -10,6 +10,7 @@ signal set_switch(chances:Array)
 signal set_bgm(key:Array)
 signal set_sfx(key:Array)
 signal set_expr(keys:Array)
+signal set_expr_solo(keys:Array)
 
 const SPEAKER_RESOURCES_FOLDER: String = "res://stuff/game_stuff/speakers/"
 
@@ -344,6 +345,9 @@ func _on_event_triggered(event_name: String, params: Array) -> void:
 		
 	if event_name == "set_expr":
 		set_expr.emit(params)
+	
+	if event_name == "set_expr_solo":
+		set_expr_solo.emit(params)
 
 
 func _handle_active_check(skill, level) -> void:
