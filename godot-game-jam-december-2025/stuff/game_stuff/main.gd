@@ -3,7 +3,7 @@ extends Node3D
 @onready var _dialogue_drawer = $HUD/DialogueDrawer
 @onready var _character = $innterogation_room/BG/Character
 
-@onready var break_room: Node2D = $break_room;
+@onready var break_room = $break_room;
 @onready var break_room_hud: CanvasLayer = $break_room/break_room;
 @onready var innterogation_room : Node2D = $innterogation_room;
 @onready var hud : CanvasLayer = $HUD;
@@ -16,6 +16,8 @@ func _ready() -> void:
 	_dialogue_drawer.connect("break_room",on_break_room_trigger)
 	_dialogue_drawer.connect("energy_used", on_energy_use_trigger)
 	_dialogue_drawer.connect("set_switch", on_set_switch_trigger)
+
+	break_room.connect("exit_break_room", on_break_room_exit_pressed)
 
 	# Add clue items to inventory
 	# Load specific character clues
@@ -100,13 +102,16 @@ func _on_dialogue_drawer_dialogue_ended() -> void:
 func _on_game_demo_pressed() -> void:
 	_start_dialogue()
 
+
 func _start_dialogue() -> void:
 	_dialogue_drawer.show()
 	_dialogue_drawer.start_conversation()
 	is_dialogue_running = true
 
+
 func on_break_room_trigger() -> void:
 	can_visit_break_room=true;
+
 
 func _on_dialogue_drawer_active_check_started() -> void:
 	$HUD/ActiveCheckAnimation.show()
@@ -120,9 +125,8 @@ func _on_restart_scene_button_pressed() -> void:
 	get_tree().reload_current_scene()
 
 
-func _on_exit_break_room_pressed() -> void:
+func on_break_room_exit_pressed() -> void:
 	load_innterogation_room()
-
 
 func change_active_character() -> void:
 	var intro_completed = GameData.get_variable("intro_completed");

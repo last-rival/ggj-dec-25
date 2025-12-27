@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://ckyk7e3k3nyb6"]
+[gd_scene load_steps=21 format=3 uid="uid://ckyk7e3k3nyb6"]
 
 [ext_resource type="Texture2D" uid="uid://bd0hwn3h5j2am" path="res://stuff/art/rooms/break_room.png" id="1_3k7g7"]
+[ext_resource type="Script" uid="uid://bdv6r4phwqndh" path="res://stuff/game_stuff/scene/break_room.gd" id="1_ndtvm"]
 [ext_resource type="Texture2D" uid="uid://bh73qvfxa05ya" path="res://stuff/art/items/cup.png" id="2_n3jja"]
-[ext_resource type="PackedScene" uid="uid://c5ql7aee5i1nl" path="res://stuff/game_stuff/inventory/item_detail_popup.tscn" id="3_8gb0s"]
+[ext_resource type="PackedScene" path="res://stuff/game_stuff/inventory/item_detail_popup.tscn" id="3_8gb0s"]
 [ext_resource type="Texture2D" uid="uid://l2i5r3fc42dv" path="res://stuff/art/items/flower.png" id="3_cilnq"]
 [ext_resource type="Texture2D" uid="uid://boiql1p6jqdec" path="res://stuff/art/items/chit_1_unlock.png" id="3_cmikf"]
 [ext_resource type="Texture2D" uid="uid://dude23l3lxwwa" path="res://stuff/art/items/doss_unlock.png" id="3_k43ay"]
@@ -88,6 +89,7 @@ corner_radius_bottom_left = 4
 corner_detail = 1
 
 [node name="break_room" type="Node2D"]
+script = ExtResource("1_ndtvm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -118,16 +120,6 @@ bbcode_enabled = true
 text = "TO DO LIST? TUTORIAL PANEL?"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="exit_break_room" type="Button" parent="break_room"]
-offset_left = 61.0
-offset_top = 101.0
-offset_right = 292.0
-offset_bottom = 220.0
-theme_override_font_sizes/font_size = 32
-text = "Return to Interrogation Room"
-autowrap_mode = 3
-icon_alignment = 1
 
 [node name="interactables" type="PanelContainer" parent="break_room"]
 anchors_preset = 15
@@ -430,6 +422,7 @@ grow_vertical = 1
 metadata/_edit_lock_ = true
 
 [node name="fade" type="PanelContainer" parent="break_room"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -440,3 +433,15 @@ metadata/_edit_lock_ = true
 
 [node name="InventoryUI" parent="break_room" instance=ExtResource("6_fud7x")]
 metadata/_edit_lock_ = true
+
+[node name="exit_room" type="Button" parent="break_room"]
+offset_left = 60.0
+offset_top = 100.0
+offset_right = 290.0
+offset_bottom = 220.0
+theme_override_font_sizes/font_size = 32
+text = "Return to 
+Interrogation
+Room"
+
+[connection signal="pressed" from="break_room/exit_room" to="." method="_on_exit_room_pressed"]

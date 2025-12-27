@@ -1,4 +1,4 @@
---
--- This is just a test file showing some of clydes feature
---
 Chell: Hello this is Chell.
++ {@intro_completed == true or @energy<=0} She looks exausted, should take a break
+	{trigger break_room} You walk out to the break room#end
+	<-
