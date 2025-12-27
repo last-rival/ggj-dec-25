@@ -77,9 +77,81 @@ Something changed.
 		<-
 	<-
 
-+ {@prudence_chit2_available == true} {@energy >= 0} Why did you source the flower?
-	You : 
-	Body
++ {@prudence_chit2_available == true} {@energy >= 0} Reveal that you know she can source restrictive items.
+	She looked at the note, her expressions turning into one of seriousness.
+	Prudence : Detective I hope you are careful with your next words
+	You : Why did you source those dangerous flower?
+	Anger flashed across her face. 
+	It’s the first time since the interview began that Prudence was not the one in control. This time the balance was in my favor. 
+	Prudence : It was Briar who told you this, wasn’t it?
+	She snaps.
+	There was venom in her tone. Betrayal written all over her face. 
+	And then she laughed.
+	Prudence : Hahahaha
+	It was a mocking, hollow laugh.
+	Prudence : As if that would save her” Prudence sneered. “She thinks pushing this on me somehow absolves her?
+	It seems she is trying to steer my suspicion towards Briar. 
+	She leaned forward as she spoke her next words.
+	Prudence : All she ever cared about was her precious little garden where she grew the flower
+	She let the words hang between us so that I could absorb the implication of her words.
+	Prudence : And her precious little girl Chell who keeps running after flowers
+	It was the first time when I have gotten something out of her that could be a major clue for solving this case. 
+	But she still has not answered the question. 
+	She looked at my face as she could see the expressions of anticipation written all over it. 
+	Prudence : You still want the answer detective?
+	She asked me after folding her arms, even though she knows that I am still sitting here for the same.
+	Prudence : Well, even I am not privy to the working of the Priests' ways
+	She finally replied.
+	Prudence : He asked of me, and so I sourced it
+	But why, why will she still listen to the priest.
+	{set prudence_q5 = true}
+	{trigger set_switch(1,1,1,1,0)}
+	{set @found_chell_chit2 = false}
+	[i]Note - "Chell is fond of flowers".
+	{set @found_briar_chit3 = true}
+	[i]Note - "Briar grew the flower".
+	{set @found_briar_dossier_1 = true}
+	[i]Dossier Unlocked "Briar" - All information about Briar is revealed.
+	<-
+
++ {prudence_q5 == true} {@energy >= 0} Why did you listen to the priest?
+	She looked at me the way one would look at something beneath notice
+	And yet, earlier I would have read this expression as simple disdain, contempt for someone she deemed inferior, but now, now when I see it again, I realise how wrong I was.
+	I dreaded the answer before she gave it.
+	Prudence : Because that’s all I could do
+	She whispered.
+	The words barely left her mouth.
+	And yet I understood them clearly.
+	I didn’t push further.
+	Because the fear on her face told me everything.
+	She sought control wherever she could find, because it was something she has never been allowed to have in her own life.
+	{set @found_prudence_chit3 = true}
+	[i]Note - "Prudence is scared of the Priest".
+	{set @found_prudence_dossier_1 = true}
+	[i]Dossier Unlocked "Prudence" - All information about Prudence is revealed
+	+{@prudence_dossier_1_available == true}{@chell_dossier_1_available == true}{@eleanor_dossier_1_available == true}{@briar_dossier_1_available == true} Reveal that you know everything about all of them.
+		I laid all four dossiers on the table.
+		One by one she went through each of them. 
+		Prudence : Ahh finally
+		Prudence exclaimed.
+		Prudence : Took you long enough though
+		Prudence : But I suppose you are not as dumb as I supposed you to be
+		She finally conceded. 
+		The smile on her face was unmistakable.
+		She was back to her previous self, which I was appreciative of. 
+		Prudence : Well as I promised
+		She continued
+		Her fingers tapping the table
+		Prudence : detective your clue…
+		She leaned in as she whispered the next words.
+		Prudence : Briar has a secret shelf
+		She says, and then she winked at me
+		Prudence : That is where she keeps all the ingredients
+		Prudence : If the flower went into the tea, then it would have come from there
+		She finally concluded. 
+		{set @found_end_game = true}
+		[i] Note - "Briar Secret shelf"
+		<-
 	<-
 
 + {@energy <= 0} She looks exausted, maybe we should take a break.
