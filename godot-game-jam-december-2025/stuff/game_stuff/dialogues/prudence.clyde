@@ -186,11 +186,13 @@
 	<-
 
 + {@energy <= 0} She looks exausted, maybe we should take a break.
-	{trigger break_room}[i]You pause the recorder walk out to the innterogation room#end
+	{trigger set_expr("prudence","No_Energy")}
+	{trigger set_expr_solo("prudence","Sweat")}
+	{trigger break_room}[i]You head out to the break room#end
 	<-
 
 + {@break_room_unlocked} {@energy > 0} Lets take and break and asses the information we have gathered.
-	{trigger break_room}[i]You pause the recorder walk out to the innterogation room.#end
+	{trigger break_room}[i]You head out to the break room.#end
 	<-
 
 
