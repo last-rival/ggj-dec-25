@@ -1,4 +1,68 @@
-Rachel: Hello this is Rachel.
-+ {@intro_completed == true or @energy<=0} She looks exausted, should take a break
-	{trigger break_room} You walk out to the break room#end
-	<-
+The words barely left my mouth before she broke. 
+Rachel : I am sorry
+The nun collapsed inwards, her sobs tore free as if they had been waiting just beneath the surface.
+Rachel : I am sorry…
+Rachel : I am sorry…
+She repeated it over and over again, as the words tumbled over each other.
+Her eyes were flooded with tears, her face was one of repentance. She pressed her hands into her face as if to hide her pain from the world. 
+Rachel : I didn’t want this to happen
+she cried
+Rachel : I was just trying to make some tea for Eleanor…
+The apology came again.
+Rachel : I am so sorry…
+For the last interrogation. 
+You : For the record, can you introduce yourself?
+I asked the question one final time.
+Rachel : My name
+Rachel : Is Rachell
+
+You : Rachell
+I say carefully
+Rachel : Do you know who killed the Priest?
+
+The question that has been haunting me the moment I stepped into the interrogation room. I finally voiced it. 
+
+She looked down, tears welling in her eyes. 
+Rachel : It was me
+she whispered.
+Rachel : I killed him
+she repeated as if repetition helped her come to terms with it.
+Rachel : I am so sorry
+she repeated her apology. 
+Rachel : I didn’t want to kill him – he just died
+Her gaze never left me.
+
+You : Rachell
+I called her, as she finally raised her head
+You : Can you tell me what happened?
+I asked her the final question.
+Rachel : I- I just wanted to help Eleanor
+she begins
+Rachel : she was feeling sick, and so I thought I would make her some tea
+her voice cracked, and yet she persisted
+Rachel : So-o, I asked Prudence for help
+Rachel : She told me where Briar keeps her ingredients… about her secret shelf
+Rachel : I took them from their
+Rachel : And decided to make floral tea
+A breath.
+A picture started to finally take a shape in my mind.  
+Rachel : The moment i was almost done, he-e walked into the kitchen, demanding where his tea was?
+Her hands clenched.
+Rachel : I panicked, so I handed him the cup that I had brewed
+Her voice faltered.
+Rachel : The moment he drank it… foam came out of his mouth
+Her expression turned into one of distraught.
+Rachel : An-d then.. he fell
+The room fell into silence. 
+The whole picture was finally clear to me. 
+You : Was the flower you used to make tea a purple one?
+She didn’t answer.
+All she did was nod, and then the tears came again. 
+The room was filled once more with the sound of weeping. 
+And all she could do was repeat the same words again and again.
+Rachel : I-it was all my fault
+I shook my head.
+You : It was nobody’s fault
+The words don’t erase what happened.
+But sometimes, some things are just supposed to happen the way they did
+{trigger set_end_game}

@@ -110,12 +110,14 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="DebugInfo" type="Label" parent="."]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "E: 5 | Exh: false"
 horizontal_alignment = 1
 
 [node name="DebugButtons" type="HBoxContainer" parent="."]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 10

@@ -70,6 +70,7 @@ Finally I steadied myself and asked the question I never expected to ask so many
 
 + {chell_q5 == true}{@energy >= 0} What is the lullaby?
 	Chell looked up at me, there was an excitement in her tone. 
+	{trigger energy_used(1)}
 	Chell : Ohhh, you know about it! Our mother used to sing it
 	she said with excitement, and then she scrunched her brow as if trying to remember something hard. Yet all she drew was a blank.
 	Chell : Probably
@@ -78,15 +79,19 @@ Finally I steadied myself and asked the question I never expected to ask so many
 	again she started humming. 
 	And yet I didn’t hear any Lullaby.
 	Suddenly there was a switch, a change in demeanor, no more the person sitting in front of me was not Chell. Rather it was the first person I had met, when I entered this interrogation room.
-	“It seems you have earned the faith of everyone here, detective” Eleanor stated. Her back was regal just like how it was before.
-	“I will tell you the clue for calling the youngest” Eleanor stated.
-	“Well, here’s how it goes” 
-	“Hush now little flower of the night,
-	Five violet petals folded tight, 
-	Born where light dares not stay, 
-	Under the stars that fade away” 
+	Chell : It seems you have earned the faith of everyone here, detective Eleanor stated. Her back was regal just like how it was before.
+	Eleanor : I will tell you the clue for calling the youngest
+	Eleanor stated.
+	Chell : Well, here’s how it goes
+	Chell : Hush now little flower of the night
+		Five violet petals folded tight
+		Born where light dares not stay, 
+		Under the stars that fade away”
 	She sang the final clue. 
-	“I will pray for you detective” 
+	Chell : “I will pray for you detective”
+	{trigger set_switch(0,0,0,0,1)} 
+	{set @found_lullaby = true}
+	[i] Note - "Chell's Lullaby"
 	<-
 
 + {@energy <= 0}She looks exausted, maybe we should take a break.
