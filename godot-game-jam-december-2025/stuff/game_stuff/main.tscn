@@ -22,11 +22,8 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6cyta"]
 
-[node name="main" type="Node3D" node_paths=PackedStringArray("break_room", "innterogation_room", "hud")]
+[node name="main" type="Node3D"]
 script = ExtResource("1_0xm2m")
-break_room = NodePath("break_room/break_room")
-innterogation_room = NodePath("innterogation_room/innterogation_room")
-hud = NodePath("HUD")
 
 [node name="DebugInventory" type="Node" parent="."]
 script = ExtResource("6_debug_inv")
@@ -37,23 +34,9 @@ script = ExtResource("7_debug_energy")
 [node name="break_room" parent="." instance=ExtResource("4_3l2cm")]
 
 [node name="innterogation_room" parent="." instance=ExtResource("9_c0q6h")]
-position = Vector2(-10, 0)
 
-[node name="character" parent="innterogation_room/innterogation_room/bg" index="0" node_paths=PackedStringArray("characters")]
-characters = {
-"briar": NodePath("briar"),
-"chell": NodePath("chell"),
-"eleanor": NodePath("eleanor"),
-"prudence": NodePath("prudence"),
-"rachel": NodePath("rachel")
-}
-
-[node name="briar" parent="innterogation_room/innterogation_room/bg/character" index="0"]
-offset_top = 21.0
-offset_bottom = 21.0
-
-[node name="eleanor" parent="innterogation_room/innterogation_room/bg/character" index="2"]
-visible = false
+[node name="BG" parent="innterogation_room" index="0"]
+position = Vector2(960, 538)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -149,7 +132,6 @@ texture = ExtResource("6_tiyvg")
 expand_mode = 1
 stretch_mode = 6
 
-[connection signal="pressed" from="break_room/break_room/bg/exit_break_room" to="." method="_on_exit_break_room_pressed"]
 [connection signal="active_check_ended" from="HUD/DialogueDrawer" to="." method="_on_dialogue_drawer_active_check_ended"]
 [connection signal="dialogue_ended" from="HUD/DialogueDrawer" to="." method="_on_dialogue_drawer_dialogue_ended"]
 [connection signal="pressed" from="HUD/start_interrogation" to="." method="_on_game_demo_pressed"]
@@ -157,4 +139,9 @@ stretch_mode = 6
 
 [editable path="break_room"]
 [editable path="innterogation_room"]
-[editable path="innterogation_room/innterogation_room/bg/character"]
+[editable path="innterogation_room/BG/Character"]
+[editable path="innterogation_room/BG/Character/Briar"]
+[editable path="innterogation_room/BG/Character/Chell"]
+[editable path="innterogation_room/BG/Character/Eleanor"]
+[editable path="innterogation_room/BG/Character/Prudence"]
+[editable path="innterogation_room/BG/Character/Rachel"]

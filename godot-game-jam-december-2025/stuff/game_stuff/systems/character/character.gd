@@ -1,6 +1,13 @@
 extends Panel
 
-@export var characters:Dictionary[String,MarginContainer];
+@onready var characters:Dictionary[String,Node2D] = {
+	GameData.BRIAR_KEY:$Briar,
+	GameData.CHELL_KEY:$Chell,
+	GameData.ELEANOR_KEY:$Eleanor,
+	GameData.PRUDENCE_KEY:$Prudence,
+	GameData.RACHEL_KEY:$Rachel,
+}
+
 @export var default_character:String=GameData.ELEANOR_KEY;
 @onready var random = RandomNumberGenerator.new()
 

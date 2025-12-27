@@ -3,13 +3,13 @@ extends Node3D
 @onready var _dialogue_drawer = $HUD/DialogueDrawer
 @onready var _character = $innterogation_room/innterogation_room/bg/character
 
-@export var break_room : CanvasLayer;
-@export var innterogation_room : CanvasLayer;
-@export var hud : CanvasLayer;
-
+@onready var break_room: Node2D = $break_room;
+@onready var break_room_hud: CanvasLayer = $break_room/break_room;
+@onready var innterogation_room : Node2D = $innterogation_room;
+@onready var hud : CanvasLayer = $HUD;
 
 var is_dialogue_running: bool = false
-
+var can_visit_break_room:bool = false;
 
 func _ready() -> void:
 	_dialogue_drawer.hide()
@@ -67,11 +67,13 @@ func load_innterogation_room() -> void:
 	innterogation_room.show();
 	hud.show();
 	break_room.hide();
-	change_active_character()
+	break_room_hud.hide();
+	change_active_character();
 
 
 func load_break_room() -> void:
 	break_room.show();
+	break_room_hud.show();
 	innterogation_room.hide();
 	hud.hide();
 
@@ -103,7 +105,6 @@ func _start_dialogue() -> void:
 	_dialogue_drawer.start_conversation()
 	is_dialogue_running = true
 
-var can_visit_break_room:bool=false;
 func on_break_room_trigger() -> void:
 	can_visit_break_room=true;
 

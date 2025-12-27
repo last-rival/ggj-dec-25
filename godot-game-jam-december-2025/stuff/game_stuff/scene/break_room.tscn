@@ -4,20 +4,13 @@
 
 [node name="break_room" type="Node2D"]
 
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_3k7g7")
+
 [node name="break_room" type="CanvasLayer" parent="."]
 
-[node name="bg" type="TextureRect" parent="break_room"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_3k7g7")
-expand_mode = 1
-stretch_mode = 6
-
-[node name="break_description_panel" type="PanelContainer" parent="break_room/bg"]
-layout_mode = 1
+[node name="break_description_panel" type="PanelContainer" parent="break_room"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -30,7 +23,7 @@ offset_bottom = 95.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="break_description" type="RichTextLabel" parent="break_room/bg/break_description_panel"]
+[node name="break_description" type="RichTextLabel" parent="break_room/break_description_panel"]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
@@ -38,8 +31,7 @@ text = "Return to the investigation once you have gathered the required informat
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="exit_break_room" type="Button" parent="break_room/bg"]
-layout_mode = 1
+[node name="exit_break_room" type="Button" parent="break_room"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

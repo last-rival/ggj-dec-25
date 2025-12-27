@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5bd4yno55slk"]
+[gd_scene load_steps=8 format=3 uid="uid://ivff25g7tlui"]
 
-[ext_resource type="Script" uid="uid://cki74gneqenum" path="res://stuff/game_stuff/systems/character/alter.gd" id="1_1yvdq"]
+[ext_resource type="Script" uid="uid://c8dc2s1vqggca" path="res://stuff/game_stuff/systems/character/character.gd" id="1_1yvdq"]
 [ext_resource type="PackedScene" uid="uid://dat6b3oancqgw" path="res://stuff/game_stuff/alter_scenes/rachel.tscn" id="2_1yvdq"]
 [ext_resource type="PackedScene" uid="uid://lqcn7ptx0hlc" path="res://stuff/game_stuff/alter_scenes/chell.tscn" id="3_le4y5"]
 [ext_resource type="PackedScene" uid="uid://do40wjbxm4arh" path="res://stuff/game_stuff/alter_scenes/prudence.tscn" id="4_0pfeu"]
@@ -9,7 +9,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uacqm"]
 
-[node name="Character" type="Panel" node_paths=PackedStringArray("characters")]
+[node name="Character" type="Panel"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,34 +18,67 @@ grow_vertical = 2
 pivot_offset = Vector2(960, 540)
 theme_override_styles/panel = SubResource("StyleBoxEmpty_uacqm")
 script = ExtResource("1_1yvdq")
-characters = {
-"brair": NodePath("Briar"),
-"chell": NodePath("Chell"),
-"eleanor": NodePath("Eleanor"),
-"prudence": NodePath("Prudence"),
-"rachel": NodePath("Rachel")
-}
 
-[node name="Rachel" parent="." instance=ExtResource("2_1yvdq")]
+[node name="Briar" parent="." instance=ExtResource("4_1yvdq")]
 visible = false
-position = Vector2(960, 497)
+position = Vector2(960, 512)
+
+[node name="Neutral_02" parent="Briar" index="6"]
+visible = true
+
+[node name="Upset_02" parent="Briar" index="18"]
+visible = false
+
+[node name="Sweat" parent="Briar" index="26"]
+visible = false
 
 [node name="Chell" parent="." instance=ExtResource("3_le4y5")]
 visible = false
 position = Vector2(960, 540)
 
-[node name="Briar" parent="." instance=ExtResource("4_1yvdq")]
-position = Vector2(960, 512)
+[node name="Neutral_01" parent="Chell" index="4"]
+visible = true
+
+[node name="No_Energy" parent="Chell" index="14"]
+visible = false
+
+[node name="Sweat" parent="Chell" index="15"]
+visible = false
+
+[node name="Eleanor" parent="." instance=ExtResource("5_i6xxb")]
+position = Vector2(960, 540)
+
+[node name="Neutral_02" parent="Eleanor" index="10"]
+visible = true
+
+[node name="No_Energy" parent="Eleanor" index="21"]
+visible = false
+
+[node name="Sweat" parent="Eleanor" index="22"]
+visible = false
 
 [node name="Prudence" parent="." instance=ExtResource("4_0pfeu")]
 visible = false
 position = Vector2(960, 540)
 
-[node name="Eleanor" parent="." instance=ExtResource("5_i6xxb")]
-position = Vector2(960, 540)
+[node name="Neutral_01" parent="Prudence" index="4"]
+visible = true
 
-[editable path="Rachel"]
-[editable path="Chell"]
+[node name="Caught_01" parent="Prudence" index="14"]
+visible = false
+
+[node name="Sweat" parent="Prudence" index="22"]
+visible = false
+
+[node name="Rachel" parent="." instance=ExtResource("2_1yvdq")]
+visible = false
+position = Vector2(960, 497)
+
+[node name="Tears" parent="Rachel" index="11"]
+visible = false
+
 [editable path="Briar"]
-[editable path="Prudence"]
+[editable path="Chell"]
 [editable path="Eleanor"]
+[editable path="Prudence"]
+[editable path="Rachel"]
