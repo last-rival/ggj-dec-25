@@ -19,6 +19,10 @@
 
 [node name="Chell" type="Node2D"]
 
+[node name="Neutral_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("5_wn26s")
+
 [node name="For_Me_01" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("1_e5tvi")
@@ -34,10 +38,6 @@ texture = ExtResource("3_uda1p")
 [node name="Happy_02" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("4_ltvih")
-
-[node name="Neutral_01" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("5_wn26s")
 
 [node name="Neutral_02" type="Sprite2D" parent="."]
 visible = false

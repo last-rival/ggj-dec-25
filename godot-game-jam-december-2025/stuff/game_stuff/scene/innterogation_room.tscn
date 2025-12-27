@@ -17,10 +17,14 @@ offset_bottom = -511.0
 scale = Vector2(0.68, 0.68)
 
 [node name="Briar" parent="BG/Character" index="0"]
+visible = true
 position = Vector2(960, 531.1765)
 
 [node name="Chell" parent="BG/Character" index="1"]
 position = Vector2(960, 547.35297)
+
+[node name="Eleanor" parent="BG/Character" index="2"]
+visible = false
 
 [node name="Rachel" parent="BG/Character" index="4"]
 position = Vector2(960, 482.64713)

@@ -26,6 +26,10 @@
 
 [node name="Eleanor" type="Node2D"]
 
+[node name="Neutral_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("11_5r2uf")
+
 [node name="Happy_01" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("1_ek63v")
@@ -65,10 +69,6 @@ texture = ExtResource("9_hllib")
 [node name="Neutral_01" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("10_6r3yn")
-
-[node name="Neutral_02" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("11_5r2uf")
 
 [node name="Neutral_03" type="Sprite2D" parent="."]
 visible = false

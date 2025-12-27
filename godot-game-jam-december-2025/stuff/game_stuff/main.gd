@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var _dialogue_drawer = $HUD/DialogueDrawer
-@onready var _character = $innterogation_room/BG/Character
+@onready var _character : CharacterAlter = $innterogation_room/BG/Character
 
 @onready var break_room = $break_room;
 @onready var break_room_hud: CanvasLayer = $break_room/break_room;
@@ -19,6 +19,7 @@ func _ready() -> void:
 	_dialogue_drawer.connect("set_switch", on_set_switch_trigger)
 	_dialogue_drawer.connect("set_bgm",on_bgm_set)
 	_dialogue_drawer.connect("set_sfx",on_sfx_set)
+	_dialogue_drawer.connect("set_expr",on_expression_set)
 
 	break_room.connect("exit_break_room", on_break_room_exit_pressed)
 
@@ -171,6 +172,14 @@ func on_sfx_set(keys:Array) -> void:
 
 	var key = keys[0]
 	audio_manager.play_sfx(key)
+
+func on_expression_set(keys:Array):
+	if keys == null || keys.size() != 2:
+		return
+
+	var char_id = keys[0]
+	var exp_id = keys[1]
+	_character.set_expression(char_id,exp_id)
 
 # TODO : Updated the game to load different conversation files based on the active character.
 # The way this will work is you carry on a conversation, the character runs of energy and then you enter break room

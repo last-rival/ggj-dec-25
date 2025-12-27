@@ -30,6 +30,10 @@
 
 [node name="Briar" type="Node2D"]
 
+[node name="Neutral_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("7_hbdc3")
+
 [node name="Smile_01" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("1_8k31g")
@@ -53,10 +57,6 @@ texture = ExtResource("5_fcnh1")
 [node name="Neutral_01" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("6_oqfl7")
-
-[node name="Neutral_02" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("7_hbdc3")
 
 [node name="Neutral_03" type="Sprite2D" parent="."]
 visible = false

@@ -15,12 +15,12 @@
 
 [node name="Rachel" type="Node2D"]
 
+[node name="Neutral_02" type="Sprite2D" parent="."]
+texture = ExtResource("2_tsyqt")
+
 [node name="Neutral_01" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("1_5c4gg")
-
-[node name="Neutral_02" type="Sprite2D" parent="."]
-texture = ExtResource("2_tsyqt")
 
 [node name="Sorry_01" type="Sprite2D" parent="."]
 visible = false

@@ -7,8 +7,9 @@ signal active_check_ended
 signal break_room
 signal energy_used(amount:int)
 signal set_switch(chances:Array)
-signal set_bgm(chances:Array)
-signal set_sfx(chances:Array)
+signal set_bgm(key:Array)
+signal set_sfx(key:Array)
+signal set_expr(keys:Array)
 
 const SPEAKER_RESOURCES_FOLDER: String = "res://stuff/game_stuff/speakers/"
 
@@ -340,6 +341,9 @@ func _on_event_triggered(event_name: String, params: Array) -> void:
 	
 	if event_name == "set_sfx":
 		set_sfx.emit(params)
+		
+	if event_name == "set_expr":
+		set_expr.emit(params)
 
 
 func _handle_active_check(skill, level) -> void:

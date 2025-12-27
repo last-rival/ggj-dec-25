@@ -26,6 +26,10 @@
 
 [node name="Prudence" type="Node2D"]
 
+[node name="Neutral_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("5_vq0c1")
+
 [node name="Happy_01" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("1_0v48x")
@@ -41,10 +45,6 @@ texture = ExtResource("3_oqj20")
 [node name="Relief_02" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("4_1qgdj")
-
-[node name="Neutral_01" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("5_vq0c1")
 
 [node name="Neutral_02" type="Sprite2D" parent="."]
 visible = false

@@ -37,9 +37,6 @@ position = Vector2(960, 538)
 [node name="Chell" parent="innterogation_room/BG/Character" index="1"]
 visible = true
 
-[node name="Eleanor" parent="innterogation_room/BG/Character" index="2"]
-visible = false
-
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="DialogueDrawer" parent="HUD" instance=ExtResource("1_ig7tw")]

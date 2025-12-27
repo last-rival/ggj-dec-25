@@ -1,4 +1,5 @@
 extends Panel
+class_name CharacterAlter
 
 @onready var characters:Dictionary[String,Node2D] = {
 	GameData.BRIAR_KEY:$Briar,
@@ -12,23 +13,45 @@ extends Panel
 @onready var random = RandomNumberGenerator.new()
 
 func _ready() -> void:
-	set_character(default_character)
+	set_character(default_character, true)
 
-
-func set_character(character:String) -> void:
+func set_character(character:String,rest_pose : bool) -> void:
 	GameData.active_character = character;
 	for key in characters:
 		characters[key].hide();
 	
-	characters[character].show();
+	var char_node = characters[character]
+	char_node.show()
+	
+	if rest_pose == false:
+		return
+
+	var childCount = char_node.get_child_count()
+	for i in range(childCount):
+		char_node.get_child(i).hide()
+
+	char_node.get_child(0).show()
+	return
 
 
-func set_expression() -> void:
-	#TODO : 
-	pass
+func set_expression(char_id: String, exp_id : String) -> void:
+	var char_node = characters[char_id]
+	if char_node == null:
+		return
+
+	var exp_node = char_node.get_node(exp_id)
+	if exp_node == null:
+		return
+
+	var childCount = char_node.get_child_count()
+	for i in range(childCount):
+		char_node.get_child(i).hide()
+
+	exp_node.show()
 
 
 func shuffle_active_character() -> void:
+	var start_energy = GameData.current_energy
 	if GameData.current_energy <= 0:
 		print("Max energy replished to  " + str(GameData.MAX_ENERGY));
 		GameData.set_energy(GameData.MAX_ENERGY)
@@ -74,10 +97,13 @@ func shuffle_active_character() -> void:
 			break;
 
 	if selected_character == active_character:
+		if start_energy < GameData.current_energy:
+			set_character(selected_character, true)
+
 		print("Skipping character selection due to missed roll, set character is " + selected_character);
 		return;
 
-	set_character(selected_character);
+	set_character(selected_character, true);
 	GameData.set_energy(GameData.MAX_ENERGY)
 
 	print("Setting character to " + selected_character);

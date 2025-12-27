@@ -13,10 +13,6 @@ A soft click breaks the silence.
 	So she was the leader of the Nuns or nun in this church’s case
 	{set @eleanor_name = true}
 	{set @found_eleanor_chit_1 = true}
-	{set @found_eleanor_chit_2 = true}
-	{set @found_eleanor_chit_2 = true}
-	{set @found_eleanor_chit_3 = true}
-	{set @found_briar_chit_3 = true}
 	Inventory : Item Received [i]Eleanor Chit Abbess
 	<-
 
@@ -27,6 +23,7 @@ A soft click breaks the silence.
 	Eleanor: May God rest his soul
 	{set eleanor_q3 = true}
 	{set @found_eleanor_chit_2 = true}
+	{trigger set_expr("eleanor","Upset_01")}
 	The prayer wasn’t performative, it was honest and that somehow made the scent of mold far more prominent. 
 	<-
 
