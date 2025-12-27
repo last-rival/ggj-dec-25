@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://djj8eqayat207" path="res://stuff/game_stuff/energy/energy_variable_master_sheet.gd" id="7_debug_energy"]
 [ext_resource type="PackedScene" uid="uid://bwp7mc2amlsvw" path="res://stuff/game_stuff/energy/energy_ui.tscn" id="7_energy"]
 [ext_resource type="PackedScene" uid="uid://dc3q0aepimx7t" path="res://stuff/game_stuff/scene/innterogation_room.tscn" id="9_c0q6h"]
-[ext_resource type="Script" uid="uid://dlj3lww0har8k" path="res://stuff/game_stuff/systems/audio_manager.gd" id="10_3l2cm"]
+[ext_resource type="Script" path="res://stuff/game_stuff/systems/audio_manager.gd" id="10_3l2cm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tiyvg"]
 
@@ -28,14 +28,6 @@ script = ExtResource("1_0xm2m")
 script = ExtResource("7_debug_energy")
 
 [node name="break_room" parent="." instance=ExtResource("4_3l2cm")]
-
-[node name="break_description_panel" parent="break_room/break_room" index="1"]
-offset_left = -508.0
-offset_right = 484.0
-
-[node name="break_description" parent="break_room/break_room/break_description_panel" index="0"]
-theme_override_font_sizes/normal_font_size = 40
-text = "Click on items to carry or remove them for innterogation."
 
 [node name="innterogation_room" parent="." instance=ExtResource("9_c0q6h")]
 

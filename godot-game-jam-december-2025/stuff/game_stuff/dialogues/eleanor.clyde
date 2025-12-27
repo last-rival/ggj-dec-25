@@ -8,22 +8,22 @@
 	{trigger set_switch(0,0,1,1,0)}
 	<-
 + {@energy > 0} {recorder_stareted}Who are you?
-	{trigger set_expr("eleanor","Netural_02")}
+	{trigger set_expr("eleanor","Neutral_02")}
 	You: Can you please introduce yourself?
 	{trigger energy_used(1)}
-	{trigger set_expr("eleanor","Netural_01")}
+	{trigger set_expr("eleanor","Neutral_01")}
 	Eleanor:My name is Eleanor, I am the Abbess of the monastery.
 	{set @eleanor_name = true}
 	{set @found_eleanor_chit_1 = true}
-	{trigger set_expr("eleanor","Netural_02")}
+	{trigger set_expr("eleanor","Neutral_02")}
 	[i]New Info. Unlocked - "Eleanor is the Abbess"
 	<-
 
 + {@eleanor_name} {@energy > 0} Where were you at the time of murder?
 	{trigger energy_used(1)}
-	{trigger set_expr("eleanor","Netural_01")}
+	{trigger set_expr("eleanor","Neutral_01")}
 	Eleanor:I was performing my 3 PM Mercy prayers, I found the head priest lying outside on the lawn when I returned from my prayers. He appeared… passed out.
-	{trigger set_expr("eleanor","Netural_04")}
+	{trigger set_expr("eleanor","Neutral_04")}
 	...
 	{trigger set_expr("eleanor","Thought_01")}
 	Eleanor: May God rest his soul
@@ -31,7 +31,7 @@
 	{trigger set_expr("eleanor","Thought_02")}
 	{set eleanor_q3 = true}
 	{set @found_eleanor_chit_2 = true}
-	{trigger set_expr("eleanor","Netural_02")}
+	{trigger set_expr("eleanor","Neutral_02")}
 	[i]New Info. Unlocked - "Eleanor was performing Mercy Prayer at the time of death"
 	<-
 
@@ -40,10 +40,10 @@
 	{trigger energy_used(1)}
 	{set @intro_completed = true }
 	{trigger set_expr("eleanor","Upset_03")}
-	{trigger set_expr("eleanor","Sweat")}
+	{trigger set_expr_solo("eleanor","Sweat")}
 	Eleanor:Y-Yes
 	{trigger set_expr("eleanor","Thought_02")}
-	{trigger set_expr("eleanor","Sweat")}
+	{trigger set_expr_solo("eleanor","Sweat")}
 	[i]These are procedural questions. To ease somebody into interrogation. There is no reason for the composure to crack here.
 	[i]But it did.
 	[i]The words catch on the way out.
@@ -53,12 +53,12 @@
 	<-
 
 + {eleanor_q4} {@priest_dossier_1_available == true} {@energy > 0} Were there more people in church apart from the head priest and you, Eleanor?
-	{trigger set_expr("eleanor","Thought_02")}
-	{trigger set_expr("eleanor","Sweat")}
+	{trigger set_expr("eleanor","Thought_01")}
+	{trigger set_expr_solo("eleanor","Sweat")}
 	{trigger energy_used(1)}
 	Eleanor : N-no, there was nobody apart from us
-	{trigger set_expr("eleanor","Thought_01")}
-	{trigger set_expr("eleanor","Sweat")}
+	{trigger set_expr("eleanor","Thought_02")}
+	{trigger set_expr_solo("eleanor","Sweat")}
 	[i]The words came out quickly. Hoping that they might be convincing.
 	[i]They were far from it.
 	i]It’s a small church perched on top of a hilltop too far from casual foot traffic.
@@ -67,7 +67,7 @@
 	[i]Which raises a different possibility. She was expecting more people.
 	{set eleanor_q5 = true}
 	[i]She was lying
-	{trigger set_expr("eleanor","Thought_01")}
+	{trigger set_expr("eleanor","Thought_02")}
 	<-
 
 + {eleanor_q5} {@energy > 0} Ask if she is hiding something
@@ -79,19 +79,19 @@
 	+ {@energy > 0} You: What are you hiding Elanor?
 		{trigger energy_used(1)}
 		{trigger set_expr("eleanor","Upset_03")}
-		{trigger set_expr("eleanor","Sweat")}
+		{trigger set_expr_solo("eleanor","Sweat")}
 		Eleanor: No-thing
 		{trigger set_expr("eleanor","Upset_02")}
-		{trigger set_expr("eleanor","Sweat")}
+		{trigger set_expr_solo("eleanor","Sweat")}
 	
 	[i]A bit more pressure.
 	+ {@energy > 0} You: What are you hiding Elanor?
 		{trigger energy_used(1)}
 		{trigger set_expr("eleanor","Upset_03")}
-		{trigger set_expr("eleanor","Sweat")}
+		{trigger set_expr_solo("eleanor","Sweat")}
 		Eleanor: No-thing
 		{trigger set_expr("eleanor","No_Energy")}
-		{trigger set_expr("eleanor","Sweat")}
+		{trigger set_expr_solo("eleanor","Sweat")}
 	+ {@energy <= 0} She looks exausted, should take a break
 		{trigger break_room}You head out to the break room#end
 		<-
@@ -100,10 +100,10 @@
 	+ {@energy > 0} You: What are you hiding Elanor?
 		{trigger energy_used(1)}
 		{trigger set_expr("eleanor","Upset_03")}
-		{trigger set_expr("eleanor","Sweat")}
+		{trigger set_expr_solo("eleanor","Sweat")}
 		Eleanor: I am not hiding anything!
 		{trigger set_expr("eleanor","No_Energy")}
-		{trigger set_expr("eleanor","Sweat")}
+		{trigger set_expr_solo("eleanor","Sweat")}
 	+ {@energy <= 0} She looks exausted, should take a break
 		{trigger break_room}You head out to the break room#end
 		<-
@@ -112,7 +112,7 @@
 		[i]Her shoulders sagged, exhaustion finally taking hold.
 		{trigger energy_used(5)}{trigger break_room}
 		{trigger set_expr("eleanor","No_Energy")}
-		{trigger set_expr("eleanor","Sweat")}
+		{trigger set_expr_solo("eleanor","Sweat")}
 		It was time for a break#end
 	<-
 	+ {@energy <= 0}She looks exausted, maybe we should take a break.

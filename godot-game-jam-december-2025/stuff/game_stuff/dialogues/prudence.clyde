@@ -1,156 +1,187 @@
-A soft click breaks the silence
-Something changed.
+[i]Something changed.
+{trigger set_expr("prudence","Neutral_02")}
 -> prudence_intro
 
 + {@energy >= 0} Who are you?
-	It is not a question you repeat again, once the premise has been established.
-	But something compelled me, an instinct screaming that the person in front was not the Elanor I was interviewing.
+	[i]It is not a question you repeat again, once the premise has been established.
+	[i]But something compelled me, an instinct screaming that the person in front was not the Elanor I was interviewing.
 	You : Eleanor?
-	The name slipped out before I could stop.
-	In response a smirk curled on her lips.
+	{trigger set_expr("prudence","Game_02")}
+	[i]The name slipped out before I could stop.
+	{trigger set_expr("prudence","Game_01")}
 	Eleanor : Are you all right detective, it seems you are confusing me for someone else?
-	She drew every word, savouring every moment, her eyes tracked my expression feeding on each flicker of confusion, each crack in my composure, she was enjoying this moment. 
-	Then answering the question that I dared not to voice, she leaned back slightly.
+	{trigger set_expr("prudence","Game_02")}
+	[i]She drew every word, savouring every moment, her eyes tracked my expression feeding on each flicker of confusion, each crack in my composure, she was enjoying this moment. 
 	{set prudence_q2 = true}
 	{trigger energy_used(1)}
+	{trigger set_expr("prudence","Game_01")}
 	Prudence : My name is Prudence, it’s a pleasure to meet you detective.
-	I could not see any telltale sign of lying, and yet she was wrong.
+	{trigger set_expr("prudence","Game_02")}
+	[i]I could not see any telltale sign of lying, and yet she was wrong.
 	<-
 
 + {prudence_q2} {@energy >= 0} Where were you at the time of death?
-	There’s a deliberate smile on her face but it never reaches her eyes. It existed out of obligation. As if she’s humoring me rather than engaging.
-	Prudence : Hmmm
-	she drags the sound out, it seems she doesn’t have much appreciation for time.
+	You : Where were you at the time of death?
+	{trigger set_expr("prudence","Neutral_02")}
+	[i]There’s a deliberate smile on her face but it never reaches her eyes. It existed out of obligation. As if she’s humoring me rather than engaging.
+	{trigger set_expr("prudence","Belittle_02")}
+	Prudence : Hmmmmmm
+	[i]She drags the sound out, it seems she doesn’t have much appreciation for time.
+	{trigger set_expr("prudence","Neutral_01")}
 	Prudence : I was reviewing the church accounts, making sure we had enough supplies for the month
 	{set @found_prudence_chit1 = true}
-	[i]Note - "Prudence takes care of management"
+	{trigger set_expr("prudence","Neutral_02")}
+	[i]New Info. Unlocked - "Prudence takes care of management"
 	{@eleanor_chit2_available == false} I should present her with the information of what Eleanor said she was doing at the time of the incident.
 	+{@eleanor_chit2_available == true} {@energy >= 0} Reveal what Eleanor was doing at 3PM.
-		Her eyes scanned over the note, and slowly a sigh escaped her lips, a sigh full of disappointment.
-		When she looked up again, there was a sharpness in her gaze as her eyes narrowed upon me. The expression that she held was not of fear or anger, but rather pity.
+		{trigger set_expr("prudence","Mock_01")}
 		Prudence: And I thought you were smarter, Detective
-		There was a softness to her voice. That made words cut deeper.
-		Prudence: To ask a question so silly
-		She emphasised on the word silly
-		Prudence: That even a toddler could answer
-		She tilted her head as she studied me, she scanned every section of my face until her expressions conveyed that she had already reached a conclusion. And it wasn’t flattering.
+		{trigger set_expr("prudence","Happy_02")}
+		[i]There was a softness to her voice. That made words cut deeper.
+		[i]She scanned every section of my face until her expressions conveyed that she had already reached a conclusion. And it wasn’t flattering.
+		{trigger set_expr("prudence","Happy_01")}
 		Prudence:Since you seem to be competing with dolphins when it comes to intelligence…
-		She lets the insult hang, her expressions were of one who was fully convinced that the words that have come out of her mouth were the absolute truth of the world. 
+		[i]She lets the insult hang, her expressions were of one who was fully convinced that the words that have come out of her mouth were the absolute truth of the world. 
 		Prudence: I will spit it out for you
+		{trigger set_expr("prudence","Neutral_01")}
 		Prudence: We are our own people, Detective,  Elanor does what she does, I do what I do, and others…
-		An intentional pause so that I could absorb the implications of her words.
+		{trigger set_expr("prudence","Neutral_04")}
+		[i]An intentional pause so that I could absorb the implications of her words.
 		{set prudence_q3 = true}
+		{trigger set_expr("prudence","Neutral_03")}
 		Prudence:They do what they do…
+		{trigger set_expr("prudence","Neutral_02")}
 		<-
 	<-
 + {prudence_q3 == true} {@energy >= 0} Who are the others that you talk about?
+	{trigger set_expr("prudence","Happy_02")}
 	She wanted me to ask that. Her face is alight with genuine excitement. What does she have in store for me?
+	{trigger set_expr("prudence","Happy_01")}
 	Prudence: Tut, tut, tut detective
 	Prudence: Wouldn’t that be far too simple?” she says “It would spoil all the fun
+	{trigger set_expr("prudence","Game_01")}
 	Prudence: How about we play a game?
-	She asked and yet it was conveyed as if it was a statement.
+	{trigger set_expr("prudence","Game_02")}
+	[i]She asked and yet it was conveyed as if it was a statement.
+	{trigger set_expr("prudence","Game_01")}
 	Prudence: You tell me about four of us
 	Prudence: Including me
 	Prudence: And in return, I will tell you something really really nice
-	Her smile widened, victoriously.
-	I already knew I was not getting anything more out of her right now, not without paying the price that she demands. Pressing hard will only amuse her or shut her down entirely. 
-	For now playing along would be wiser.
+	{trigger set_expr("prudence","Game_02")}
+	[i]I already knew I was not getting anything more out of her right now, not without paying the price that she demands. Pressing hard will only amuse her or shut her down entirely. 
+	[i]For now playing along would be wiser.
 	{@eleanor_chit1_available == false} I should present her with the information of what Eleanor does around here.
 	+{@eleanor_chit1_available == true} {@energy >= 0} Reveal what Eleanor does around here.
-		Prudence: And IUgh
-		The moment her eyes fell on it, her expressions shifted into one who had tasted lime.
-		Prudence: Can you imagine” she said rolling her eyes “she gets to be the Abbess?
-		Prudence: When it is me who manages the finances. The rations. The supplies” She gestured dismissively. 
-		Prudence: I am the one keeping this place running”
-		It’s obvious now, she doesn’t think the Elanor deserves the position. 
-		There is an ambition in her eyes. The kind that comes from believing the role was stolen from you. Prudence sees herself as the more capable one, the only right choice. 
-		I doubt that they get along. 
+		{trigger set_expr("prudence","Neutral_03")}
+		Prudence: Ugh
+		Prudence: Can you imagine... She gets to be the Abbess?
+		{trigger set_expr("prudence","Whatchu_Say_01")}
+		Prudence: When it is me who manages the finances. The rations. The supplies.
+		Prudence: I am the one keeping this place running
+		{trigger set_expr("prudence","Whatchu_Say_02")}
+		[i]It’s obvious now, she doesn’t think the Elanor deserves the position. 
+		[i]There is an ambition in her eyes. The kind that comes from believing the role was stolen from you. Prudence sees herself as the more capable one, the only right choice. 
+		[i]I doubt that they get along.
+		{trigger set_expr("prudence","Whatchu_Say_01")}
 		Prudence: Frankly
-		she continues, voice edged with disdain.
 		Prudence: All she does is to tell others what to do
-		A scoff.
+		{trigger set_expr("prudence","Neutral_03")}
 		Prudence: That’s it, that’s all she does
 		{set @found_eleanor_chit3 = true}
-		[i]Note - "Eleanor only prays and designates tasks"
+		{trigger set_expr("prudence","Neutral_04")}
+		[i]New Info. Unlocked - "Eleanor only prays and designates tasks"
 		{set @found_eleanor_dossier_1 = true}
 		[i]Dossier Unlocked "Eleanor" - All information about Eleanor is revealed.
 		<-
 	<-
 
 + {@prudence_chit2_available == true} {@energy >= 0} Reveal that you know she can source restrictive items.
-	She looked at the note, her expressions turning into one of seriousness.
+	{trigger set_expr("prudence","Whatchu_Say_01")}
 	Prudence : Detective I hope you are careful with your next words
+	{trigger set_expr("prudence","Whatchu_Say_02")}
 	You : Why did you source those dangerous flower?
-	Anger flashed across her face. 
-	It’s the first time since the interview began that Prudence was not the one in control. This time the balance was in my favor. 
+	{trigger set_expr("prudence","Caught_01")}
+	[i]It’s the first time since the interview began that Prudence was not the one in control. This time the balance was in my favor.
+	{trigger set_expr("prudence","Whatchu_Say_01")}
+	{trigger set_expr_solo("prudence","Sweat")}
 	Prudence : It was Briar who told you this, wasn’t it?
-	She snaps.
-	There was venom in her tone. Betrayal written all over her face. 
-	And then she laughed.
+	{trigger set_expr("prudence","Caught_01")}
+	{trigger set_expr_solo("prudence","Sweat")}
+	There was venom in her tone. Betrayal written all over her face.
+	{trigger set_expr("prudence","Mock_01")}
 	Prudence : Hahahaha
-	It was a mocking, hollow laugh.
-	Prudence : As if that would save her” Prudence sneered. “She thinks pushing this on me somehow absolves her?
-	It seems she is trying to steer my suspicion towards Briar. 
-	She leaned forward as she spoke her next words.
+	Prudence : As if that would save her.
+	Prudence : She thinks pushing this on me somehow absolves her?
+	{trigger set_expr("prudence","Mock_02")}
+	[i]It seems she is trying to steer my suspicion towards Briar. 
+	{trigger set_expr("prudence","Whatchu_Say_01")}
 	Prudence : All she ever cared about was her precious little garden where she grew the flower
-	She let the words hang between us so that I could absorb the implication of her words.
+	{trigger set_expr("prudence","Whatchu_Say_02")}
+	[i]She let the words hang between us so that I could absorb the implication of her words.
+	{trigger set_expr("prudence","Belittle_01")}
 	Prudence : And her precious little girl Chell who keeps running after flowers
-	It was the first time when I have gotten something out of her that could be a major clue for solving this case. 
-	But she still has not answered the question. 
-	She looked at my face as she could see the expressions of anticipation written all over it. 
+	{trigger set_expr("prudence","Belittle_02")}
+	[i]It was the first time when I have gotten something out of her that could be a major clue for solving this case. 
+	[i]But she still has not answered the question. 
+	{trigger set_expr("prudence","Whatchu_Say_02")}
+	[i]She looked at my face as she could see the expressions of anticipation written all over it. 
+	{trigger set_expr("prudence","Whatchu_Say_01")}
 	Prudence : You still want the answer detective?
-	She asked me after folding her arms, even though she knows that I am still sitting here for the same.
+	{trigger set_expr("prudence","Upset_01")}
 	Prudence : Well, even I am not privy to the working of the Priests' ways
-	She finally replied.
 	Prudence : He asked of me, and so I sourced it
+	{trigger set_expr("prudence","Upset_03")}
 	But why, why will she still listen to the priest.
 	{set prudence_q5 = true}
 	{trigger set_switch(1,1,1,1,0)}
 	{set @found_chell_chit2 = false}
-	[i]Note - "Chell is fond of flowers".
+	[i]New Info. Unlocked - "Chell is fond of flowers".
 	{set @found_briar_chit3 = true}
-	[i]Note - "Briar grew the flower".
+	[i]New Info. Unlocked - "Briar grew the flower".
 	{set @found_briar_dossier_1 = true}
 	[i]Dossier Unlocked "Briar" - All information about Briar is revealed.
+	{trigger set_expr("prudence","No_Energy")}
+	{trigger set_expr_solo("prudence","Sweat")}
 	<-
 
 + {prudence_q5 == true} {@energy >= 0} Why did you listen to the priest?
-	She looked at me the way one would look at something beneath notice
-	And yet, earlier I would have read this expression as simple disdain, contempt for someone she deemed inferior, but now, now when I see it again, I realise how wrong I was.
+	{trigger set_expr("prudence","Upset_02")}
+	Earlier I would have read this expression as simple disdain, contempt for someone she deemed inferior, but now, now when I see it again, I realise how wrong I was.
 	I dreaded the answer before she gave it.
+	{trigger set_expr("prudence","Upset_01")}
 	Prudence : Because that’s all I could do
+	{trigger set_expr("prudence","Upset_03")}
 	She whispered.
 	The words barely left her mouth.
 	And yet I understood them clearly.
 	I didn’t push further.
 	Because the fear on her face told me everything.
 	She sought control wherever she could find, because it was something she has never been allowed to have in her own life.
+	{trigger set_expr("prudence","Neutral_04")}
 	{set @found_prudence_chit3 = true}
-	[i]Note - "Prudence is scared of the Priest".
+	[i]New Info. Unlocked - "Prudence is scared of the Priest".
 	{set @found_prudence_dossier_1 = true}
 	[i]Dossier Unlocked "Prudence" - All information about Prudence is revealed
 	+{@prudence_dossier_1_available == true}{@chell_dossier_1_available == true}{@eleanor_dossier_1_available == true}{@briar_dossier_1_available == true} Reveal that you know everything about all of them.
-		I laid all four dossiers on the table.
-		One by one she went through each of them. 
+		{trigger set_expr("prudence","Game_02")}
+		[i]I laid all four dossiers on the table.
+		[i]One by one she went through each of them. 
+		{trigger set_expr("prudence","Game_01")}
 		Prudence : Ahh finally
-		Prudence exclaimed.
 		Prudence : Took you long enough though
 		Prudence : But I suppose you are not as dumb as I supposed you to be
-		She finally conceded. 
+		{trigger set_expr("prudence","Game_02")}
 		The smile on her face was unmistakable.
 		She was back to her previous self, which I was appreciative of. 
+		{trigger set_expr("prudence","Game_01")}
 		Prudence : Well as I promised
-		She continued
-		Her fingers tapping the table
 		Prudence : detective your clue…
-		She leaned in as she whispered the next words.
 		Prudence : Briar has a secret shelf
-		She says, and then she winked at me
 		Prudence : That is where she keeps all the ingredients
 		Prudence : If the flower went into the tea, then it would have come from there
-		She finally concluded. 
+		{trigger set_expr("prudence","Game_01")}
 		{set @found_end_game = true}
-		[i] Note - "Briar Secret shelf"
+		[i] New Info. Unlocked - "Briar Secret shelf"
 		<-
 	<-
 
