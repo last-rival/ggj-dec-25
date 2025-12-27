@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var _dialogue_drawer = $HUD/DialogueDrawer
-@onready var _character = $innterogation_room/innterogation_room/bg/character
+@onready var _character = $innterogation_room/BG/Character
 
 @onready var break_room: Node2D = $break_room;
 @onready var break_room_hud: CanvasLayer = $break_room/break_room;
