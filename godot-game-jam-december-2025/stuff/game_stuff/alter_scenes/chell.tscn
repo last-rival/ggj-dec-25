@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://lqcn7ptx0hlc"]
+[gd_scene load_steps=22 format=3 uid="uid://lqcn7ptx0hlc"]
 
 [ext_resource type="Texture2D" uid="uid://c6tjep6hjrltx" path="res://stuff/art/alters/C_Sprites/happy/for_me_m_open.png" id="1_e5tvi"]
 [ext_resource type="Texture2D" uid="uid://bbqfkg23md1g8" path="res://stuff/art/alters/C_Sprites/happy/for_me_m_close.png" id="2_cdrvh"]
@@ -16,6 +16,11 @@
 [ext_resource type="Texture2D" uid="uid://cln4ouso5y6lg" path="res://stuff/art/alters/C_Sprites/upset/pout_e_open.png" id="14_xbiih"]
 [ext_resource type="Texture2D" uid="uid://org5q6ps0jkk" path="res://stuff/art/alters/C_Sprites/no_energy.png" id="15_o657w"]
 [ext_resource type="Texture2D" uid="uid://bgurjr2itwinq" path="res://stuff/art/alters/C_Sprites/sweat.png" id="16_uk4ov"]
+[ext_resource type="Texture2D" uid="uid://c1o5dku4de20a" path="res://stuff/art/alters/E_Sprites/happy/e_m_open.png" id="16_y72pb"]
+[ext_resource type="Texture2D" uid="uid://cy00jg5jwdjqn" path="res://stuff/art/alters/E_Sprites/happy/e_open_m_close.png" id="17_uktdo"]
+[ext_resource type="Texture2D" uid="uid://cj33l2mdp78a5" path="res://stuff/art/alters/E_Sprites/happy/e_worry_m_open.png" id="18_0bkuv"]
+[ext_resource type="Texture2D" uid="uid://cmjeutumbwm03" path="res://stuff/art/alters/E_Sprites/happy/e_relief_m_open.png" id="19_d5agt"]
+[ext_resource type="Texture2D" uid="uid://cubqtl1scksoq" path="res://stuff/art/alters/E_Sprites/happy/e_relief_m_close.png" id="20_3nb8o"]
 
 [node name="Chell" type="Node2D"]
 
@@ -78,5 +83,26 @@ texture = ExtResource("14_xbiih")
 [node name="No_Energy" type="Sprite2D" parent="."]
 texture = ExtResource("15_o657w")
 
+[node name="El_Happy_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("16_y72pb")
+
+[node name="El_Happy_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("17_uktdo")
+
+[node name="El_Relief_01" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("18_0bkuv")
+
+[node name="El_Relief_02" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("19_d5agt")
+
+[node name="El_Relief_03" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("20_3nb8o")
+
 [node name="Sweat" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("16_uk4ov")
