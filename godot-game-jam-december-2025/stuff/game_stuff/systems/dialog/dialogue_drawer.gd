@@ -350,8 +350,8 @@ func _on_event_triggered(event_name: String, params: Array) -> void:
 	if event_name == "set_expr_solo":
 		set_expr_solo.emit(params)
 	
-	if event_name == "set_eng_game":
-		set_end_game.emit(params)
+	if event_name == "set_end_game":
+		set_end_game.emit()
 
 
 func _handle_active_check(skill, level) -> void:

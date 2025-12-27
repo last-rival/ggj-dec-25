@@ -195,8 +195,8 @@ func on_expression_solo_set(keys:Array):
 	var exp_id = keys[1]
 	_character.set_expression_solo(char_id,exp_id)
 
-func on_end_game(keys):
-	print("End Game.")
+func on_end_game():
+	SceneLoader.load_scene("res://addons/maaacks_menus_template/examples/scenes/windows/main_menu_credits_window.tscn", true)
 
 # TODO : Updated the game to load different conversation files based on the active character.
 # The way this will work is you carry on a conversation, the character runs of energy and then you enter break room
