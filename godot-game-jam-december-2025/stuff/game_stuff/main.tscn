@@ -132,6 +132,7 @@ texture = ExtResource("6_tiyvg")
 expand_mode = 1
 stretch_mode = 6
 
+[connection signal="pressed" from="break_room/break_room/exit_break_room" to="." method="_on_exit_break_room_pressed"]
 [connection signal="active_check_ended" from="HUD/DialogueDrawer" to="." method="_on_dialogue_drawer_active_check_ended"]
 [connection signal="dialogue_ended" from="HUD/DialogueDrawer" to="." method="_on_dialogue_drawer_dialogue_ended"]
 [connection signal="pressed" from="HUD/start_interrogation" to="." method="_on_game_demo_pressed"]
