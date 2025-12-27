@@ -1,48 +1,442 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckyk7e3k3nyb6"]
+[gd_scene load_steps=20 format=3 uid="uid://ckyk7e3k3nyb6"]
 
 [ext_resource type="Texture2D" uid="uid://bd0hwn3h5j2am" path="res://stuff/art/rooms/break_room.png" id="1_3k7g7"]
+[ext_resource type="Texture2D" uid="uid://bh73qvfxa05ya" path="res://stuff/art/items/cup.png" id="2_n3jja"]
+[ext_resource type="PackedScene" uid="uid://c5ql7aee5i1nl" path="res://stuff/game_stuff/inventory/item_detail_popup.tscn" id="3_8gb0s"]
+[ext_resource type="Texture2D" uid="uid://l2i5r3fc42dv" path="res://stuff/art/items/flower.png" id="3_cilnq"]
+[ext_resource type="Texture2D" uid="uid://boiql1p6jqdec" path="res://stuff/art/items/chit_1_unlock.png" id="3_cmikf"]
+[ext_resource type="Texture2D" uid="uid://dude23l3lxwwa" path="res://stuff/art/items/doss_unlock.png" id="3_k43ay"]
+[ext_resource type="Texture2D" uid="uid://bykm0xvuee6xn" path="res://stuff/art/items/doss_lock.png" id="3_pjncy"]
+[ext_resource type="Texture2D" uid="uid://ctkljv4waosij" path="res://stuff/art/items/chit_1_lock.png" id="4_ndtvm"]
+[ext_resource type="Texture2D" uid="uid://d15uporjjum4f" path="res://stuff/art/items/chit_2_unlock.png" id="5_2pdk3"]
+[ext_resource type="PackedScene" uid="uid://njfpmdjc3qex" path="res://stuff/game_stuff/inventory/inventory_ui.tscn" id="6_fud7x"]
+[ext_resource type="Texture2D" uid="uid://34nmxlngfo2p" path="res://stuff/art/items/chit_2_lock.png" id="6_rb5l8"]
+[ext_resource type="Texture2D" uid="uid://cs57mwdrjpbfg" path="res://stuff/art/items/chit_3_unlock.png" id="7_lkh5e"]
+[ext_resource type="Texture2D" uid="uid://b8xsyy656v0vl" path="res://stuff/art/items/chit_3_lock.png" id="8_xxqmt"]
+
+[sub_resource type="Animation" id="Animation_k43ay"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("break_room/fade:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0627451, 0.0627451, 0.0627451, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8gb0s"]
+resource_name = "fade_in"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("break_room/fade:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0619267, 0.0619267, 0.0619266, 1), Color(0.0627451, 0.0627451, 0.0627451, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_n3jja"]
+resource_name = "flicker"
+length = 6.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("break_room/fade:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0412583, 1.33998, 1.4594687, 1.5, 1.5318469, 1.6, 1.6437485, 1.6959693, 1.9971677, 4.9202404, 5.1002407, 5.20024, 5.2502403, 5.3402405, 5.5902405, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.0627451, 0.0627451, 0.0627451, 0), Color(0.0627451, 0.0627451, 0.0627451, 0), Color(0.0627451, 0.0627451, 0.0627451, 0.21568628), Color(0.0627451, 0.0627451, 0.0627451, 0), Color(0.0627451, 0.0627451, 0.0627451, 0.21568628), Color(0.0627451, 0.0627451, 0.0627451, 0), Color(0.0627451, 0.0627451, 0.0627451, 0.21568628), Color(0.0627451, 0.0627451, 0.0627451, 0), Color(0.0627451, 0.0627451, 0.0627451, 0.21568628), Color(0.0627451, 0.0627451, 0.0627451, 0), Color(0.0627451, 0.0627451, 0.0627451, 0), Color(0.0627451, 0.0627451, 0.0627451, 0.21568628), Color(0.0627451, 0.0627451, 0.0627451, 0), Color(0.0627451, 0.0627451, 0.0627451, 0.21568628), Color(0.0627451, 0.0627451, 0.0627451, 0), Color(0.0627451, 0.0627451, 0.0627451, 0.21568628), Color(0.0627451, 0.0627451, 0.0627451, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cilnq"]
+_data = {
+&"RESET": SubResource("Animation_k43ay"),
+&"fade_in": SubResource("Animation_8gb0s"),
+&"flicker": SubResource("Animation_n3jja")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fud7x"]
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 0)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gb0s"]
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 0)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 1
 
 [node name="break_room" type="Node2D"]
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cilnq")
+}
+autoplay = "fade_in"
+
 [node name="bg" type="Sprite2D" parent="."]
+modulate = Color(0.7121294, 0.7121294, 0.71212935, 1)
 position = Vector2(960, 540)
 texture = ExtResource("1_3k7g7")
 
 [node name="break_room" type="CanvasLayer" parent="."]
 
 [node name="break_description_panel" type="PanelContainer" parent="break_room"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -571.0
-offset_top = -102.0
-offset_right = 576.0
-offset_bottom = 95.0
-grow_horizontal = 2
-grow_vertical = 2
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -197.0
+offset_right = 384.0
+grow_vertical = 0
 
 [node name="break_description" type="RichTextLabel" parent="break_room/break_description_panel"]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
-text = "Return to the investigation once you have gathered the required information"
+text = "TO DO LIST? TUTORIAL PANEL?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="exit_break_room" type="Button" parent="break_room"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = 141.0
-offset_right = 164.0
-offset_bottom = 230.0
+offset_left = 61.0
+offset_top = 101.0
+offset_right = 292.0
+offset_bottom = 220.0
+theme_override_font_sizes/font_size = 32
+text = "Return to Interrogation Room"
+autowrap_mode = 3
+icon_alignment = 1
+
+[node name="interactables" type="PanelContainer" parent="break_room"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 24
-text = "Return to investigation"
-icon_alignment = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_fud7x")
+
+[node name="board" type="Node2D" parent="break_room/interactables"]
+
+[node name="priest_doss" type="Sprite2D" parent="break_room/interactables/board"]
+position = Vector2(492, 223)
+rotation = 0.5336359
+texture = ExtResource("3_k43ay")
+flip_h = true
+
+[node name="eleanor_chit_a" type="Node2D" parent="break_room/interactables/board"]
+position = Vector2(-137, -84)
+
+[node name="unlock" type="Sprite2D" parent="break_room/interactables/board/eleanor_chit_a"]
+position = Vector2(1311, 257)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("3_cmikf")
+
+[node name="lock" type="Sprite2D" parent="break_room/interactables/board/eleanor_chit_a"]
+position = Vector2(1311, 257)
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("4_ndtvm")
+
+[node name="eleanor_chit_b" type="Node2D" parent="break_room/interactables/board"]
+position = Vector2(118, -21)
+
+[node name="unlock" type="Sprite2D" parent="break_room/interactables/board/eleanor_chit_b"]
+position = Vector2(1311, 257)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_2pdk3")
+
+[node name="lock" type="Sprite2D" parent="break_room/interactables/board/eleanor_chit_b"]
+position = Vector2(1311, 257)
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("6_rb5l8")
+
+[node name="eleanor_chit_c" type="Node2D" parent="break_room/interactables/board"]
+position = Vector2(-94, 85)
+
+[node name="unlock" type="Sprite2D" parent="break_room/interactables/board/eleanor_chit_c"]
+position = Vector2(1311, 257)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("7_lkh5e")
+
+[node name="lock" type="Sprite2D" parent="break_room/interactables/board/eleanor_chit_c"]
+position = Vector2(1311, 257)
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("8_xxqmt")
+
+[node name="pru_chit_a" type="Node2D" parent="break_room/interactables/board"]
+position = Vector2(-535, -61)
+
+[node name="unlock" type="Sprite2D" parent="break_room/interactables/board/pru_chit_a"]
+position = Vector2(1311, 257)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("3_cmikf")
+
+[node name="lock" type="Sprite2D" parent="break_room/interactables/board/pru_chit_a"]
+position = Vector2(1311, 257)
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("4_ndtvm")
+
+[node name="pru_chit_b" type="Node2D" parent="break_room/interactables/board"]
+position = Vector2(-280, 2)
+
+[node name="unlock" type="Sprite2D" parent="break_room/interactables/board/pru_chit_b"]
+position = Vector2(1311, 257)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_2pdk3")
+
+[node name="lock" type="Sprite2D" parent="break_room/interactables/board/pru_chit_b"]
+position = Vector2(1311, 257)
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("6_rb5l8")
+
+[node name="pru_chit_c" type="Node2D" parent="break_room/interactables/board"]
+position = Vector2(-493, 131)
+
+[node name="unlock" type="Sprite2D" parent="break_room/interactables/board/pru_chit_c"]
+position = Vector2(1311, 257)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("7_lkh5e")
+
+[node name="lock" type="Sprite2D" parent="break_room/interactables/board/pru_chit_c"]
+position = Vector2(1311, 257)
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("8_xxqmt")
+
+[node name="chell_chit_a" type="Node2D" parent="break_room/interactables/board"]
+position = Vector2(-260, 282)
+
+[node name="unlock" type="Sprite2D" parent="break_room/interactables/board/chell_chit_a"]
+position = Vector2(1311, 257)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("3_cmikf")
+
+[node name="lock" type="Sprite2D" parent="break_room/interactables/board/chell_chit_a"]
+position = Vector2(1311, 257)
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("4_ndtvm")
+
+[node name="chell_chit_b" type="Node2D" parent="break_room/interactables/board"]
+position = Vector2(-6, 260)
+
+[node name="unlock" type="Sprite2D" parent="break_room/interactables/board/chell_chit_b"]
+position = Vector2(1311, 257)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_2pdk3")
+
+[node name="lock" type="Sprite2D" parent="break_room/interactables/board/chell_chit_b"]
+position = Vector2(1311, 257)
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("6_rb5l8")
+
+[node name="chell_chit_c" type="Node2D" parent="break_room/interactables/board"]
+position = Vector2(-33, 414)
+
+[node name="unlock" type="Sprite2D" parent="break_room/interactables/board/chell_chit_c"]
+position = Vector2(1311, 257)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("7_lkh5e")
+
+[node name="lock" type="Sprite2D" parent="break_room/interactables/board/chell_chit_c"]
+position = Vector2(1311, 257)
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("8_xxqmt")
+
+[node name="briar_chit_a" type="Node2D" parent="break_room/interactables/board"]
+position = Vector2(-794, 220)
+
+[node name="unlock" type="Sprite2D" parent="break_room/interactables/board/briar_chit_a"]
+position = Vector2(1311, 257)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("3_cmikf")
+
+[node name="lock" type="Sprite2D" parent="break_room/interactables/board/briar_chit_a"]
+position = Vector2(1311, 257)
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("4_ndtvm")
+
+[node name="briar_chit_b" type="Node2D" parent="break_room/interactables/board"]
+position = Vector2(-779, 414)
+
+[node name="unlock" type="Sprite2D" parent="break_room/interactables/board/briar_chit_b"]
+position = Vector2(1311, 257)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_2pdk3")
+
+[node name="lock" type="Sprite2D" parent="break_room/interactables/board/briar_chit_b"]
+position = Vector2(1311, 257)
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("6_rb5l8")
+
+[node name="briar_chit_c" type="Node2D" parent="break_room/interactables/board"]
+position = Vector2(-578, 371)
+
+[node name="unlock" type="Sprite2D" parent="break_room/interactables/board/briar_chit_c"]
+position = Vector2(1311, 257)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("7_lkh5e")
+
+[node name="lock" type="Sprite2D" parent="break_room/interactables/board/briar_chit_c"]
+position = Vector2(1311, 257)
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("8_xxqmt")
+
+[node name="eleanor_doss" type="Node2D" parent="break_room/interactables/board"]
+
+[node name="unlock" type="Sprite2D" parent="break_room/interactables/board/eleanor_doss"]
+position = Vector2(1311, 257)
+rotation = -0.32533297
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("3_k43ay")
+
+[node name="lock" type="Sprite2D" parent="break_room/interactables/board/eleanor_doss"]
+position = Vector2(1311, 257)
+rotation = -0.32533297
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("3_pjncy")
+
+[node name="pru_doss" type="Node2D" parent="break_room/interactables/board"]
+
+[node name="unlock" type="Sprite2D" parent="break_room/interactables/board/pru_doss"]
+position = Vector2(899.99994, 283)
+rotation = -0.10010831
+texture = ExtResource("3_k43ay")
+
+[node name="lock" type="Sprite2D" parent="break_room/interactables/board/pru_doss"]
+position = Vector2(899.99994, 283)
+rotation = -0.10010831
+texture = ExtResource("3_pjncy")
+
+[node name="briar_doss" type="Node2D" parent="break_room/interactables/board"]
+
+[node name="unlock" type="Sprite2D" parent="break_room/interactables/board/briar_doss"]
+position = Vector2(617.99994, 562)
+rotation = 0.3376349
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("3_k43ay")
+
+[node name="lock" type="Sprite2D" parent="break_room/interactables/board/briar_doss"]
+position = Vector2(617.99994, 562)
+rotation = 0.3376349
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("3_pjncy")
+
+[node name="chell_doss" type="Node2D" parent="break_room/interactables/board"]
+
+[node name="unlock" type="Sprite2D" parent="break_room/interactables/board/chell_doss"]
+position = Vector2(1175.9999, 590)
+rotation = 0.33796293
+texture = ExtResource("3_k43ay")
+
+[node name="lock" type="Sprite2D" parent="break_room/interactables/board/chell_doss"]
+position = Vector2(1175.9999, 590)
+rotation = 0.33796293
+texture = ExtResource("3_pjncy")
+
+[node name="decor_red" type="Node2D" parent="break_room/interactables/board"]
+
+[node name="red_line_2" type="Line2D" parent="break_room/interactables/board/decor_red"]
+points = PackedVector2Array(698, 613, 677, 523)
+width = 4.0
+default_color = Color(0.66, 0, 0, 1)
+
+[node name="red_line_6" type="Line2D" parent="break_room/interactables/board/decor_red"]
+points = PackedVector2Array(804, 182, 825, 362)
+width = 4.0
+default_color = Color(0.66, 0, 0, 1)
+
+[node name="red_line_5" type="Line2D" parent="break_room/interactables/board/decor_red"]
+points = PackedVector2Array(803, 178, 1003, 238, 828, 363, 859, 217)
+width = 4.0
+default_color = Color(0.66, 0, 0, 1)
+
+[node name="red_line_4" type="Line2D" parent="break_room/interactables/board/decor_red"]
+points = PackedVector2Array(499, 647, 550, 452, 610, 477)
+width = 4.0
+default_color = Color(0.66, 0, 0, 1)
+
+[node name="red_line_7" type="Line2D" parent="break_room/interactables/board/decor_red"]
+points = PackedVector2Array(1078, 517, 1187, 655, 1242, 655)
+width = 4.0
+default_color = Color(0.66, 0, 0, 1)
+
+[node name="red_line_3" type="Line2D" parent="break_room/interactables/board/decor_red"]
+points = PackedVector2Array(551, 656, 585, 611)
+width = 4.0
+default_color = Color(0.66, 0, 0, 1)
+
+[node name="red_line_8" type="Line2D" parent="break_room/interactables/board/decor_red"]
+points = PackedVector2Array(1175, 512, 1279, 497)
+width = 4.0
+default_color = Color(0.66, 0, 0, 1)
+
+[node name="red_line_9" type="Line2D" parent="break_room/interactables/board/decor_red"]
+points = PackedVector2Array(1231, 317, 1260, 201)
+width = 4.0
+default_color = Color(0.66, 0, 0, 1)
+
+[node name="red_line_10" type="Line2D" parent="break_room/interactables/board/decor_red"]
+points = PackedVector2Array(1206, 147, 1260, 201)
+width = 4.0
+default_color = Color(0.66, 0, 0, 1)
+
+[node name="red_line_11" type="Line2D" parent="break_room/interactables/board/decor_red"]
+points = PackedVector2Array(1399, 214, 1260, 201)
+width = 4.0
+default_color = Color(0.66, 0, 0, 1)
+
+[node name="table" type="Node2D" parent="break_room/interactables"]
+
+[node name="cup" type="Sprite2D" parent="break_room/interactables/table"]
+position = Vector2(1334, 826)
+texture = ExtResource("2_n3jja")
+
+[node name="flower" type="Sprite2D" parent="break_room/interactables/table"]
+position = Vector2(634, 847)
+texture = ExtResource("3_cilnq")
+
+[node name="ItemDetailPopup" parent="break_room" instance=ExtResource("3_8gb0s")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -1879.0
+offset_top = 329.0
+offset_right = -1579.0
+offset_bottom = 904.0
+grow_horizontal = 0
+grow_vertical = 1
+metadata/_edit_lock_ = true
+
+[node name="fade" type="PanelContainer" parent="break_room"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8gb0s")
+metadata/_edit_lock_ = true
+
+[node name="InventoryUI" parent="break_room" instance=ExtResource("6_fud7x")]
+metadata/_edit_lock_ = true

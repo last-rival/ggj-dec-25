@@ -1,14 +1,12 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dn2fnooixwv2g"]
 
-[ext_resource type="Script" path="res://stuff/game_stuff/inventory/inventory_item.gd" id="1_item"]
+[ext_resource type="Texture2D" uid="uid://l2i5r3fc42dv" path="res://stuff/art/items/flower.png" id="1_14h2h"]
+[ext_resource type="Script" uid="uid://bqq6s368r5ltg" path="res://stuff/game_stuff/inventory/inventory_item.gd" id="1_item"]
 
 [resource]
 script = ExtResource("1_item")
-placeholder_color = Color(0.5, 0, 0.5, 1)
 name = "Strange Flower"
-description = "A unique flower found near the incident."
+description = "Briar's gift to Chell"
+icon = ExtResource("1_14h2h")
 use_condition_variable = "flower_available"
-use_condition_expected_value = true
 on_use_set_variable = "flower_used"
-on_use_set_value = true
-on_use_dialogue = ""

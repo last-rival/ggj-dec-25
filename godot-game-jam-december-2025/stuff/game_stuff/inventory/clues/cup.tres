@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://pj55n6j7ttqn"]
 
-[ext_resource type="Texture2D" uid="uid://hglgepaou6jy" path="res://stuff/game_stuff/inventory/clues/images/cup.png" id="1_i84di"]
+[ext_resource type="Texture2D" uid="uid://bh73qvfxa05ya" path="res://stuff/art/items/cup.png" id="1_i84di"]
 [ext_resource type="Script" uid="uid://bqq6s368r5ltg" path="res://stuff/game_stuff/inventory/inventory_item.gd" id="1_item"]
 
 [resource]
@@ -8,6 +8,5 @@ script = ExtResource("1_item")
 name = "Poisoned Cup"
 description = "A cracked cup. It looks like it might have contained poison."
 icon = ExtResource("1_i84di")
-placeholder_color = Color(0, 1, 0, 1)
 use_condition_variable = "cup_available"
 on_use_set_variable = "cup_used"

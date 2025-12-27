@@ -63,5 +63,3 @@ func _on_slot_clicked(item: InventoryItem):
 	popup.setup(item)
 	popup.update_info() # Ensure visuals update logic is triggered
 	popup.show()
-
-

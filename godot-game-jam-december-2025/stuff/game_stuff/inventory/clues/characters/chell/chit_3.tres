@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://dha761cpp30or"]
+
+[ext_resource type="Script" uid="uid://bqq6s368r5ltg" path="res://stuff/game_stuff/inventory/inventory_item.gd" id="1_item"]
+
+[resource]
+script = ExtResource("1_item")
+name = "Chell Chit 3"
+description = "A fragmented note about Chell.
+"
+use_condition_variable = "rachel_chit3_available"
+on_use_set_variable = "rachel_chit3_used"
