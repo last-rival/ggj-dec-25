@@ -38,6 +38,12 @@ script = ExtResource("7_debug_energy")
 [node name="BG" parent="innterogation_room" index="0"]
 position = Vector2(960, 538)
 
+[node name="Chell" parent="innterogation_room/BG/Character" index="1"]
+visible = true
+
+[node name="Eleanor" parent="innterogation_room/BG/Character" index="2"]
+visible = false
+
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="DialogueDrawer" parent="HUD" instance=ExtResource("1_ig7tw")]
@@ -132,13 +138,11 @@ texture = ExtResource("6_tiyvg")
 expand_mode = 1
 stretch_mode = 6
 
-[connection signal="pressed" from="break_room/break_room/exit_break_room" to="." method="_on_exit_break_room_pressed"]
 [connection signal="active_check_ended" from="HUD/DialogueDrawer" to="." method="_on_dialogue_drawer_active_check_ended"]
 [connection signal="dialogue_ended" from="HUD/DialogueDrawer" to="." method="_on_dialogue_drawer_dialogue_ended"]
 [connection signal="pressed" from="HUD/start_interrogation" to="." method="_on_game_demo_pressed"]
 [connection signal="pressed" from="HUD/MarginContainer/restart_scene_button" to="." method="_on_restart_scene_button_pressed"]
 
-[editable path="break_room"]
 [editable path="innterogation_room"]
 [editable path="innterogation_room/BG/Character"]
 [editable path="innterogation_room/BG/Character/Briar"]

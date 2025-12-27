@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://njfpmdjc3qex"]
+[gd_scene load_steps=4 format=3 uid="uid://njfpmdjc3qex"]
 
 [ext_resource type="Script" uid="uid://du78rnc6egy4f" path="res://stuff/game_stuff/inventory/inventory_ui.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://dst7fduhkovdp" path="res://stuff/art/ui/inventory_bg.png" id="2_0wykr"]
 [ext_resource type="PackedScene" uid="uid://dhnxw3evf1ivm" path="res://stuff/game_stuff/inventory/inventory_slot.tscn" id="2_slot"]
 
 [node name="InventoryUI" type="Control"]
@@ -13,6 +14,21 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_script")
 
+[node name="InventoryBg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -340.5
+offset_top = -166.0
+offset_right = 344.5
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_0wykr")
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 7
@@ -20,10 +36,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -300.0
-offset_top = -150.0
-offset_right = 300.0
-offset_bottom = -55.0
+offset_left = -302.0
+offset_top = -143.0
+offset_right = 298.0
+offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_right = 0

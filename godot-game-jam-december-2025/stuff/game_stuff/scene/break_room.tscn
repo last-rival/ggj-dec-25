@@ -412,7 +412,7 @@ position = Vector2(1334, 826)
 texture = ExtResource("2_n3jja")
 
 [node name="flower" type="Sprite2D" parent="break_room/interactables/table"]
-position = Vector2(634, 847)
+position = Vector2(634, 833)
 texture = ExtResource("3_cilnq")
 
 [node name="ItemDetailPopup" parent="break_room" instance=ExtResource("3_8gb0s")]
