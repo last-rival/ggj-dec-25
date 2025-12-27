@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://bxo0iiaofykol"]
+
+[ext_resource type="Texture2D" uid="uid://dbk02glow0upx" path="res://stuff/art/items/photo.png" id="1_sacux"]
+[ext_resource type="Script" uid="uid://bqq6s368r5ltg" path="res://stuff/game_stuff/inventory/inventory_item.gd" id="2_b50gr"]
+
+[resource]
+script = ExtResource("2_b50gr")
+name = "Body Photo"
+description = "A picture of the dead body."
+icon = ExtResource("1_sacux")
+use_condition_variable = "body_photo_available"
+on_use_set_variable = "body_photo_used"

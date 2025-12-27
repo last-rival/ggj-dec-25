@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhnxw3evf1ivm"]
+[gd_scene load_steps=8 format=3 uid="uid://dhnxw3evf1ivm"]
 
 [ext_resource type="Script" uid="uid://btn3duxqxhti2" path="res://stuff/game_stuff/inventory/inventory_slot.gd" id="1_slot"]
 
@@ -11,6 +11,9 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a7m5u"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tuo8r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngno8"]
+bg_color = Color(0, 0, 0, 0.78431374)
 
 [node name="InventorySlot" type="Button"]
 custom_minimum_size = Vector2(95, 95)
@@ -34,6 +37,11 @@ theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ngno8")
 
 [node name="InventoryContainer" type="Control" parent="MarginContainer"]
 layout_mode = 2

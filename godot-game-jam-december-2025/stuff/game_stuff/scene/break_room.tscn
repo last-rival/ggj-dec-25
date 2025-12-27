@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://bd0hwn3h5j2am" path="res://stuff/art/rooms/break_room.png" id="1_3k7g7"]
 [ext_resource type="Script" uid="uid://bdv6r4phwqndh" path="res://stuff/game_stuff/scene/break_room.gd" id="1_ndtvm"]
 [ext_resource type="Texture2D" uid="uid://bh73qvfxa05ya" path="res://stuff/art/items/cup.png" id="2_n3jja"]
-[ext_resource type="PackedScene" path="res://stuff/game_stuff/inventory/item_detail_popup.tscn" id="3_8gb0s"]
 [ext_resource type="Texture2D" uid="uid://l2i5r3fc42dv" path="res://stuff/art/items/flower.png" id="3_cilnq"]
 [ext_resource type="Texture2D" uid="uid://boiql1p6jqdec" path="res://stuff/art/items/chit_1_unlock.png" id="3_cmikf"]
 [ext_resource type="Texture2D" uid="uid://dude23l3lxwwa" path="res://stuff/art/items/doss_unlock.png" id="3_k43ay"]
+[ext_resource type="PackedScene" uid="uid://d2r7rn32axi1h" path="res://stuff/game_stuff/inventory/ui/expanded_inventory_ui.tscn" id="3_ndtvm"]
 [ext_resource type="Texture2D" uid="uid://bykm0xvuee6xn" path="res://stuff/art/items/doss_lock.png" id="3_pjncy"]
 [ext_resource type="Texture2D" uid="uid://ctkljv4waosij" path="res://stuff/art/items/chit_1_lock.png" id="4_ndtvm"]
 [ext_resource type="Texture2D" uid="uid://d15uporjjum4f" path="res://stuff/art/items/chit_2_unlock.png" id="5_2pdk3"]
@@ -407,20 +407,6 @@ texture = ExtResource("2_n3jja")
 position = Vector2(634, 833)
 texture = ExtResource("3_cilnq")
 
-[node name="ItemDetailPopup" parent="break_room" instance=ExtResource("3_8gb0s")]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 0.0
-offset_left = -1879.0
-offset_top = 329.0
-offset_right = -1579.0
-offset_bottom = 904.0
-grow_horizontal = 0
-grow_vertical = 1
-metadata/_edit_lock_ = true
-
 [node name="fade" type="PanelContainer" parent="break_room"]
 visible = false
 anchors_preset = 15
@@ -443,5 +429,29 @@ theme_override_font_sizes/font_size = 32
 text = "Return to 
 Interrogation
 Room"
+
+[node name="ExpandedInventoryUI" parent="break_room" instance=ExtResource("3_ndtvm")]
+anchors_preset = 3
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -325.0
+offset_top = -860.0
+offset_right = 0.0
+offset_bottom = -110.0
+grow_vertical = 0
+
+[node name="InventoryButton" type="Button" parent="break_room"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -177.0
+offset_top = -66.0
+offset_right = -17.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Inventory"
 
 [connection signal="pressed" from="break_room/exit_room" to="." method="_on_exit_room_pressed"]

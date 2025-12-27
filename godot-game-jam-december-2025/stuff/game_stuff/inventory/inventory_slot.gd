@@ -5,6 +5,7 @@ signal item_clicked(item: InventoryItem)
 var item: InventoryItem
 
 @onready var icon_rect = $MarginContainer/TextureRect
+@onready var slot_bg = $MarginContainer/Panel
 
 
 func set_item(new_item: InventoryItem):
@@ -17,9 +18,12 @@ func set_item(new_item: InventoryItem):
 	
 	if has_node("NameLabel"):
 		$NameLabel.text = item.name
-		$NameLabel.visible = true
+		#$NameLabel.visible = true
 	
 	disabled = false
+
+func show_bg_visible(visible:bool):
+	slot_bg.visible = visible;
 
 func clear():
 	item = null

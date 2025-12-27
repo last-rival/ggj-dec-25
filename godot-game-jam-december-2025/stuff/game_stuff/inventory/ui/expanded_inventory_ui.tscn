@@ -1,43 +1,53 @@
-[gd_scene load_steps=3 format=3 uid="uid://expanded_inv_ui"]
+[gd_scene load_steps=4 format=3 uid="uid://d2r7rn32axi1h"]
 
-[ext_resource type="Script" path="res://stuff/game_stuff/inventory/ui/expanded_inventory_ui.gd" id="1_script"]
-[ext_resource type="PackedScene" path="res://stuff/game_stuff/inventory/inventory_slot.tscn" id="2_slot"]
-[ext_resource type="PackedScene" path="res://stuff/game_stuff/inventory/item_detail_popup.tscn" id="3_popup"]
+[ext_resource type="Script" uid="uid://ctxs2e7ryksb2" path="res://stuff/game_stuff/inventory/ui/expanded_inventory_ui.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://c5ql7aee5i1nl" path="res://stuff/game_stuff/inventory/item_detail_popup.tscn" id="3_popup"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nrhfw"]
+bg_color = Color(0, 0, 0, 0.39215687)
 
 [node name="ExpandedInventoryUI" type="Control"]
 layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -800.0
-offset_top = 70.0
-offset_right = -20.0
-offset_bottom = 500.0
+offset_left = -350.0
+offset_top = 220.0
+offset_right = -25.0
+offset_bottom = 970.0
 grow_horizontal = 0
 script = ExtResource("1_script")
 
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nrhfw")
+
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -750.0
-offset_bottom = 400.0
-grow_horizontal = 0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
 theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 50
-columns = 6
+columns = 3
 
 [node name="ItemDetailPopup" parent="." instance=ExtResource("3_popup")]
 visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
+anchor_top = 0.0
 anchor_right = 1.0
-offset_left = -1080.0
-offset_top = 0.0
-offset_right = -780.0
-offset_bottom = 400.0
+anchor_bottom = 0.0
+offset_left = -644.0
+offset_top = 1.0
+offset_right = -344.0
+offset_bottom = 521.0
 grow_horizontal = 0
-
-
+grow_vertical = 1

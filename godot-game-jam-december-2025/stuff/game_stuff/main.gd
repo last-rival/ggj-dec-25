@@ -1,4 +1,4 @@
-extends Node3D
+extends Node2D
 
 @onready var _dialogue_drawer = $HUD/DialogueDrawer
 @onready var _character = $innterogation_room/BG/Character
@@ -48,16 +48,6 @@ func _ready() -> void:
 	if photo: GameData.add_item(photo)
 	if cup: GameData.add_item(cup)
 	if flower: GameData.add_item(flower)
-	
-	# Connect Inventory Button
-	$HUD/InventoryButton.pressed.connect(func(): $HUD/ExpandedInventoryUI.toggle())
-	
-	# Handle visibility
-	GameData.inventory_visibility_changed.connect(func(v): $HUD/InventoryButton.visible = v)
-	# Set initial state (default true if not set)
-	var is_inv_visible = GameData.get_variable("inventory_button_visible")
-	if is_inv_visible == null: is_inv_visible = true
-	$HUD/InventoryButton.visible = is_inv_visible
 	
 	# Start Game
 	load_innterogation_room()

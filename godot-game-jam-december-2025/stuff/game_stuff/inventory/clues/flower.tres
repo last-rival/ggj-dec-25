@@ -1,12 +1,12 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dn2fnooixwv2g"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://b03my8tt4acn6"]
 
-[ext_resource type="Texture2D" uid="uid://l2i5r3fc42dv" path="res://stuff/art/items/flower.png" id="1_14h2h"]
+[ext_resource type="Texture2D" uid="uid://dbk02glow0upx" path="res://stuff/art/items/photo.png" id="1_14h2h"]
 [ext_resource type="Script" uid="uid://bqq6s368r5ltg" path="res://stuff/game_stuff/inventory/inventory_item.gd" id="1_item"]
 
 [resource]
 script = ExtResource("1_item")
 name = "Strange Flower"
-description = "Briar's gift to Chell"
+description = "A picture of the dead body."
 icon = ExtResource("1_14h2h")
 use_condition_variable = "flower_available"
 on_use_set_variable = "flower_used"

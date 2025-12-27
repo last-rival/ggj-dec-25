@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://c0785cd2fjnf2"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://bjt50rt1y16ld"]
 
 [ext_resource type="Script" uid="uid://bqq6s368r5ltg" path="res://stuff/game_stuff/inventory/inventory_item.gd" id="1_item"]
+[ext_resource type="Texture2D" uid="uid://dude23l3lxwwa" path="res://stuff/art/items/doss_unlock.png" id="1_py3e8"]
 
 [resource]
 script = ExtResource("1_item")
 name = "Priest Dossier 1"
 description = "A dossier about the Priest."
+icon = ExtResource("1_py3e8")
 use_condition_variable = "priest_dossier_1_available"
 on_use_set_variable = "priest_dossier_1_used"

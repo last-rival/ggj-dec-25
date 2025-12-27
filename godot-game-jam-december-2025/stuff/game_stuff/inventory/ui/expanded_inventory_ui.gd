@@ -39,16 +39,17 @@ func _populate_grid():
 	# Get discovered items in order of discovery
 	var items = GameData.discovered_items
 	
-	# Create 30 slots
-	for i in range(GRID_SIZE):
+	var item_count = items.size();
+
+	for i in range(item_count):
 		var slot = slot_scene.instantiate()
 		grid_container.add_child(slot)
-		slot.custom_minimum_size = Vector2(100, 100)
 		slot.item_clicked.connect(_on_slot_clicked)
 		
-		if i < items.size():
+		if i < item_count:
 			var item = items[i]
 			slot.set_item(item)
+			slot.show_bg_visible(true)
 			
 			# Check if used
 			if GameData.is_item_used(item):
@@ -59,7 +60,10 @@ func _populate_grid():
 			slot.clear() # Empty slot
 
 func _on_slot_clicked(item: InventoryItem):
-	popup.allow_use = false
-	popup.setup(item)
-	popup.update_info() # Ensure visuals update logic is triggered
-	popup.show()
+	# Ignore inventory interactions in the grid
+	#popup.allow_use = false
+	#popup.setup(item)
+	#popup.update_info() # Ensure visuals update logic is triggered
+	#popup.show()
+	GameData.equip_item(item);
+	return;
