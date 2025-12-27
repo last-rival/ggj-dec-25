@@ -48,7 +48,7 @@ func _ready() -> void:
 	if photo: GameData.add_item(photo)
 	if cup: GameData.add_item(cup)
 	if flower: GameData.add_item(flower)
-	
+
 	# Start Game
 	load_innterogation_room()
 
@@ -60,10 +60,12 @@ func load_innterogation_room() -> void:
 	hud.show();
 	break_room.hide();
 	break_room_hud.hide();
+	break_room.close();
 	change_active_character();
 
 
 func load_break_room() -> void:
+	break_room.set_up();
 	break_room.show();
 	break_room_hud.show();
 	innterogation_room.hide();

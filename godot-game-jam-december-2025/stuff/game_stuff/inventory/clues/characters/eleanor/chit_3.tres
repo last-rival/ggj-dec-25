@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://dgg2ofi5ppgd7"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://c5lohx08igoav"]
 
 [ext_resource type="Script" uid="uid://bqq6s368r5ltg" path="res://stuff/game_stuff/inventory/inventory_item.gd" id="1_item"]
+[ext_resource type="Texture2D" uid="uid://cs57mwdrjpbfg" path="res://stuff/art/items/chit_3_unlock.png" id="1_q4xqq"]
 
 [resource]
 script = ExtResource("1_item")
 name = "Eleanor Chit 3"
 description = "A fragmented note about Eleanor."
+icon = ExtResource("1_q4xqq")
 use_condition_variable = "eleanor_chit3_available"
 on_use_set_variable = "eleanor_chit3_used"

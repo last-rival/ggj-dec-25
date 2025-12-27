@@ -5,14 +5,14 @@ extends Node
 # or use it as a reference for your dialogue system.
 # Change 'false' to 'true' to unlock items for testing.
 
+# Use _available at end of item name in clyde to check item stats
+
 func _ready():
 	# ==========================================
 	# DEFAULT UNLOCKED ITEMS (Start of Game)
 	# ==========================================
 	GameData.set_variable("found_body_photo", true)
-	GameData.set_variable("found_poisoned_cup", true)
-	GameData.set_variable("found_priest_dossier_1", true)
-	
+
 	# Visibility Control
 	GameData.set_variable("inventory_button_visible", true)
 

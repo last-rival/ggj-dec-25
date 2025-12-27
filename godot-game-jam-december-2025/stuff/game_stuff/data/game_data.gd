@@ -24,7 +24,6 @@ var character_switch_chances:Dictionary[String,int]={
 
 signal inventory_updated
 signal collection_updated
-signal inventory_visibility_changed(visible: bool)
 signal energy_updated(new_amount: int)
 signal energy_debug_visibility_changed(visible: bool)
 
@@ -48,20 +47,12 @@ var active_character:String="elanor";
 func _ready():
 	# --- Default UNLOCKED Items ---
 	set_variable("found_body_photo", true)
-	set_variable("found_poisoned_cup", true)
 	set_variable("found_priest_dossier_1", true)
-	
-	# Default Inventory Button Visibility
-	set_variable("inventory_button_visible", true)
-	
+
 	# Default Energy
 	set_variable("energy", 5)
 	set_variable("exhausted", false)
 	set_variable("energy_debug_visible", false)
-	
-	# --- Default LOCKED Items (Hidden) ---
-	# Key items
-	set_variable("found_strange_flower", false)
 
 	# Character Clues
 	var chars = ["eleanor", "rachel", "prudence", "briar"]
@@ -86,10 +77,6 @@ func set_variable(var_name: String, value) -> void:
 	# Check for Item Discovery
 	if var_name.begins_with("found_") and value == true:
 		_process_discovery(var_name)
-	
-	# Check for Inventory Button Visibility
-	if var_name == "inventory_button_visible":
-		inventory_visibility_changed.emit(value)
 
 	# Check for Energy Debug Visibility
 	if var_name == "energy_debug_visible":
@@ -116,11 +103,6 @@ func is_item_used(item: InventoryItem) -> bool:
 	var val = get_variable(item.on_use_set_variable)
 	# Check if the variable matches the 'used' value (usually true)
 	return val == item.on_use_set_value
-
-func remove_item_from_active(item: InventoryItem) -> void:
-	if _persistence.inventory.has(item):
-		_persistence.inventory.erase(item)
-		inventory_updated.emit()
 
 
 func get_dialogue_data(dialogue_name: String):
@@ -151,10 +133,17 @@ func equip_item(item: InventoryItem) -> bool:
 	# Check if space available
 	if _persistence.inventory.size() < 5:
 		_persistence.inventory.append(item)
+		set_variable(item.use_condition_variable,true)
 		inventory_updated.emit()
 		return true
 	
 	return false
+
+func remove_item_from_active(item: InventoryItem) -> void:
+	if _persistence.inventory.has(item):
+		_persistence.inventory.erase(item)
+		set_variable(item.use_condition_variable,false)
+		inventory_updated.emit()
 
 func has_collected_item(item_name: String) -> bool:
 	for item in _persistence.collected_items:

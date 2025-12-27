@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5ql7aee5i1nl"]
+[gd_scene load_steps=3 format=3 uid="uid://c5ql7aee5i1nl"]
 
 [ext_resource type="Script" uid="uid://cwlh1vodyfqyw" path="res://stuff/game_stuff/inventory/item_detail_popup.gd" id="1_popup"]
+[ext_resource type="Texture2D" uid="uid://baex2wxh66v5l" path="res://icon.svg" id="2_pku26"]
 
 [node name="ItemDetailPopup" type="PanelContainer"]
 anchors_preset = 8
@@ -39,39 +40,19 @@ theme_override_font_sizes/font_size = 24
 text = "Item Name"
 horizontal_alignment = 1
 
-[node name="InventoryContainer" type="Control" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="Polygon2D" type="Polygon2D" parent="MarginContainer/VBoxContainer/InventoryContainer"]
-polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
-
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+texture = ExtResource("2_pku26")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="DescLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(260, 0)
 layout_mode = 2
 theme_override_constants/line_spacing = 4
 theme_override_font_sizes/font_size = 20
 text = "Item Description goes here."
 autowrap_mode = 2
 
-[node name="UseButton" type="Button" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 45)
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "USE"
-
-[node name="CarryButton" type="Button" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 45)
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "CARRY"
-
 [connection signal="pressed" from="MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/UseButton" to="." method="_on_use_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/CarryButton" to="." method="_on_carry_button_pressed"]
