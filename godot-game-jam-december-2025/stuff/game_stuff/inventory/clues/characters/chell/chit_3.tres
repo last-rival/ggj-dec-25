@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource("1_item")
 name = "Chell Chit 3"
-description = "A fragmented note about Chell.
-"
+description = "\"Chell doesn’t feel pain\"
+Briar told me that Chell doesn’t feel pain, I fear that I will not like the answer"
 icon = ExtResource("1_nw4xp")
 use_condition_variable = "rachel_chit3_available"
 on_use_set_variable = "rachel_chit3_used"

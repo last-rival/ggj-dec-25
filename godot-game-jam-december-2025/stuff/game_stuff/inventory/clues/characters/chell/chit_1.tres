@@ -1,10 +1,14 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://bx47nixlxme7p"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://bx47nixlxme7p"]
 
 [ext_resource type="Script" uid="uid://bqq6s368r5ltg" path="res://stuff/game_stuff/inventory/inventory_item.gd" id="1_item"]
+[ext_resource type="Texture2D" uid="uid://boiql1p6jqdec" path="res://stuff/art/items/chit_1_unlock.png" id="1_pfjx4"]
 
 [resource]
 script = ExtResource("1_item")
 name = "Chell Chit 1"
-description = "A fragmented note about Chell."
+description = "\"Chell is fond of flower\"
+Chell loves flowers, something that Briar grows plenty
+"
+icon = ExtResource("1_pfjx4")
 use_condition_variable = "rachel_chit1_available"
 on_use_set_variable = "rachel_chit1_used"

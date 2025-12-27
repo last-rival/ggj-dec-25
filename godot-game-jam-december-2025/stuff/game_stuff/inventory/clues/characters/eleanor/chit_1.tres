@@ -6,7 +6,8 @@
 [resource]
 script = ExtResource("1_item")
 name = "Eleanor Chit 1"
-description = "A fragmented note about Eleanor."
+description = "\"Eleanor is the Abbess\"
+Eleanor is the one who is the head nun."
 icon = ExtResource("1_votvy")
 use_condition_variable = "eleanor_chit1_available"
 on_use_set_variable = "eleanor_chit1_used"

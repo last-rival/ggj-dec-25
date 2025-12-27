@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_item")
 name = "Priest Dossier 1"
-description = "A dossier about the Priest."
+description = "A complete dossier composed of details about the Priest and events associated with his death."
 icon = ExtResource("1_py3e8")
 use_condition_variable = "priest_dossier_1_available"
 on_use_set_variable = "priest_dossier_1_used"

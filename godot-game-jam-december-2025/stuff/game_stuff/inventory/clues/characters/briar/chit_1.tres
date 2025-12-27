@@ -6,7 +6,8 @@
 [resource]
 script = ExtResource("1_item")
 name = "Briar Chit 1"
-description = "A fragmented note about Briar."
+description = "\"Briar manages Kitchen and Garden\"
+Briar is responsible for taking care of the garden, and she is also the one who does all the cooking. "
 icon = ExtResource("1_gtatc")
 use_condition_variable = "briar_chit1_available"
 on_use_set_variable = "briar_chit1_used"

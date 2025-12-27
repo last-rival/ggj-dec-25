@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://csbccfbj62g2s"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://csbccfbj62g2s"]
 
 [ext_resource type="Script" uid="uid://bqq6s368r5ltg" path="res://stuff/game_stuff/inventory/inventory_item.gd" id="1_item"]
+[ext_resource type="Texture2D" uid="uid://d15uporjjum4f" path="res://stuff/art/items/chit_2_unlock.png" id="1_sbbsl"]
 
 [resource]
 script = ExtResource("1_item")
 name = "Prudence Chit 3"
-description = "A fragmented note about Prudence."
+description = "\"Prudence is scared of the Priest\"
+Prudence sources whatever the priest asks her to source without question, because she is scared of him"
+icon = ExtResource("1_sbbsl")
 use_condition_variable = "prudence_chit3_available"
 on_use_set_variable = "prudence_chit3_used"

@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://dxe6ymybl7atk"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dxe6ymybl7atk"]
 
+[ext_resource type="Texture2D" uid="uid://boiql1p6jqdec" path="res://stuff/art/items/chit_1_unlock.png" id="1_0t6e5"]
 [ext_resource type="Script" uid="uid://bqq6s368r5ltg" path="res://stuff/game_stuff/inventory/inventory_item.gd" id="1_item"]
 
 [resource]
 script = ExtResource("1_item")
 name = "Prudence Chit 2"
-description = "A fragmented note about Prudence."
+description = "\"Prudence could source restrictive items\"
+Prudence is very resourceful who is even capable of sourcing items that might not be legal in nature."
+icon = ExtResource("1_0t6e5")
 use_condition_variable = "prudence_chit2_available"
 on_use_set_variable = "prudence_chit2_used"

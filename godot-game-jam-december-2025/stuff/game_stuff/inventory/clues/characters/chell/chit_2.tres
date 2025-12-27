@@ -1,10 +1,14 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://cd25w106e0hpq"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://cd25w106e0hpq"]
 
 [ext_resource type="Script" uid="uid://bqq6s368r5ltg" path="res://stuff/game_stuff/inventory/inventory_item.gd" id="1_item"]
+[ext_resource type="Texture2D" uid="uid://d15uporjjum4f" path="res://stuff/art/items/chit_2_unlock.png" id="1_y5upd"]
 
 [resource]
 script = ExtResource("1_item")
 name = "Chell Chit 2"
-description = "A fragmented note about Chell."
+description = "\"Chell looks after cleanliness\"
+Chell is responsible for the overall cleanliness of the church
+"
+icon = ExtResource("1_y5upd")
 use_condition_variable = "rachel_chit2_available"
 on_use_set_variable = "rachel_chit2_used"

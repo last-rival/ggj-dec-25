@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://bsac4v0rqxad0"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://bsac4v0rqxad0"]
 
+[ext_resource type="Texture2D" uid="uid://cs57mwdrjpbfg" path="res://stuff/art/items/chit_3_unlock.png" id="1_4gtdj"]
 [ext_resource type="Script" uid="uid://bqq6s368r5ltg" path="res://stuff/game_stuff/inventory/inventory_item.gd" id="1_item"]
 
 [resource]
 script = ExtResource("1_item")
 name = "Prudence Chit 1"
-description = "A fragmented note about Prudence."
+description = "\"Prudence take care of management\"
+Prudence is the one who handles and manages the finances and the operations of the church"
+icon = ExtResource("1_4gtdj")
 use_condition_variable = "prudence_chit1_available"
 on_use_set_variable = "prudence_chit1_used"

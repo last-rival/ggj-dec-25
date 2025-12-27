@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://by58kd5hdgy4p"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://by58kd5hdgy4p"]
 
 [ext_resource type="Script" uid="uid://bqq6s368r5ltg" path="res://stuff/game_stuff/inventory/inventory_item.gd" id="1_item"]
+[ext_resource type="Texture2D" uid="uid://boiql1p6jqdec" path="res://stuff/art/items/chit_1_unlock.png" id="1_jspcg"]
 
 [resource]
 script = ExtResource("1_item")
 name = "Briar Chit 2"
-description = "A fragmented note about Briar."
+description = "\"Briar grew the poison flower\"
+Briar grows the Night Rhododendron in the garden which was used to poison the Priest."
+icon = ExtResource("1_jspcg")
 use_condition_variable = "briar_chit2_available"
 on_use_set_variable = "briar_chit2_used"

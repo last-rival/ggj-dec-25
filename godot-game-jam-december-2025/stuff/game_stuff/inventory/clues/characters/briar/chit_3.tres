@@ -6,5 +6,6 @@
 [resource]
 script = ExtResource("1_item")
 name = "Briar Chit 3"
-description = "A fragmented note about Briar."
+description = "\"Briar takes care of Chell\"
+Briar seems to be fond of Chell and thus she takes care of all her needs"
 icon = ExtResource("1_0i3h0")

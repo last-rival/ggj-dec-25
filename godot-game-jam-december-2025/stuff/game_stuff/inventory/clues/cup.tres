@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_item")
 name = "Poisoned Cup"
-description = "A cracked cup. It looks like it might have contained poison."
+description = "A cracked cup which was used to administer poison to the victim."
 icon = ExtResource("1_i84di")
 use_condition_variable = "cup_available"
 on_use_set_variable = "cup_used"
