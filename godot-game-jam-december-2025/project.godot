@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="GodotGameJamDecember2025"
+config/name="ALTER GIRL"
 run/main_scene="res://addons/maaacks_menus_template/examples/scenes/opening/opening.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"

@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2wqh5w8nm5rg"]
+
+[ext_resource type="PackedScene" uid="uid://t2dui8ppm3a4" path="res://addons/maaacks_menus_template/examples/scenes/credits/scrolling_credits.tscn" id="1_e3r4h"]
+
+[node name="IntroTextScroll" instance=ExtResource("1_e3r4h")]
+scroll_paused = false
+
+[node name="ScrollContainer" parent="." index="0"]
+scroll_vertical = 2182
+
+[node name="CreditsLabel" parent="ScrollContainer/VBoxContainer" index="1"]
+text = "[font_size=48]I had a craving for tea.[/font_size]
+[font_size=48]Maybe it was because the day felt unusually slow, with a weight that had settled on my shoulder. Or maybe it was the lack of sleep, the one which has accumulated over nights spent without any. Or perhaps it was something else entirely, the weight that had settled into my chest for the reason I could not quite name. [/font_size]
+
+[font_size=48]I looked down on the dossier in my hand. [/font_size]
+
+[font_size=48]On paper, it was a simple case. A remote church. A dead priest. A poisoned cup. A single Witness. And a single suspect.[/font_size]
+[font_size=48]And yet, a sense of foreboding lingered, as if the more I tried to unravel this mystery, the more it would tangle. [/font_size]
+[font_size=48]Only two people lived at church, the priest and the nun. No signs of forced entry, nor any signs of anyone leaving the premises. The initial investigation has concluded that no other body was present at the time of death.[/font_size]
+
+[font_size=48]And still something didn't sit quite right.[/font_size]
+
+[font_size=48]Was it because it was she who had called the police?  [/font_size]
+[font_size=48]Or because she cooperated without hesitation, helping us at every step wherever she could. [/font_size]
+[font_size=48]But instincts rarely speak without reasons.[/font_size]
+
+[font_size=48]And yet I hoped that it wasn’t her fault. [/font_size]
+"
+attribution_file_path = "res://stuff/IntroTextScroll.md"

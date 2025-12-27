@@ -11,13 +11,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4")
+scroll_paused = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-scroll_vertical = 0
+scroll_vertical = 2975
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
@@ -27,14 +28,55 @@ size_flags_horizontal = 3
 
 [node name="HeaderSpace" type="Control" parent="ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 720)
+custom_minimum_size = Vector2(0, 1080)
 layout_mode = 2
 
 [node name="CreditsLabel" parent="ScrollContainer/VBoxContainer" instance=ExtResource("3_fbdex")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(1920, 0)
 layout_mode = 2
+text = "[font_size=48]Thanks for Playing![/font_size]
+
+[font_size=32]Game Makers[/font_size]
+[shake]Crayon Cat[/shake]: Character Art + Narrative Design  
+[shake]Kuldeep[/shake]: Gameplay Programming  
+[shake]Tanay.wav[/shake]: Music + SFX  
+[shake]Skkarrty[/shake]: Dialogue + Narrative Design + Gameplay Programming 
+[shake]Major Bacon[/shake]: Creative Lead + Game Design + Tech Art
+
+
+[font_size=24]Godot Engine Logo[/font_size]
+Author: Andrea Calabró  
+Source: [url=https://godotengine.org/press/]godotengine.org : press[/url]  
+License: [url=https://github.com/godotengine/godot/blob/master/LOGO_LICENSE.txt]CC BY 4.0 International[/url] 
+
+[font_size=48]Tools[/font_size]
+[font_size=24]Godot[/font_size]
+[img=80]res:///addons/maaacks_menus_template/examples/assets/godot_engine_logo/logo_vertical_color_dark.png[/img]  
+Author: [url=https://godotengine.org/contact]Juan Linietsky, Ariel Manzur, and contributors[/url]  
+Source: [url=https://godotengine.org/]godotengine.org[/url]  
+License: [url=https://github.com/godotengine/godot/blob/master/LICENSE.txt]MIT License[/url] 
+
+[font_size=32]Clyde Dialogue Tool[/font_size]
+[img=80]res:///addons/maaacks_menus_template/examples/assets/plugin_logo/clyde.png[/img]  
+Author: [url=https://github.com/viniciusgerevini]Vinicius Gerevini and contributors[/url]
+Source: [url=https://github.com/viniciusgerevini/godot-clyde-dialogue]github: godot-clyde-dialogue[/url]
+
+
+[font_size=24]Godot Menus Template[/font_size]
+[img=80]res:///addons/maaacks_menus_template/examples/assets/plugin_logo/logo.png[/img]  
+Author: [url=https://github.com/Maaack/Godot-Menus-Template/graphs/contributors]Marek Belski and contributors[/url]  
+Source: [url=https://github.com/Maaack/Godot-Menus-Template]github: Godot-Menus-Template[/url]  
+License: [url=LICENSE.txt]MIT License[/url]  
+
+[font_size=24]Git[/font_size]
+[img=80]res:///addons/maaacks_menus_template/examples/assets/git_logo/Git-Logo-2Color.png[/img]  
+Author: [url=https://github.com/torvalds]Linus Torvalds[/url]  
+Source: [url=https://git-scm.com/downloads]git-scm.com[/url]  
+License: [url=https://opensource.org/licenses/GPL-2.0]GNU General Public License version 2[/url]
+"
 
 [node name="FooterSpace" type="Control" parent="ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 720)
+custom_minimum_size = Vector2(0, 1080)
 layout_mode = 2
