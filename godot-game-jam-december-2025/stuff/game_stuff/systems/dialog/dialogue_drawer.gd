@@ -71,6 +71,9 @@ func _ready() -> void:
 	init_dialogue(_prudence_dialogue)
 	init_dialogue(_rachel_dialogue)
 
+	return
+
+
 func start_conversation() -> void:
 	var active_character = GameData.active_character;
 	match active_character:
@@ -355,4 +358,6 @@ func _on_continue_button_pressed() -> void:
 	# to solve this
 	if _continue_button.modulate.a == 0.0:
 		return
+
 	next()
+	return;
