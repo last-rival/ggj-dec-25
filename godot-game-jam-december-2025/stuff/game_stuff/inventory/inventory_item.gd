@@ -16,3 +16,6 @@ class_name InventoryItem
 @export var on_use_set_variable: String = ""
 @export var on_use_set_value: bool = true
 @export var on_use_dialogue: String = ""
+
+func get_item_id() -> String :
+	return name.to_lower().replace(" ", "_");
