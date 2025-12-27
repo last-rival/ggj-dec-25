@@ -57,22 +57,22 @@ func _ready():
 	GameData.set_variable("flower_available", false)
 	GameData.set_variable("priest_dossier_1_available", false)
 	
-	GameData.set_variable("eleanor_dossier1_available", false)
+	GameData.set_variable("eleanor_dossier_1_available", false)
 	GameData.set_variable("eleanor_chit1_available", false)
 	GameData.set_variable("eleanor_chit2_available", false)
 	GameData.set_variable("eleanor_chit3_available", false)
 	
-	GameData.set_variable("rachel_dossier1_available", false)
+	GameData.set_variable("rachel_dossier_1_available", false)
 	GameData.set_variable("rachel_chit1_available", false)
 	GameData.set_variable("rachel_chit2_available", false)
 	GameData.set_variable("rachel_chit3_available", false)
 	
-	GameData.set_variable("prudence_dossier1_available", false)
+	GameData.set_variable("prudence_dossier_1_available", false)
 	GameData.set_variable("prudence_chit1_available", false)
 	GameData.set_variable("prudence_chit2_available", false)
 	GameData.set_variable("prudence_chit3_available", false)
 	
-	GameData.set_variable("briar_dossier1_available", false)
+	GameData.set_variable("briar_dossier_1_available", false)
 	GameData.set_variable("briar_chit1_available", false)
 	GameData.set_variable("briar_chit2_available", false)
 	GameData.set_variable("briar_chit3_available", false)
@@ -87,22 +87,22 @@ func _ready():
 	GameData.set_variable("flower_used", false)
 	GameData.set_variable("priest_dossier_1_used", false)
 	
-	GameData.set_variable("eleanor_dossier1_used", false)
+	GameData.set_variable("eleanor_dossier_1_used", false)
 	GameData.set_variable("eleanor_chit1_used", false)
 	GameData.set_variable("eleanor_chit2_used", false)
 	GameData.set_variable("eleanor_chit3_used", false)
 	
-	GameData.set_variable("rachel_dossier1_used", false)
+	GameData.set_variable("rachel_dossier_1_used", false)
 	GameData.set_variable("rachel_chit1_used", false)
 	GameData.set_variable("rachel_chit2_used", false)
 	GameData.set_variable("rachel_chit3_used", false)
 	
-	GameData.set_variable("prudence_dossier1_used", false)
+	GameData.set_variable("prudence_dossier_1_used", false)
 	GameData.set_variable("prudence_chit1_used", false)
 	GameData.set_variable("prudence_chit2_used", false)
 	GameData.set_variable("prudence_chit3_used", false)
 	
-	GameData.set_variable("briar_dossier1_used", false)
+	GameData.set_variable("briar_dossier_1_used", false)
 	GameData.set_variable("briar_chit1_used", false)
 	GameData.set_variable("briar_chit2_used", false)
 	GameData.set_variable("briar_chit3_used", false)

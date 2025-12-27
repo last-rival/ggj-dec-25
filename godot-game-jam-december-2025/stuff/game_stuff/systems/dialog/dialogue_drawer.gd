@@ -2,7 +2,7 @@ extends MarginContainer
 
 signal dialogue_ended
 
-signal active_check_start_conversation_withed
+signal active_check_start_conversation_with
 signal active_check_ended
 signal break_room
 signal energy_used(amount:int)
@@ -348,7 +348,7 @@ func _on_event_triggered(event_name: String, params: Array) -> void:
 
 func _handle_active_check(skill, level) -> void:
 	_set_as_waiting_for_active_check()
-	active_check_start_conversation_withed.emit()
+	active_check_start_conversation_with.emit()
 	active_check_handler.process_active_check(skill, level)
 	await get_tree().create_timer(2.0).timeout
 	active_check_ended.emit()
