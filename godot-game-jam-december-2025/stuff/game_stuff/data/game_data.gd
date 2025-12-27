@@ -25,7 +25,6 @@ var character_switch_chances:Dictionary[String,int]={
 signal inventory_updated
 signal collection_updated
 signal energy_updated(new_amount: int)
-signal energy_debug_visibility_changed(visible: bool)
 
 var _persistence = {
 	"dialogues": {},
@@ -77,10 +76,6 @@ func set_variable(var_name: String, value) -> void:
 	# Check for Item Discovery
 	if var_name.begins_with("found_") and value == true:
 		_process_discovery(var_name)
-
-	# Check for Energy Debug Visibility
-	if var_name == "energy_debug_visible":
-		energy_debug_visibility_changed.emit(value)
 
 func _process_discovery(var_name: String):
 	# Find which item matches this variable

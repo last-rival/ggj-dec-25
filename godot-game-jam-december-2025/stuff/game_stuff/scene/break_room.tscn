@@ -318,19 +318,20 @@ grow_horizontal = 0
 grow_vertical = 1
 
 [node name="break_description_panel" type="PanelContainer" parent="break_room"]
-visible = false
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -197.0
-offset_right = 384.0
-grow_vertical = 0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -508.0
+offset_top = 27.0
+offset_right = 484.0
+offset_bottom = 84.0
+grow_horizontal = 2
 
 [node name="break_description" type="RichTextLabel" parent="break_room/break_description_panel"]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
-text = "TO DO LIST? TUTORIAL PANEL?"
+text = "Click on items to carry or remove them for innterogation."
 horizontal_alignment = 1
 vertical_alignment = 1
 

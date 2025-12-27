@@ -128,6 +128,9 @@ func change_active_character() -> void:
 		intro_value=intro_completed as bool
 
 	if intro_value == false:
+		if GameData.current_energy <= 0:
+			print("Max energy replished to  " + str(GameData.MAX_ENERGY));
+			GameData.set_energy(GameData.MAX_ENERGY)
 		return
 
 	_character.shuffle_active_character();

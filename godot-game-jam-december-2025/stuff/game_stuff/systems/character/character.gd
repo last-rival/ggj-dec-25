@@ -29,6 +29,9 @@ func set_expression() -> void:
 
 
 func shuffle_active_character() -> void:
+	if GameData.current_energy <= 0:
+		print("Max energy replished to  " + str(GameData.MAX_ENERGY));
+		GameData.set_energy(GameData.MAX_ENERGY)
 
 	var shouldShuffle : bool = false;
 	if GameData.current_energy <= 0:
@@ -72,15 +75,9 @@ func shuffle_active_character() -> void:
 
 	if selected_character == active_character:
 		print("Skipping character selection due to missed roll, set character is " + selected_character);
-
-		if GameData.current_energy <= 0:
-			print("Max energy replished to  " + str(GameData.MAX_ENERGY));
-			GameData.set_energy(GameData.MAX_ENERGY)
-
 		return;
 
 	set_character(selected_character);
 	GameData.set_energy(GameData.MAX_ENERGY)
 
 	print("Setting character to " + selected_character);
-	print("Max energy replished to  " + str(GameData.MAX_ENERGY));

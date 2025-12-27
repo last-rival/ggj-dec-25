@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://energy_ui_scene"]
+[gd_scene load_steps=4 format=3 uid="uid://bwp7mc2amlsvw"]
 
-[ext_resource type="Script" path="res://stuff/game_stuff/energy/energy_ui.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://bsoop1tndk1ht" path="res://stuff/game_stuff/energy/energy_ui.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://cva4ickk71qc4" path="res://stuff/art/ui/energy_fill.png" id="2_hb2ri"]
+[ext_resource type="Texture2D" uid="uid://d4m1iwqfjysgp" path="res://stuff/art/ui/energy_empty.png" id="3_vuvqw"]
 
 [node name="EnergyUI" type="VBoxContainer"]
 offset_right = 240.0
@@ -8,34 +10,16 @@ offset_bottom = 20.0
 theme_override_constants/separation = 10
 script = ExtResource("1_script")
 
-[node name="Indicators" type="HBoxContainer" parent="."]
+[node name="DebugInfo" type="Label" parent="."]
 layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="Energy1" type="ColorRect" parent="Indicators"]
-custom_minimum_size = Vector2(40, 20)
-layout_mode = 2
-
-[node name="Energy2" type="ColorRect" parent="Indicators"]
-custom_minimum_size = Vector2(40, 20)
-layout_mode = 2
-
-[node name="Energy3" type="ColorRect" parent="Indicators"]
-custom_minimum_size = Vector2(40, 20)
-layout_mode = 2
-
-[node name="Energy4" type="ColorRect" parent="Indicators"]
-custom_minimum_size = Vector2(40, 20)
-layout_mode = 2
-
-[node name="Energy5" type="ColorRect" parent="Indicators"]
-custom_minimum_size = Vector2(40, 20)
-layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "E: 5 | Exh: false"
+horizontal_alignment = 1
 
 [node name="DebugButtons" type="HBoxContainer" parent="."]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 10
+alignment = 1
 
 [node name="ReduceButton" type="Button" parent="DebugButtons"]
 layout_mode = 2
@@ -45,8 +29,101 @@ text = " - Energy"
 layout_mode = 2
 text = "Reset Exh."
 
-[node name="DebugInfo" type="Label" parent="."]
-visible = false
+[node name="Indicators" type="HBoxContainer" parent="."]
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
-text = "E: 5 | Exh: false"
+theme_override_constants/separation = 10
+
+[node name="energy1" type="MarginContainer" parent="Indicators"]
+custom_minimum_size = Vector2(80, 40)
+layout_mode = 2
+
+[node name="open" type="TextureRect" parent="Indicators/energy1"]
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+texture = ExtResource("2_hb2ri")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="close" type="TextureRect" parent="Indicators/energy1"]
+visible = false
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+texture = ExtResource("3_vuvqw")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="energy2" type="MarginContainer" parent="Indicators"]
+custom_minimum_size = Vector2(80, 40)
+layout_mode = 2
+
+[node name="open" type="TextureRect" parent="Indicators/energy2"]
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+texture = ExtResource("2_hb2ri")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="close" type="TextureRect" parent="Indicators/energy2"]
+visible = false
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+texture = ExtResource("3_vuvqw")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="energy3" type="MarginContainer" parent="Indicators"]
+custom_minimum_size = Vector2(80, 40)
+layout_mode = 2
+
+[node name="open" type="TextureRect" parent="Indicators/energy3"]
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+texture = ExtResource("2_hb2ri")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="close" type="TextureRect" parent="Indicators/energy3"]
+visible = false
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+texture = ExtResource("3_vuvqw")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="energy4" type="MarginContainer" parent="Indicators"]
+custom_minimum_size = Vector2(80, 40)
+layout_mode = 2
+
+[node name="open" type="TextureRect" parent="Indicators/energy4"]
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+texture = ExtResource("2_hb2ri")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="close" type="TextureRect" parent="Indicators/energy4"]
+visible = false
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+texture = ExtResource("3_vuvqw")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="energy5" type="MarginContainer" parent="Indicators"]
+custom_minimum_size = Vector2(80, 40)
+layout_mode = 2
+
+[node name="open" type="TextureRect" parent="Indicators/energy5"]
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+texture = ExtResource("2_hb2ri")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="close" type="TextureRect" parent="Indicators/energy5"]
+visible = false
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+texture = ExtResource("3_vuvqw")
+expand_mode = 1
+stretch_mode = 4
