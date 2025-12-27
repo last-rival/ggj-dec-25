@@ -95,12 +95,5 @@ func get_sfx_player() -> AudioStreamPlayer:
 
 
 func on_energy_changed(value : bool):
-	if GameData.current_energy == 0:
-		play_sfx("sfx_eng_drop")
-		return
-
 	if value:
 		play_sfx("sfx_eng_fill")
-
-	else:
-		play_sfx("sfx_eng_tired")

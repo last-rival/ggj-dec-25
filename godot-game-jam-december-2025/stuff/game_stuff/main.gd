@@ -21,6 +21,7 @@ func _ready() -> void:
 	_dialogue_drawer.connect("set_sfx",on_sfx_set)
 	_dialogue_drawer.connect("set_expr",on_expression_set)
 	_dialogue_drawer.connect("set_expr_solo",on_expression_solo_set)
+	_dialogue_drawer.connect("set_end_game",on_end_game)
 
 	break_room.connect("exit_break_room", on_break_room_exit_pressed)
 
@@ -193,6 +194,9 @@ func on_expression_solo_set(keys:Array):
 	var char_id = keys[0]
 	var exp_id = keys[1]
 	_character.set_expression_solo(char_id,exp_id)
+
+func on_end_game():
+	SceneLoader.load_scene("res://addons/maaacks_menus_template/examples/scenes/windows/main_menu_credits_window.tscn", true)
 
 # TODO : Updated the game to load different conversation files based on the active character.
 # The way this will work is you carry on a conversation, the character runs of energy and then you enter break room

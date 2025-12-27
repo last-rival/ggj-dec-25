@@ -48,6 +48,7 @@ func _ready():
 	# --- Default UNLOCKED Items ---
 	set_variable("found_body_photo", true)
 	set_variable("found_priest_dossier_1", true)
+	set_variable("found_poisoned_cup", true)
 
 	# Default Energy
 	set_variable("energy", 5)

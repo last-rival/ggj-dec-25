@@ -5,6 +5,7 @@ signal dialogue_ended
 signal active_check_start_conversation_with
 signal active_check_ended
 signal break_room
+signal set_end_game
 signal energy_used(amount:int)
 signal set_switch(chances:Array)
 signal set_bgm(key:Array)
@@ -348,6 +349,9 @@ func _on_event_triggered(event_name: String, params: Array) -> void:
 	
 	if event_name == "set_expr_solo":
 		set_expr_solo.emit(params)
+	
+	if event_name == "set_end_game":
+		set_end_game.emit()
 
 
 func _handle_active_check(skill, level) -> void:
