@@ -49,10 +49,14 @@ func _ready() -> void:
 	var photo = load("res://stuff/game_stuff/inventory/clues/photo.tres")
 	var cup = load("res://stuff/game_stuff/inventory/clues/cup.tres")
 	var flower = load("res://stuff/game_stuff/inventory/clues/flower.tres")
+	var secret =  load("res://stuff/game_stuff/inventory/clues/characters/briar/secret.tres")
+	var song =  load("res://stuff/game_stuff/inventory/clues/song.tres")
 	
 	if photo: GameData.add_item(photo)
 	if cup: GameData.add_item(cup)
 	if flower: GameData.add_item(flower)
+	if secret: GameData.add_item(secret)
+	if song: GameData.add_item(song)
 
 	# Start Game
 	load_innterogation_room()

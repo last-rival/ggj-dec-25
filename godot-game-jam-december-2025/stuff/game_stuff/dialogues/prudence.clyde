@@ -195,9 +195,9 @@
 
 
 == prudence_intro
-{prudence_drink == false}I noticed it the moment I looked at her again. 
-{prudence_drink == false}The woman across the table no longer feels… warm, the kindness, the grief softened eyes… they were missing. In its place was something colder and sharper.
-{prudence_drink == false}She snatched the water from my hand, and downed it in a single go, not breaking eye contact until the glass was empty.
-{prudence_drink == false}The dynamics between us feels different. Earlier when I felt I was in control, now I was not that sure. 
-{set prudence_drink = true}
+Something changed.
+I noticed it the moment I looked at her again. 
+The woman across the table no longer feels… warm, the kindness, the grief softened eyes… they were missing. In its place was something colder and sharper.
+She snatched the water from my hand, and downed it in a single go, not breaking eye contact until the glass was empty.
+The dynamics between us feels different. Earlier when I felt I was in control, now I was not that sure. 
 <-

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://2cjexigkh8bl"]
+
+[ext_resource type="Texture2D" uid="uid://boiql1p6jqdec" path="res://stuff/art/items/chit_1_unlock.png" id="1_ayj0t"]
+[ext_resource type="Script" uid="uid://bqq6s368r5ltg" path="res://stuff/game_stuff/inventory/inventory_item.gd" id="2_5dms7"]
+
+[resource]
+script = ExtResource("2_5dms7")
+name = "Lullaby"
+description = "Hush now little flower of the night,
+Five violet petals folded tight, 
+Born where light dares not stay, 
+Under the stars that fade away
+- Chell's Lullaby"
+icon = ExtResource("1_ayj0t")
+use_condition_variable = "lullaby_available"
+on_use_set_variable = "briar_chit1_used"

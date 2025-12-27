@@ -1,4 +1,97 @@
-Chell: Hello this is Chell.
-+ {@intro_completed == true or @energy<=0} She looks exausted, should take a break
-	{trigger break_room} You walk out to the break room#end
+There’s a gloom about her, a wariness so deep I could feel it settle inside my bones by just looking at her.
+Her eyes held resentment as they met mine-but not the kind that meant for me, it was aimed inward.
+
+For a moment only silence persisted between the two of us. 
+Finally I steadied myself and asked the question I never expected to ask so many times in a single interview. 
+
++ {@energy >= 0} Who are you?
+	I studied the woman who seated across me, she was timid, her gaze refused to settle, slipping away whenever our eyes nearly met. She wasn't the same as the others, and since I already knew all the others, then this must be Chell. The final missing piece of the puzzle. 
+	You: For the record, can you introduce yourself?
+	I repeated, this time with the practiced neutrality that I was supposed to carry in an interrogation room. 
+	Her eyes dropped to the floor, as if the answer to my question was written over it. 
+	Then slowly she spoke.
+	{trigger energy_used(1)}
+	Chell : My name is Chell
+	{trigger set_switch(1,1,1,1,0)}
+	A brief pause.
+	{set chell_q2 = true}
+	Chell : I care for the church’s cleanliness
+	{set @found_chell_chit1 = true}
+	[i] Note - "Chell looks after the cleanliness"
+	<-
+
++ {chell_q2 == true}{@energy >= 0} Where were you at the time of murder?
+	Another textbook question, and I hoped for another textbook answer.
+	Judging by her expression she was not about to deflect or play for the time. 
+	{trigger energy_used(1)}
+	Chell : I was reading a book
+	Though the change was imminent.
+	{set chell_q3 = true}
+	Her face brightened, even at the mention of it, for the first time since she had sat down she looked at me directly.
+	<-
+
++ {chell_q3 == true}{@energy >= 0} Where were you at the time of murder?
+	The moment those words left my mouth, her face instantly lit up, no more was she wary of me, it seems that I have recalled her favourite person. An admiration so pure.
+	{trigger energy_used(1)}
+	Chell : Briar takes care of me all the time.
+	The words spilled out unguarded.
+	Chell : She makes my favourite food
+	she said smiling widely
+	Chell : and gives me sweets
+	Chell : she is the best!
+	She exclaimed the sentence with joy.
+	{set @found_briar_chit2 = true}
+	[i]Note - "Briar takes care of Chell"
+	{set @found_briar_dossier_1 = true}
+	[i]Dossier Unlocked "Briar" - All information about Briar is revealed.
+	{set chell_q4 = true}
+	{set @briar_q5 = true}
+	<-
+
++ {chell_q4 == true}{@energy >= 0} Do you know what could have caused the death?
+	Chell, who was answering all the questions even though she seemed scared in the beginning, suddenly seemed to have become lost. 
+	Chell : Hmmm~ hmm~ hmmm~ hmmmmmm~ hmm~ mhm~
+	She was humming the music.
+	{trigger energy_used(1)}
+	You : Chell?
+	I called her again.
+	You : Chell?
+	And yet
+	Chell : Hmmm~ hmm~ hmmm~ hmmmmmm~ hmm~ mhm~
+	All she did was sing the same. 
+	It seems I won’t go any further, and yet it seems like the answer is very near.
+	{@strange_flower_available == false} Maybe I should bring something to get her attention.
+	+{@strange_flower_available == true}{@energy >= 0} Give her the Night Rhododendron Flower
+		{trigger energy_used(1)}
+		Chell : Ohh thank you so much, it’s my favourite flower!
+		{set chell_q5 = true}
+		<-
+	<-
+
++ {chell_q5 == true}{@energy >= 0} What is the lullaby?
+	Chell looked up at me, there was an excitement in her tone. 
+	Chell : Ohhh, you know about it! Our mother used to sing it
+	she said with excitement, and then she scrunched her brow as if trying to remember something hard. Yet all she drew was a blank.
+	Chell : Probably
+	The last word were spoken with a sense of longingness. 
+	Chell : Hmmm~ hmm~ hmmm~ hmmmmmm~ hmm~ mhm~
+	again she started humming. 
+	And yet I didn’t hear any Lullaby.
+	Suddenly there was a switch, a change in demeanor, no more the person sitting in front of me was not Chell. Rather it was the first person I had met, when I entered this interrogation room.
+	“It seems you have earned the faith of everyone here, detective” Eleanor stated. Her back was regal just like how it was before.
+	“I will tell you the clue for calling the youngest” Eleanor stated.
+	“Well, here’s how it goes” 
+	“Hush now little flower of the night,
+	Five violet petals folded tight, 
+	Born where light dares not stay, 
+	Under the stars that fade away” 
+	She sang the final clue. 
+	“I will pray for you detective” 
+	<-
+
++ {@energy <= 0}She looks exausted, maybe we should take a break.
+	{trigger break_room}[i]You pause the recorder walk out to the innterogation room#end
+
++ {@break_room_unlocked} {@energy > 0} Lets take and break and asses the information we have gathered.
+	{trigger break_room}[i]You pause the recorder walk out to the innterogation room.#end
 	<-
