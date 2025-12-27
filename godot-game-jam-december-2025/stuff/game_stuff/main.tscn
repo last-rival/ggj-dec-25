@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://joqju5gkcy0j"]
+[gd_scene load_steps=17 format=3 uid="uid://joqju5gkcy0j"]
 
 [ext_resource type="Script" uid="uid://ct4qw6sp5c36c" path="res://stuff/game_stuff/main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://ltwhxc6oap2c" path="res://stuff/game_stuff/systems/dialog/dialogue_drawer.tscn" id="1_ig7tw"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bwp7mc2amlsvw" path="res://stuff/game_stuff/energy/energy_ui.tscn" id="7_energy"]
 [ext_resource type="PackedScene" uid="uid://dc3q0aepimx7t" path="res://stuff/game_stuff/scene/innterogation_room.tscn" id="9_c0q6h"]
 [ext_resource type="Script" uid="uid://dlj3lww0har8k" path="res://stuff/game_stuff/systems/audio_manager.gd" id="10_3l2cm"]
+[ext_resource type="Script" uid="uid://bpu2j8r83xfy" path="res://stuff/game_stuff/all.gd" id="10_tiyvg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tiyvg"]
 
@@ -96,6 +97,18 @@ texture = ExtResource("6_tiyvg")
 expand_mode = 1
 stretch_mode = 6
 
+[node name="all" type="Button" parent="HUD"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -137.0
+offset_bottom = 50.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+text = "Give All"
+script = ExtResource("10_tiyvg")
+
 [node name="audio_manager" type="Node" parent="."]
 script = ExtResource("10_3l2cm")
 
@@ -120,6 +133,7 @@ bus = &"SFX"
 [connection signal="active_check_ended" from="HUD/DialogueDrawer" to="." method="_on_dialogue_drawer_active_check_ended"]
 [connection signal="dialogue_ended" from="HUD/DialogueDrawer" to="." method="_on_dialogue_drawer_dialogue_ended"]
 [connection signal="pressed" from="HUD/start_interrogation" to="." method="_on_game_demo_pressed"]
+[connection signal="pressed" from="HUD/all" to="HUD/all" method="_on_pressed"]
 
 [editable path="break_room"]
 [editable path="innterogation_room"]
