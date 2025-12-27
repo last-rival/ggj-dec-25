@@ -1,53 +1,56 @@
-There’s a gloom about her, a wariness so deep I could feel it settle inside my bones by just looking at her.
-Her eyes held resentment as they met mine-but not the kind that meant for me, it was aimed inward.
+{trigger set_expr("briar","Neutral_02")}
+[i]There’s a gloom about her, a wariness so deep I could feel it settle inside my bones by just looking at her.
+[i]Her eyes held resentment as they met mine-but not the kind that meant for me, it was aimed inward.
 
-For a moment only silence persisted between the two of us. 
-Finally I steadied myself and asked the question I never expected to ask so many times in a single interview. 
+[i]For a moment only silence persisted between the two of us. 
+[i]Finally I steadied myself and asked the question I never expected to ask so many times in a single interview. 
 
 + {@energy >= 0} Who are you
-	She left out a chuckle. 
-	A self deprecating chuckle.
-	I didn’t like the sound of it.
+	{trigger set_expr("briar","Hah_02")}
+	[i]A self deprecating chuckle.
+	[i]I didn’t like the sound of it.
 	{trigger energy_used(1)}
+	{trigger set_expr("briar","Hah_01")}
 	Briar : Does it matter, detective?
-	She spat those words out.
 	Briar : Who am I? What am I?
-	Her eyes scrunch shut, as if those questions physically hurt. 
 	Briar : Why am I?
-	She asked the question not to me but more to herself.
+	{trigger set_expr("briar","Hah_03")}
 	Briar : But since you are the first person who actually asked.
-	Cracks formed in her voice as pain bled through it, 
 	Briar : And not scream the answer at me
-	An old wound she did not want to touch.
+	{trigger set_expr("briar","Neutral_01")}
 	{set briar_q2 = true}
 	Briar : I am Briar, the one who takes care of the kitchen and gardens
+	{trigger set_expr("briar","Neutral_02")}
 	<-
 
 + {briar_q2 == true} {@energy > 0} Where were you at the time of murder?
-	I had a premonition. That I am not going to like the answer. Not one bit. 
+	{trigger set_expr("briar","Neutral_02")}
+	[i]I had a premonition. That I am not going to like the answer. Not one bit. 
 	{trigger energy_used(1)}
-	Briar: Just contemplating what poison will give the most painless death
-	She said in a nonchalant manner. Too casually as if discussing weather
-	Every alarm in my head goes off at once. 
+	{trigger set_expr("briar","Neutral_01")}
+	Briar: Just contemplating about poisons.
+	{trigger set_expr("briar","Neutral_02")}
 	It’s not just the thought, but the ease with which she voiced it. The lack of fear in saying that out loud. 
-	But the implications of that one statement. 
 	She has knowledge about different poisons and their effects.
 	{@poisoned_cup_available == false} I should show her the poisoned cup.
 	+{@poisoned_cup_available == true}{@energy >= 0} Show her the poisoned cup.
+		{trigger set_expr("briar","Neutral_01")}
 		Briar: Ahh
-		She muttered almost fondly
-		Briar: A poisoned cup”
-		She leaned in slightly, inhaling. 
+		Briar: A poisoned cup?
+		{trigger set_expr("briar","Smile_02")}
 		Briar: And is that the fragrance of Night Rhondendron?
-		There’s warmth in her expression now, the gloom seems to have receded. The look that she had was of one who is coming across an old friend. 
+		{trigger set_expr("briar","Smile_01")}
+		[i]There’s warmth in her expression now, the gloom seems to have receded. The look that she had was of one who is coming across an old friend. 
+		{trigger set_expr("briar","Smile_02")}
 		Briar: It seems that the poison of it is quite affective, to make the priest pass away
-		I didn’t miss the smile that accompanied that statement. 
-		I couldn’t tell what it meant. 
-		Before I could linger on the thought, she spoke again. 
+		{trigger set_expr("briar","Smile_03")}
+		[i]I didn’t miss the smile that accompanied that statement. 
+		[i]I couldn’t tell what it meant.
+		{trigger set_expr("briar","Neutral_01")}
 		Briar: You know detective
-		She said thoughtfully
-		Briar: A Night Rhododendron bears only a single flower
+		Briar: A Night Rhododendron bears only a single flower with 5 petals.
 		Briar: I would say we are quite similar.
+		{trigger set_expr("briar","Hah_04")}
 		{set briar_q3 = true}
 		<-
 	<-
@@ -55,18 +58,18 @@ Finally I steadied myself and asked the question I never expected to ask so many
 + {briar_q3 == true} {@energy >= 0} How did the flower come to church?
 	{trigger energy_used(1)}
 	Briar: How did the flower make it to the church
-	That much has been established, the tea was brewed with poisoned petals. But the question that it raised was how could something that dangerous cross church threshold so easily.  
-	Briar exhaled slowly.
-	Her lips turned upward. Yet her eyes didn’t show any warmth, the smile carried amusement but it was threaded with anger.
+	[i]That much has been established, the tea was brewed with poisoned petals. But the question that it raised was how could something that dangerous cross church threshold so easily.  
+	[i]Briar exhaled slowly.
+	[i]Her lips turned upward. Yet her eyes didn’t show any warmth, the smile carried amusement but it was threaded with anger.
 	Briar: Where do you think?
-	She didn’t let the question linger. 
+	[i]She didn’t let the question linger. 
 	Briar: There’s only one person could get her hands on it
-	Her gaze hardened.
+	[i]Her gaze hardened.
 	Briar: And that would be Prudence
-	But why, why would Prudence source something so dangerous - something so deadly.
+	[i]But why, why would Prudence source something so dangerous - something so deadly.
 	{set @found_prudence_chit2 = true}
 	{set briar_q4 = true}
-	[i]Note - "Prudence can source restirictive items like Night Rhondendron Flower".
+	[i]New Info. Unlocked - "Prudence can source restirictive items like Night Rhondendron Flower".
 	<-
 
 + {briar_q4 == true} {@energy >= 0} Why would Prudence source the flower?
@@ -100,24 +103,22 @@ Finally I steadied myself and asked the question I never expected to ask so many
 	[i]Dossier Unlocked "Chell" - All information about Chell is revealed
 	{@briar_secret_available == false} I should ask her about her secret shelf.
 	+ {@briar_secret_available == true} {@energy >= 0} Reveal that you know about her secret shelf.
+		{trigger set_expr("briar","Disbelief_01")}
 		I could see fury in her eyes. The feeling of betrayal. 
 		{trigger energy_used(1)}
+		{trigger set_expr("briar","Backstab_02")}
 		Briar: It was Prudence wasn’t it
-		Briar asked me or rather screamed at me.
 		Briar: She was the one who told you about the shelf?
-		She said frustration seeping from her voice.
 		Briar: When it finally seemed like everything is going to be fine
-		She muttered the words, there was hope in her tone, a contrast from her previous behavior as if she was looking forward to her life now. 
 		Briar: She push me under the bus?
-		She asked not to me but to Prudence who wasn’t here.
+		{trigger set_expr("briar","Offended_01")}
 		Briar: Well I am not paying for the crime of others
-		She replied, pulling out a flower from her pocket. A beautiful violet flower.
-		She straightened herself as she looked directly in my eyes to emphasise the weight of what she was going to say next.
+		{trigger set_expr("briar","Offended_02")}
+		Pulling out a flower from her pocket, A beautiful violet flower.
+		{trigger set_expr("briar","Disbelief_02")}
 		Briar: Detective this is Night Rhododendron, the flower responsible for the priest’s death.
-		She said looking at the flower with mixed emotions, too hard to decipher
 		Briar: And also Chell’s favourite flower, you can give it to her and ask for the lullaby, that should solve this case
-		The last line came out too quickly.
-		Finally handing over the flower to me.
+		{trigger set_expr("briar","Smile_01")}
 		It seems I was near the finish line.
 		{set @found_strange_flower = true}
 		[i] New Evidence - Night Rhododendron Flower
@@ -125,7 +126,7 @@ Finally I steadied myself and asked the question I never expected to ask so many
 		<-
 	<-
 
-+ {@energy <= 0}She looks exausted, maybe we should take a break.
++ {@energy <= 0}{trigger set_expr("briar","No_Energy")}{trigger set_expr_solo("briar","Sweat")}She looks exausted, maybe we should take a break.
 	{trigger break_room}[i]You pause the recorder walk out to the innterogation room#end
 
 + {@break_room_unlocked} {@energy > 0} Lets take and break and asses the information we have gathered.
