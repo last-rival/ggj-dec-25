@@ -8,13 +8,13 @@ enum OptionType {
 	WHITE,
 }
 
-const NORMAL_COLOR = Color("#c2512bff")
-const SELECTED_COLOR = Color("#ffffff")
+const NORMAL_COLOR = Color("4f0099ff")
+const SELECTED_COLOR = Color("000000ff")
 
 const CHECK_COLOR = Color(0.094, 0.094, 0.094, 1.0)
 
-const RED_BG = Color("#c6512e")
-const RED_BG_SELETED = Color("8a3820ff")
+const RED_BG = Color("860c74ff")
+const RED_BG_SELETED = Color("5b054fff")
 const WHITE_BG = Color("#847f71")
 const WHITE_BG_SELECTED = Color("57534bff")
 const TRANSPARENT_BG = Color("#ffffff00")

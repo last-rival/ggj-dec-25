@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=11 format=3 uid="uid://boixl5pj5ta8y"]
 
-[ext_resource type="FontFile" uid="uid://bi6d1g3gojifj" path="res://UI/Jackladder Demo.ttf" id="1_fq88c"]
+[ext_resource type="FontFile" uid="uid://bi6d1g3gojifj" path="res://fonts/Jackladder Demo.ttf" id="1_fq88c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mc6tu"]
 content_margin_left = 4.0

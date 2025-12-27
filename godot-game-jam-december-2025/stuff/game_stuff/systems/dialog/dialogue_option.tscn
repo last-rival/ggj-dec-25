@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bpiyt3yp8e3x7"]
 
 [ext_resource type="Script" uid="uid://c20cjf80lxjcu" path="res://stuff/game_stuff/systems/dialog/dialogue_option.gd" id="1_pkjeq"]
-[ext_resource type="FontFile" uid="uid://05aog0qyx7lq" path="res://UI/Nunito-VariableFont_wght.ttf" id="2_ujy1j"]
+[ext_resource type="FontFile" uid="uid://dwrc32gi4scnk" path="res://fonts/RadioCanadaBig-Medium.ttf" id="2_ujy1j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pkjeq"]
 resource_local_to_scene = true
@@ -25,7 +25,7 @@ theme_override_constants/separation = 10
 [node name="opt_number" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0.7607843, 0.31764707, 0.16862746, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "1."
 
 [node name="opt_label" type="Button" parent="HBoxContainer"]

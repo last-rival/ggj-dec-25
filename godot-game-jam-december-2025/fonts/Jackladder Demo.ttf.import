@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bs5er5vopmn1f"
-path="res://.godot/imported/Nunito-Italic-VariableFont_wght.ttf-236b6cab7b6057f349b50490716cd27c.fontdata"
+uid="uid://bi6d1g3gojifj"
+path="res://.godot/imported/Jackladder Demo.ttf-b6cae1bb2a70e27b5c867aba11f4e69a.fontdata"
 
 [deps]
 
-source_file="res://UI/Nunito-Italic-VariableFont_wght.ttf"
-dest_files=["res://.godot/imported/Nunito-Italic-VariableFont_wght.ttf-236b6cab7b6057f349b50490716cd27c.fontdata"]
+source_file="res://fonts/Jackladder Demo.ttf"
+dest_files=["res://.godot/imported/Jackladder Demo.ttf-b6cae1bb2a70e27b5c867aba11f4e69a.fontdata"]
 
 [params]
 

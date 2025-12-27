@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bi6d1g3gojifj"
-path="res://.godot/imported/Jackladder Demo.ttf-752d69cec0aa31252d5bb9aacda209c8.fontdata"
+uid="uid://d35ho3kgmbto4"
+path="res://.godot/imported/RadioCanadaBig-Bold.ttf-7ad0cf8ba5a37f43bfe716e8885c3c03.fontdata"
 
 [deps]
 
-source_file="res://UI/Jackladder Demo.ttf"
-dest_files=["res://.godot/imported/Jackladder Demo.ttf-752d69cec0aa31252d5bb9aacda209c8.fontdata"]
+source_file="res://fonts/RadioCanadaBig-Bold.ttf"
+dest_files=["res://.godot/imported/RadioCanadaBig-Bold.ttf-7ad0cf8ba5a37f43bfe716e8885c3c03.fontdata"]
 
 [params]
 

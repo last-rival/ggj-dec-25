@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://05aog0qyx7lq"
-path="res://.godot/imported/Nunito-VariableFont_wght.ttf-f4b61cde4e8ba075ee709d8993514f57.fontdata"
+uid="uid://dwue0hqcw0q6r"
+path="res://.godot/imported/RadioCanadaBig-MediumItalic.ttf-be4bffc8952f5d3bf04fbcee5ea7b0b3.fontdata"
 
 [deps]
 
-source_file="res://UI/Nunito-VariableFont_wght.ttf"
-dest_files=["res://.godot/imported/Nunito-VariableFont_wght.ttf-f4b61cde4e8ba075ee709d8993514f57.fontdata"]
+source_file="res://fonts/RadioCanadaBig-MediumItalic.ttf"
+dest_files=["res://.godot/imported/RadioCanadaBig-MediumItalic.ttf-be4bffc8952f5d3bf04fbcee5ea7b0b3.fontdata"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmfhd0w1alirt"]
 
-[ext_resource type="FontFile" uid="uid://05aog0qyx7lq" path="res://UI/Nunito-VariableFont_wght.ttf" id="1_ccylu"]
+[ext_resource type="FontFile" uid="uid://dwrc32gi4scnk" path="res://fonts/RadioCanadaBig-Medium.ttf" id="1_ccylu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ol573"]
 content_margin_left = 10.0

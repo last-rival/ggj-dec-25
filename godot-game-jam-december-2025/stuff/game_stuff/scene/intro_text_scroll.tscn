@@ -3,13 +3,26 @@
 [ext_resource type="PackedScene" uid="uid://t2dui8ppm3a4" path="res://addons/maaacks_menus_template/examples/scenes/credits/scrolling_credits.tscn" id="1_e3r4h"]
 
 [node name="IntroTextScroll" instance=ExtResource("1_e3r4h")]
-scroll_paused = false
 
-[node name="ScrollContainer" parent="." index="0"]
-scroll_vertical = 2182
+[node name="Panel" type="Panel" parent="." index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" parent="." index="1"]
+layout_mode = 1
+anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2
+scroll_vertical = 2587
 
 [node name="CreditsLabel" parent="ScrollContainer/VBoxContainer" index="1"]
 text = "[font_size=48]I had a craving for tea.[/font_size]
+
+
 [font_size=48]Maybe it was because the day felt unusually slow, with a weight that had settled on my shoulder. Or maybe it was the lack of sleep, the one which has accumulated over nights spent without any. Or perhaps it was something else entirely, the weight that had settled into my chest for the reason I could not quite name. [/font_size]
 
 [font_size=48]I looked down on the dossier in my hand. [/font_size]
@@ -24,6 +37,7 @@ text = "[font_size=48]I had a craving for tea.[/font_size]
 [font_size=48]Or because she cooperated without hesitation, helping us at every step wherever she could. [/font_size]
 [font_size=48]But instincts rarely speak without reasons.[/font_size]
 
-[font_size=48]And yet I hoped that it wasn’t her fault. [/font_size]
+
+[font_size=48]And yet I hope that it wasn’t her fault...[/font_size]
 "
 attribution_file_path = "res://stuff/IntroTextScroll.md"

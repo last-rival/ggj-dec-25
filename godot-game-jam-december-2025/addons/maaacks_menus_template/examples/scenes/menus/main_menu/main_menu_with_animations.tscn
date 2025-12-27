@@ -314,10 +314,6 @@ transitions = ["Intro", "OpenMainMenu", SubResource("11"), "OpenMainMenu", "Open
 graph_offset = Vector2(-180.277, 49)
 
 [node name="MainMenu" instance=ExtResource("1_0i2sc")]
-offset_left = 559.0
-offset_top = 259.0
-offset_right = -559.0
-offset_bottom = -259.0
 script = ExtResource("2_ncvk7")
 game_scene_path = "uid://joqju5gkcy0j"
 options_packed_scene = ExtResource("3_4saoe")
@@ -333,11 +329,14 @@ tree_root = SubResource("AnimationNodeStateMachine_vikuh")
 anim_player = NodePath("../MenuAnimationPlayer")
 parameters/conditions/intro_done = false
 
+[node name="MenuContainer" parent="." index="5"]
+offset_left = 171.0
+offset_top = 272.0
+offset_right = -1107.0
+offset_bottom = -214.0
+
 [node name="TitleContainer" parent="MenuContainer/TitleMargin" index="0"]
 modulate = Color(1, 1, 1, 0)
-
-[node name="TitleLabel" parent="MenuContainer/TitleMargin/TitleContainer" index="0"]
-text = "ALTER GIRL"
 
 [node name="SubTitleContainer" parent="MenuContainer/SubTitleMargin" index="0"]
 modulate = Color(1, 1, 1, 0)

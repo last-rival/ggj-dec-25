@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ltwhxc6oap2c"]
+[gd_scene load_steps=7 format=3 uid="uid://ltwhxc6oap2c"]
 
 [ext_resource type="Script" uid="uid://orcqpquirjav" path="res://stuff/game_stuff/systems/dialog/dialogue_drawer.gd" id="1_rtfiw"]
 [ext_resource type="Texture2D" uid="uid://bnfk3qmbyyebo" path="res://stuff/art/ui/convopanel.png" id="2_72toh"]
 [ext_resource type="PackedScene" uid="uid://dmfhd0w1alirt" path="res://stuff/game_stuff/systems/dialog/continue_button.tscn" id="2_kv2xt"]
-[ext_resource type="FontFile" uid="uid://05aog0qyx7lq" path="res://UI/Nunito-VariableFont_wght.ttf" id="4_g05qq"]
 
 [sub_resource type="Theme" id="Theme_rtfiw"]
 default_font_size = 20
@@ -73,6 +72,5 @@ alignment = 2
 [node name="ContinueButton" parent="PanelContainer/ScrollContainer/inner_container" instance=ExtResource("2_kv2xt")]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_g05qq")
 
 [connection signal="pressed" from="PanelContainer/ScrollContainer/inner_container/ContinueButton" to="." method="_on_continue_button_pressed"]

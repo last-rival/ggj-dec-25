@@ -298,6 +298,7 @@ position = Vector2(470, 297)
 texture = ExtResource("2_n3jja")
 
 [node name="strange_flower" type="Sprite2D" parent="bg"]
+visible = false
 position = Vector2(-326, 299)
 texture = ExtResource("3_cilnq")
 
@@ -321,17 +322,17 @@ grow_vertical = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -508.0
+offset_left = -571.0
 offset_top = 27.0
-offset_right = 484.0
+offset_right = 547.0
 offset_bottom = 84.0
 grow_horizontal = 2
 
 [node name="break_description" type="RichTextLabel" parent="break_room/break_description_panel"]
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
-text = "Click on items to carry or remove them for innterogation."
+text = "Click on items on the left to add to inventory slots on the bottom. Click on slots to remove them."
 horizontal_alignment = 1
 vertical_alignment = 1
 
