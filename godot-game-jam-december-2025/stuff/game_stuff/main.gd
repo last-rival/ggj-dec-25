@@ -6,7 +6,8 @@ extends Node2D
 @onready var break_room = $break_room;
 @onready var break_room_hud: CanvasLayer = $break_room/break_room;
 @onready var innterogation_room : Node2D = $innterogation_room;
-@onready var hud : CanvasLayer = $HUD;
+@onready var hud : CanvasLayer = $HUD
+@onready var audio_manager : AudioManager = $audio_manager
 
 var is_dialogue_running: bool = false
 var can_visit_break_room:bool = false;
@@ -16,6 +17,8 @@ func _ready() -> void:
 	_dialogue_drawer.connect("break_room",on_break_room_trigger)
 	_dialogue_drawer.connect("energy_used", on_energy_use_trigger)
 	_dialogue_drawer.connect("set_switch", on_set_switch_trigger)
+	_dialogue_drawer.connect("set_bgm",on_bgm_set)
+	_dialogue_drawer.connect("set_sfx",on_sfx_set)
 
 	break_room.connect("exit_break_room", on_break_room_exit_pressed)
 
@@ -152,6 +155,22 @@ func on_set_switch_trigger(chances:Array) -> void:
 	
 	for key in GameData.character_switch_chances:
 		print("Set Switch Chance for "+str(key)+" = "+str(GameData.character_switch_chances[key]));
+
+
+func on_bgm_set(keys:Array) -> void:
+	if keys == null || keys.size() == 0:
+		return
+
+	var key = keys[0]
+	audio_manager.play_bgm(key)
+
+
+func on_sfx_set(keys:Array) -> void:
+	if keys == null || keys.size() == 0:
+		return
+
+	var key = keys[0]
+	audio_manager.play_sfx(key)
 
 # TODO : Updated the game to load different conversation files based on the active character.
 # The way this will work is you carry on a conversation, the character runs of energy and then you enter break room
