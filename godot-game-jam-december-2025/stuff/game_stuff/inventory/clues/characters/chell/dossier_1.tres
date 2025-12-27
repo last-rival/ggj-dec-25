@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_item")
 name = "Chell Dossier 1"
-description = "Detailed file 1 on Chell"
+description = "A complete dossier composed of details about Chell and events associated with her"
 icon = ExtResource("1_xgscv")
 use_condition_variable = "rachel_dossier1_available"
 on_use_set_variable = "rachel_dossier1_used"
