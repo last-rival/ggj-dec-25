@@ -25,6 +25,7 @@ var character_switch_chances:Dictionary[String,int]={
 signal inventory_updated
 signal collection_updated
 signal energy_updated(new_amount: int)
+signal energy_changed(gained: bool)
 
 var _persistence = {
 	"dialogues": {},
@@ -165,6 +166,7 @@ func get_inventory() -> Array:
 	return _persistence.inventory
 
 func modify_energy(amount: int) -> void:
+	var old_energy = current_energy;
 	current_energy = clamp(current_energy + amount, 0, MAX_ENERGY)
 	
 	# Sync to global variables for dialogue system
@@ -179,7 +181,11 @@ func modify_energy(amount: int) -> void:
 
 	energy_updated.emit(current_energy)
 
+	if old_energy != current_energy:
+		energy_changed.emit(current_energy>old_energy)
+
 func set_energy(amount: int) -> void:
+	var old_energy = current_energy;
 	current_energy = clamp(amount, 0, MAX_ENERGY)
 	
 	set_variable("energy", current_energy)
@@ -190,3 +196,6 @@ func set_energy(amount: int) -> void:
 		set_variable("exhausted", false)
 		
 	energy_updated.emit(current_energy)
+
+	if old_energy != current_energy:
+		energy_changed.emit(current_energy>old_energy)

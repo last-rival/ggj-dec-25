@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://joqju5gkcy0j"]
+[gd_scene load_steps=16 format=3 uid="uid://joqju5gkcy0j"]
 
 [ext_resource type="Script" uid="uid://ct4qw6sp5c36c" path="res://stuff/game_stuff/main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://ltwhxc6oap2c" path="res://stuff/game_stuff/systems/dialog/dialogue_drawer.tscn" id="1_ig7tw"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://djj8eqayat207" path="res://stuff/game_stuff/energy/energy_variable_master_sheet.gd" id="7_debug_energy"]
 [ext_resource type="PackedScene" uid="uid://bwp7mc2amlsvw" path="res://stuff/game_stuff/energy/energy_ui.tscn" id="7_energy"]
 [ext_resource type="PackedScene" uid="uid://dc3q0aepimx7t" path="res://stuff/game_stuff/scene/innterogation_room.tscn" id="9_c0q6h"]
+[ext_resource type="Script" uid="uid://dlj3lww0har8k" path="res://stuff/game_stuff/systems/audio_manager.gd" id="10_3l2cm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tiyvg"]
 
@@ -97,6 +98,27 @@ grow_vertical = 2
 texture = ExtResource("6_tiyvg")
 expand_mode = 1
 stretch_mode = 6
+
+[node name="audio_manager" type="Node" parent="."]
+script = ExtResource("10_3l2cm")
+
+[node name="bgm_1" type="AudioStreamPlayer" parent="audio_manager"]
+bus = &"Music"
+
+[node name="bgm_2" type="AudioStreamPlayer" parent="audio_manager"]
+bus = &"Music"
+
+[node name="sfx_1" type="AudioStreamPlayer" parent="audio_manager"]
+bus = &"SFX"
+
+[node name="sfx_2" type="AudioStreamPlayer" parent="audio_manager"]
+bus = &"SFX"
+
+[node name="sfx_3" type="AudioStreamPlayer" parent="audio_manager"]
+bus = &"SFX"
+
+[node name="sfx_4" type="AudioStreamPlayer" parent="audio_manager"]
+bus = &"SFX"
 
 [connection signal="active_check_ended" from="HUD/DialogueDrawer" to="." method="_on_dialogue_drawer_active_check_ended"]
 [connection signal="dialogue_ended" from="HUD/DialogueDrawer" to="." method="_on_dialogue_drawer_dialogue_ended"]
