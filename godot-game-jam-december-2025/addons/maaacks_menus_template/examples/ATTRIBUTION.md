@@ -1,22 +1,12 @@
 # Attribution
-## Collaborators
+## Thanks for Playing!
 
-### Role
-Person 1  
-Person 2  
-[Person w/ Link]()  
-
-## Sourced
-### Asset Type
-#### Use Case
-Author: [Name]()  
-Source: [Domain : webpage.html]()  
-License: [License]()
-
-#### Godot Engine Logo
-Author: Andrea Calabró  
-Source: [godotengine.org : press](https://godotengine.org/press/)  
-License: [CC BY 4.0 International](https://github.com/godotengine/godot/blob/master/LOGO_LICENSE.txt) 
+### Game Makers
+[shake]Crayon Cat[/shake]: Character Art + Narrative Design  
+[shake]Kuldeep[/shake]: Gameplay Programming  
+[shake]Tanay.wav[/shake]: Music + SFX  
+[shake]Skkarrty[/shake]: Dialogue + Narrative Design + Gameplay Programming 
+[shake]Major Bacon[/shake]: Creative Lead + Game Design + Tech Art
 
 ## Tools
 #### Godot
@@ -24,6 +14,11 @@ License: [CC BY 4.0 International](https://github.com/godotengine/godot/blob/mas
 Author: [Juan Linietsky, Ariel Manzur, and contributors](https://godotengine.org/contact)  
 Source: [godotengine.org](https://godotengine.org/)  
 License: [MIT License](https://github.com/godotengine/godot/blob/master/LICENSE.txt) 
+
+### Clyde Dialogue Tool
+![Clyde Dialogue Logo](/addons/maaacks_menus_template/examples/assets/plugin_logo/clyde.png)  
+Author: [Vinicius Gerevini and contributors](https://github.com/viniciusgerevini)
+Source: [github: godot-clyde-dialogue](https://github.com/viniciusgerevini/godot-clyde-dialogue)
 
 #### Godot Menus Template
 ![Maaack Plugin Icon](/addons/maaacks_menus_template/examples/assets/plugin_logo/logo.png)  

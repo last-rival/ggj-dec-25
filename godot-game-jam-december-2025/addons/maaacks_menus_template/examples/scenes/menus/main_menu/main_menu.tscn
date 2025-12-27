@@ -16,7 +16,7 @@ options_packed_scene = ExtResource("3_cfr4i")
 credits_packed_scene = ExtResource("4_qhsni")
 
 [node name="TitleLabel" parent="MenuContainer/TitleMargin/TitleContainer" index="0"]
-text = "Alter Girl"
+text = "ALTER GIRL"
 
 [node name="SubTitleLabel" parent="MenuContainer/SubTitleMargin/SubTitleContainer" index="0"]
 text = "A Visual Novel Investigation"
