@@ -29,11 +29,11 @@
 	[i]She drags the sound out, it seems she doesn’t have much appreciation for time.
 	{trigger set_expr("prudence","Neutral_01")}
 	Prudence : I was reviewing the church accounts, making sure we had enough supplies for the month
-	{set @found_prudence_chit1 = true}
+	{set @found_prudence_chit_1 = true}
 	{trigger set_expr("prudence","Neutral_02")}
 	[i]New Info. Unlocked - "Prudence takes care of management"
-	{@eleanor_chit2_available == false} I should present her with the information of what Eleanor said she was doing at the time of the incident.
-	+{@eleanor_chit2_available == true} {@energy >= 0} Reveal what Eleanor was doing at 3PM.
+	{@eleanor_chit_2_available == false} I should present her with the information of what Eleanor said she was doing at the time of the incident.
+	+{@eleanor_chit_2_available == true} {@energy >= 0} Reveal what Eleanor was doing at 3PM.
 		{trigger set_expr("prudence","Mock_01")}
 		Prudence: And I thought you were smarter, Detective
 		{trigger set_expr("prudence","Happy_02")}
@@ -70,8 +70,8 @@
 	{trigger set_expr("prudence","Game_02")}
 	[i]I already knew I was not getting anything more out of her right now, not without paying the price that she demands. Pressing hard will only amuse her or shut her down entirely. 
 	[i]For now playing along would be wiser.
-	{@eleanor_chit1_available == false} I should present her with the information of what Eleanor does around here.
-	+{@eleanor_chit1_available == true} {@energy >= 0} Reveal what Eleanor does around here.
+	{@eleanor_chit_1_available == false} I should present her with the information of what Eleanor does around here.
+	+{@eleanor_chit_1_available == true} {@energy >= 0} Reveal what Eleanor does around here.
 		{trigger set_expr("prudence","Neutral_03")}
 		Prudence: Ugh
 		Prudence: Can you imagine... She gets to be the Abbess?
@@ -87,7 +87,7 @@
 		Prudence: All she does is to tell others what to do
 		{trigger set_expr("prudence","Neutral_03")}
 		Prudence: That’s it, that’s all she does
-		{set @found_eleanor_chit3 = true}
+		{set @found_eleanor_chit_3 = true}
 		{trigger set_expr("prudence","Neutral_04")}
 		[i]New Info. Unlocked - "Eleanor only prays and designates tasks"
 		{set @found_eleanor_dossier_1 = true}
@@ -95,7 +95,7 @@
 		<-
 	<-
 
-+ {@prudence_chit2_available == true} {@energy >= 0} Reveal that you know she can source restrictive items.
++ {@prudence_chit_2_available == true} {@energy >= 0} Reveal that you know she can source restrictive items.
 	{trigger set_expr("prudence","Whatchu_Say_01")}
 	Prudence : Detective I hope you are careful with your next words
 	{trigger set_expr("prudence","Whatchu_Say_02")}
@@ -134,9 +134,9 @@
 	But why, why will she still listen to the priest.
 	{set prudence_q5 = true}
 	{trigger set_switch(1,1,1,1,0)}
-	{set @found_chell_chit2 = false}
+	{set @found_chell_chit_2 = false}
 	[i]New Info. Unlocked - "Chell is fond of flowers".
-	{set @found_briar_chit3 = true}
+	{set @found_briar_chit_3 = true}
 	[i]New Info. Unlocked - "Briar grew the flower".
 	{set @found_briar_dossier_1 = true}
 	[i]Dossier Unlocked "Briar" - All information about Briar is revealed.
@@ -158,7 +158,7 @@
 	Because the fear on her face told me everything.
 	She sought control wherever she could find, because it was something she has never been allowed to have in her own life.
 	{trigger set_expr("prudence","Neutral_04")}
-	{set @found_prudence_chit3 = true}
+	{set @found_prudence_chit_3 = true}
 	[i]New Info. Unlocked - "Prudence is scared of the Priest".
 	{set @found_prudence_dossier_1 = true}
 	[i]Dossier Unlocked "Prudence" - All information about Prudence is revealed

@@ -16,7 +16,7 @@ Finally I steadied myself and asked the question I never expected to ask so many
 	A brief pause.
 	{set chell_q2 = true}
 	Chell : I care for the church’s cleanliness
-	{set @found_chell_chit1 = true}
+	{set @found_chell_chit_1 = true}
 	[i] Note - "Chell looks after the cleanliness"
 	<-
 
@@ -40,7 +40,7 @@ Finally I steadied myself and asked the question I never expected to ask so many
 	Chell : and gives me sweets
 	Chell : she is the best!
 	She exclaimed the sentence with joy.
-	{set @found_briar_chit2 = true}
+	{set @found_briar_chit_2 = true}
 	[i]Note - "Briar takes care of Chell"
 	{set @found_briar_dossier_1 = true}
 	[i]Dossier Unlocked "Briar" - All information about Briar is revealed.

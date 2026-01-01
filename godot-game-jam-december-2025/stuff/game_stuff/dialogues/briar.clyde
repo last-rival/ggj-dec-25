@@ -67,7 +67,7 @@
 	[i]Her gaze hardened.
 	Briar: And that would be Prudence
 	[i]But why, why would Prudence source something so dangerous - something so deadly.
-	{set @found_prudence_chit2 = true}
+	{set @found_prudence_chit_2 = true}
 	{set briar_q4 = true}
 	[i]New Info. Unlocked - "Prudence can source restirictive items like Night Rhondendron Flower".
 	<-
@@ -97,7 +97,7 @@
 	Briar: She doesn’t feel pain.
 	That is all I needed to know.
 	This conversation didn’t need to continue.
-	{set @found_chell_chit3 = true}
+	{set @found_chell_chit_3 = true}
 	[i]Note - "Chell doesn’t feel pain"
 	{set @found_chell_dossier_1 = true}
 	[i]Dossier Unlocked "Chell" - All information about Chell is revealed
