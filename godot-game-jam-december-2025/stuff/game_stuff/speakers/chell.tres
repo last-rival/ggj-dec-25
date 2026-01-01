@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_hgxwl")
 speaker_name = "Chell"
-speaker_color = Color(0.05467821, 0.72884846, 7.70092e-07, 1)
+speaker_color = Color(0.057851218, 0.73760307, 0, 1)
 portrait_path = "uid://d0tchol8isse6"
 metadata/_custom_type_script = "uid://booxiry4lf2es"

@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_d05g0")
 speaker_name = "Prudence"
-speaker_color = Color(1, 0.5275415, 0.19748032, 1)
+speaker_color = Color(0.7715464, 0.31990954, 0, 1)
 portrait_path = "uid://b3qpe8ju3m2cs"
 metadata/_custom_type_script = "uid://booxiry4lf2es"
