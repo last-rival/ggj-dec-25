@@ -27,6 +27,8 @@ Finally I steadied myself and asked the question I never expected to ask so many
 	Chell : I was reading a book
 	Though the change was imminent.
 	{set chell_q3 = true}
+	{set @found_chell_chit_2 = true}
+	[i] Note - "Chell Likes to read"
 	Her face brightened, even at the mention of it, for the first time since she had sat down she looked at me directly.
 	<-
 

@@ -4,10 +4,10 @@
 	[i]She’s already seated when I walked in.
 	[i]Her hands were folded in her lap, her posture was straight but not rigid. There is a dignity about her. The kind that came from bearing responsibility for too long. Her eyes carried grief, still mourning the loss. Yet beneath all this there is a resolve that said that she is ready to give her all to this interview. 
 	[i]Whether that confidence will make this interview easier or far more complicated is something only time will tell.
-	{set recorder_stareted = true}
+	{set recorder_started = true}
 	{trigger set_switch(0,0,1,1,0)}
 	<-
-+ {@energy > 0} {recorder_stareted}Who are you?
++ {@energy > 0} {recorder_started}Who are you?
 	{trigger set_expr("eleanor","Neutral_02")}
 	You: Can you please introduce yourself?
 	{trigger energy_used(1)}
@@ -92,7 +92,7 @@
 		Eleanor: No-thing
 		{trigger set_expr("eleanor","No_Energy")}
 		{trigger set_expr_solo("eleanor","Sweat")}
-	+ {@energy <= 0} She looks exausted, should take a break
+	+ {@energy <= 0} She looks exhausted, should take a break
 		{trigger break_room}You head out to the break room#end
 		<-
 	[i]Her breathing quickened, panic leaked through her composure. She is spiraling down.
@@ -115,7 +115,7 @@
 		{trigger set_expr_solo("eleanor","Sweat")}
 		It was time for a break#end
 	<-
-	+ {@energy <= 0}She looks exausted, maybe we should take a break.
+	+ {@energy <= 0}She looks exhausted, maybe we should take a break.
 		{trigger set_expr("eleanor","No_Energy")}
 		{trigger set_expr_solo("eleanor","Sweat")}
 		{trigger break_room}[i]You head out to the break room#end
@@ -134,7 +134,7 @@
 	Eleanor:Briar, she takes care of kitchen and garden
 	{trigger set_expr("eleanor","Thought_02")}
 	{trigger set_switch(1,0,1,1,0)}
-	{set @found_brair_chit_1 = true}
+	{set @found_briar_chit_1 = true}
 	[i]Note - "Briar takes care of Kitchen and Garden"
 	<-
 
