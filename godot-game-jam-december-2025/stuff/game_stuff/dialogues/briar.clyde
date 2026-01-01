@@ -1,3 +1,4 @@
+\------------------------
 {trigger set_expr("briar","Neutral_02")}
 [i]There’s a gloom about her, a wariness so deep I could feel it settle inside my bones by just looking at her.
 [i]Her eyes held resentment as they met mine-but not the kind that meant for me, it was aimed inward.
@@ -52,7 +53,7 @@
 		Briar: I would say we are quite similar.
 		{trigger set_expr("briar","Hah_04")}
 		{set briar_q3 = true}
-		<-
+	<-
 	<-
 
 + {briar_q3 == true} {@energy >= 0} How did the flower come to church?
@@ -123,7 +124,7 @@
 		{set @found_strange_flower = true}
 		[i] New Evidence - Night Rhododendron Flower
 		{trigger set_switch(0,1,0,0,0)}
-		<-
+	<-
 	<-
 
 + {@energy <= 0}{trigger set_expr("briar","No_Energy")}{trigger set_expr_solo("briar","Sweat")}She looks exausted, maybe we should take a break.

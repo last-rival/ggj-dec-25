@@ -8,5 +8,5 @@ script = ExtResource("1_item")
 name = "Chell Dossier 1"
 description = "A complete dossier composed of details about Chell and events associated with her"
 icon = ExtResource("1_xgscv")
-use_condition_variable = "rachel_dossier1_available"
+use_condition_variable = "chell_dossier_1_available"
 on_use_set_variable = "rachel_dossier1_used"

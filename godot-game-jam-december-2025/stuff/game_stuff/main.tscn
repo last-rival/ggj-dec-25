@@ -109,6 +109,12 @@ theme_override_colors/font_color = Color(0, 0, 0, 0)
 text = "Give All"
 script = ExtResource("10_tiyvg")
 
+[node name="Button" type="Button" parent="HUD"]
+visible = false
+offset_right = 32.0
+offset_bottom = 8.0
+text = "End"
+
 [node name="audio_manager" type="Node" parent="."]
 script = ExtResource("10_3l2cm")
 
@@ -134,6 +140,7 @@ bus = &"SFX"
 [connection signal="dialogue_ended" from="HUD/DialogueDrawer" to="." method="_on_dialogue_drawer_dialogue_ended"]
 [connection signal="pressed" from="HUD/start_interrogation" to="." method="_on_game_demo_pressed"]
 [connection signal="pressed" from="HUD/all" to="HUD/all" method="_on_pressed"]
+[connection signal="pressed" from="HUD/Button" to="." method="_on_button_pressed"]
 
 [editable path="break_room"]
 [editable path="innterogation_room"]

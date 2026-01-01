@@ -203,14 +203,14 @@ rotation = -0.32533297
 scale = Vector2(0.9999999, 0.9999999)
 texture = ExtResource("3_pjncy")
 
-[node name="prudence__dossier_1" type="Node2D" parent="bg/items"]
+[node name="prudence_dossier_1" type="Node2D" parent="bg/items"]
 
-[node name="unlock" type="Sprite2D" parent="bg/items/prudence__dossier_1"]
+[node name="unlock" type="Sprite2D" parent="bg/items/prudence_dossier_1"]
 position = Vector2(899.99994, 283)
 rotation = -0.10010831
 texture = ExtResource("3_k43ay")
 
-[node name="lock" type="Sprite2D" parent="bg/items/prudence__dossier_1"]
+[node name="lock" type="Sprite2D" parent="bg/items/prudence_dossier_1"]
 position = Vector2(899.99994, 283)
 rotation = -0.10010831
 texture = ExtResource("3_pjncy")

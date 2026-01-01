@@ -8,5 +8,5 @@ script = ExtResource("1_item")
 name = "Briar Dossier 1"
 description = "A complete dossier composed of details about Briar and events associated with her"
 icon = ExtResource("1_b7f0h")
-use_condition_variable = "briar_dossier1_available"
+use_condition_variable = "briar_dossier_1_available"
 on_use_set_variable = "briar_dossier1_used"

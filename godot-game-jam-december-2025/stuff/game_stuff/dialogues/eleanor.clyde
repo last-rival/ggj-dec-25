@@ -1,3 +1,4 @@
+\------------------------
 * Enter the interrogation room.
 	{trigger set_expr("eleanor","Thought_02")}
 	[i]The interrogation room smelled of room freshener working hard to mask the underlying stench of mold which was not overpowering yet persistently lingered beneath the lavender scent.
@@ -33,6 +34,7 @@
 	{set @found_eleanor_chit_2 = true}
 	{trigger set_expr("eleanor","Neutral_02")}
 	[i]New Info. Unlocked - "Eleanor was performing Mercy Prayer at the time of death"
+	{set @break_room_unlocked = true}
 	<-
 
 + {eleanor_q3} {@energy > 0} Were you the first person who discovered the body?
@@ -61,7 +63,7 @@
 	{trigger set_expr_solo("eleanor","Sweat")}
 	[i]The words came out quickly. Hoping that they might be convincing.
 	[i]They were far from it.
-	i]It’s a small church perched on top of a hilltop too far from casual foot traffic.
+	[i]It’s a small church perched on top of a hilltop too far from casual foot traffic.
 	[i]According to records only two people resided there, the head priest and Elanor.
 	[i]Anybody visiting around the time of death would have come to attend the Mercy Prayer, but the initial investigation confirmed proof of no other presence. And the head priest did not have any prior appointments.
 	[i]Which raises a different possibility. She was expecting more people.
@@ -86,7 +88,6 @@
 	
 	[i]A bit more pressure.
 	+ {@energy > 0} You: What are you hiding Elanor?
-		{trigger energy_used(1)}
 		{trigger set_expr("eleanor","Upset_03")}
 		{trigger set_expr_solo("eleanor","Sweat")}
 		Eleanor: No-thing
@@ -98,7 +99,6 @@
 	[i]Her breathing quickened, panic leaked through her composure. She is spiraling down.
 	[i]Once more just a little more.
 	+ {@energy > 0} You: What are you hiding Elanor?
-		{trigger energy_used(1)}
 		{trigger set_expr("eleanor","Upset_03")}
 		{trigger set_expr_solo("eleanor","Sweat")}
 		Eleanor: I am not hiding anything!
@@ -138,7 +138,7 @@
 	[i]Note - "Briar takes care of Kitchen and Garden"
 	<-
 
-+ {@eleanor_chit_1_available or @energy<=0} Lets take and break and asses the information we have gathered.
++ {@break_room_unlocked or @energy<=0} Lets take and break and asses the information we have gathered.
 	{trigger set_expr("eleanor","No_Energy")}
 	{trigger set_expr_solo("eleanor","Sweat")}
 	{trigger break_room}[i]You head out to the break room.#end

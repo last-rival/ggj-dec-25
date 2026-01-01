@@ -9,5 +9,5 @@ name = "Prudence Chit 3"
 description = "\"Prudence is scared of the Priest\"
 Prudence sources whatever the priest asks her to source without question, because she is scared of him"
 icon = ExtResource("1_sbbsl")
-use_condition_variable = "prudence_chit3_available"
+use_condition_variable = "prudence_chit_3_available"
 on_use_set_variable = "prudence_chit3_used"

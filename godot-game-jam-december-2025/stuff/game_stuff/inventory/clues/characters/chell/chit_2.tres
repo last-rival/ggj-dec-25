@@ -10,5 +10,5 @@ description = "\"Chell looks after cleanliness\"
 Chell is responsible for the overall cleanliness of the church
 "
 icon = ExtResource("1_y5upd")
-use_condition_variable = "rachel_chit2_available"
+use_condition_variable = "chell_chit_2_available"
 on_use_set_variable = "rachel_chit2_used"

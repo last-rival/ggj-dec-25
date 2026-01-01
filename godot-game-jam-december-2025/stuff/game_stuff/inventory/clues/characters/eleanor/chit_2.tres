@@ -9,5 +9,5 @@ name = "Eleanor Chit 2"
 description = "\"Eleanor Performs Mercy Prayer\"
 Eleanor is the one who performs mercy prayer at 3:00 PM. And thus was not present at the time of death."
 icon = ExtResource("1_av70u")
-use_condition_variable = "eleanor_chit2_available"
+use_condition_variable = "eleanor_chit_2_available"
 on_use_set_variable = "eleanor_chit2_used"

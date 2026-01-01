@@ -30,7 +30,7 @@ func _ready() -> void:
 	# Load specific character clues
 	
 	# 1. Chits (3 per character, except Priest)
-	var chit_chars = ["eleanor", "rachel", "prudence", "briar"]
+	var chit_chars = ["eleanor", "chell", "prudence", "briar"]
 	for char_name in chit_chars:
 		for i in range(1, 4):
 			var path = "res://stuff/game_stuff/inventory/clues/characters/%s/chit_%d.tres" % [char_name, i]
@@ -39,7 +39,7 @@ func _ready() -> void:
 				if item: GameData.add_item(item)
 
 	# 2. Dossiers (1 per character, including Priest)
-	var dossier_chars = ["eleanor", "rachel", "prudence", "briar", "priest"]
+	var dossier_chars = ["eleanor", "chell", "prudence", "briar", "priest"]
 	for char_name in dossier_chars:
 		var path = "res://stuff/game_stuff/inventory/clues/characters/%s/dossier_1.tres" % [char_name]
 		if ResourceLoader.exists(path):
@@ -196,10 +196,16 @@ func on_expression_solo_set(keys:Array):
 	_character.set_expression_solo(char_id,exp_id)
 
 func on_end_game():
-	SceneLoader.load_scene("res://addons/maaacks_menus_template/examples/scenes/windows/main_menu_credits_window.tscn", true)
+	print("Game Completed")
+	SceneLoader.load_scene("res://addons/maaacks_menus_template/examples/scenes/windows/main_menu_credits_window.tscn", false)
 
 # TODO : Updated the game to load different conversation files based on the active character.
 # The way this will work is you carry on a conversation, the character runs of energy and then you enter break room
 # Next character loads in looks at the interal and external variables and picks up from the required place.
 # This that are difficult to do are -> Jumping from one place section of the script to another section via code.
 # Should be possible need to check the documentation
+
+
+func _on_button_pressed() -> void:
+	on_end_game()
+	pass # Replace with function body.

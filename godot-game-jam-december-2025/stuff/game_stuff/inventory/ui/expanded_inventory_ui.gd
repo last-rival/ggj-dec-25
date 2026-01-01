@@ -1,7 +1,7 @@
 extends Control
 class_name ItemInventory
 
-@onready var grid_container = $GridContainer
+@onready var grid_container = $Panel/ScrollContainer/GridContainer
 @export var popup : ItemDetailPanel
 
 var slot_scene = preload("res://stuff/game_stuff/inventory/inventory_slot.tscn")

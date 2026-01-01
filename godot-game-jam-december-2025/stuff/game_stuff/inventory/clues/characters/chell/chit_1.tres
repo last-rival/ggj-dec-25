@@ -10,5 +10,5 @@ description = "\"Chell is fond of flower\"
 Chell loves flowers, something that Briar grows plenty
 "
 icon = ExtResource("1_pfjx4")
-use_condition_variable = "rachel_chit1_available"
+use_condition_variable = "chell_chit_1_available"
 on_use_set_variable = "rachel_chit1_used"

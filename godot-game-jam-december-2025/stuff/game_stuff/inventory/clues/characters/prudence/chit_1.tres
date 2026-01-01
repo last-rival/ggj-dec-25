@@ -9,5 +9,5 @@ name = "Prudence Chit 1"
 description = "\"Prudence take care of management\"
 Prudence is the one who handles and manages the finances and the operations of the church"
 icon = ExtResource("1_4gtdj")
-use_condition_variable = "prudence_chit1_available"
+use_condition_variable = "prudence_chit_1_available"
 on_use_set_variable = "prudence_chit1_used"

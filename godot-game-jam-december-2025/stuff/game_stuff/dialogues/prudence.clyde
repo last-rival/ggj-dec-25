@@ -1,3 +1,4 @@
+\------------------------
 [i]Something changed.
 {trigger set_expr("prudence","Neutral_02")}
 -> prudence_intro
@@ -51,8 +52,9 @@
 		{trigger set_expr("prudence","Neutral_03")}
 		Prudence:They do what they do…
 		{trigger set_expr("prudence","Neutral_02")}
-		<-
 	<-
+	<-
+
 + {prudence_q3 == true} {@energy >= 0} Who are the others that you talk about?
 	{trigger set_expr("prudence","Happy_02")}
 	She wanted me to ask that. Her face is alight with genuine excitement. What does she have in store for me?
@@ -92,7 +94,7 @@
 		[i]New Info. Unlocked - "Eleanor only prays and designates tasks"
 		{set @found_eleanor_dossier_1 = true}
 		[i]Dossier Unlocked "Eleanor" - All information about Eleanor is revealed.
-		<-
+	<-
 	<-
 
 + {@prudence_chit_2_available == true} {@energy >= 0} Reveal that you know she can source restrictive items.
@@ -180,9 +182,9 @@
 		Prudence : That is where she keeps all the ingredients
 		Prudence : If the flower went into the tea, then it would have come from there
 		{trigger set_expr("prudence","Game_01")}
-		{set @found_end_game = true}
+		{set @found_briar_secret = true}
 		[i] New Info. Unlocked - "Briar Secret shelf"
-		<-
+	<-
 	<-
 
 + {@energy <= 0} She looks exausted, maybe we should take a break.
@@ -197,7 +199,6 @@
 
 
 == prudence_intro
-Something changed.
 I noticed it the moment I looked at her again. 
 The woman across the table no longer feels… warm, the kindness, the grief softened eyes… they were missing. In its place was something colder and sharper.
 She snatched the water from my hand, and downed it in a single go, not breaking eye contact until the glass was empty.

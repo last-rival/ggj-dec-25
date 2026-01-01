@@ -13,4 +13,4 @@ Under the stars that fade away
 - Chell's Lullaby"
 icon = ExtResource("1_ayj0t")
 use_condition_variable = "lullaby_available"
-on_use_set_variable = "briar_chit1_used"
+on_use_set_value = false

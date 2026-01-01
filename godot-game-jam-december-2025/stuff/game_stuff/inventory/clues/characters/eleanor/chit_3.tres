@@ -9,5 +9,5 @@ name = "Eleanor Chit 3"
 description = "\"Eleanor Role in Church\"
 Eleanor manages all the personalities, she designates them tasks, and she performs prayers."
 icon = ExtResource("1_q4xqq")
-use_condition_variable = "eleanor_chit3_available"
+use_condition_variable = "eleanor_chit_3_available"
 on_use_set_variable = "eleanor_chit3_used"

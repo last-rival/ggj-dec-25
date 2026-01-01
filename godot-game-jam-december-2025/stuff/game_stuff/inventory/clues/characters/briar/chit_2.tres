@@ -9,5 +9,5 @@ name = "Briar Chit 2"
 description = "\"Briar grew the poison flower\"
 Briar grows the Night Rhododendron in the garden which was used to poison the Priest."
 icon = ExtResource("1_jspcg")
-use_condition_variable = "briar_chit2_available"
+use_condition_variable = "briar_chit_2_available"
 on_use_set_variable = "briar_chit2_used"

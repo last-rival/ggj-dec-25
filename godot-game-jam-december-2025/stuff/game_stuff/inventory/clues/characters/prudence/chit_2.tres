@@ -9,5 +9,5 @@ name = "Prudence Chit 2"
 description = "\"Prudence could source restrictive items\"
 Prudence is very resourceful who is even capable of sourcing items that might not be legal in nature."
 icon = ExtResource("1_0t6e5")
-use_condition_variable = "prudence_chit2_available"
+use_condition_variable = "prudence_chit_2_available"
 on_use_set_variable = "prudence_chit2_used"

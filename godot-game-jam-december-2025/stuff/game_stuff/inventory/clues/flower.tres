@@ -8,5 +8,5 @@ script = ExtResource("1_item")
 name = "Strange Flower"
 description = "Chell’s favourite flower, the one Briar specifically grows for her. I should give it to her."
 icon = ExtResource("1_14h2h")
-use_condition_variable = "flower_available"
+use_condition_variable = "strange_flower_available"
 on_use_set_variable = "flower_used"
